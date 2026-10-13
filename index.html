@@ -6,7 +6,7 @@
 
   <meta
     name="description"
-    content="Dr Md. Mezanur Rahman – Postdoctoral Research Associate at Oak Ridge National Laboratory. Heat and drought physiology of Populus, high-throughput plant phenotyping, multi-omics, and editorial contributions in plant science."
+    content="Dr Md. Mezanur Rahman – Postdoctoral Research Associate at Oak Ridge National Laboratory. Research in plant stress physiology, Populus phenotyping, multi-omics, climate resilience, and editorial contributions in plant science."
   >
 
   <title>Dr. Md. Mezanur Rahman | Plant Scientist</title>
@@ -18,6 +18,7 @@
     "name": "Md. Mezanur Rahman",
     "honorificPrefix": "Dr",
     "jobTitle": "Postdoctoral Research Associate",
+    "description": "Plant scientist working on heat and drought physiology, high-throughput phenotyping, multi-omics, and climate resilience.",
     "affiliation": {
       "@type": "Organization",
       "name": "Oak Ridge National Laboratory"
@@ -42,17 +43,19 @@
 
   <style>
     :root {
-      --ornl-navy: #003b5c;
-      --ornl-dark: #002b45;
-      --ornl-blue: #0077b6;
-      --ornl-sky: #43b5e8;
-      --ornl-orange: #f58220;
+      --navy: #003b5c;
+      --navy-dark: #002b45;
+      --blue: #0077b6;
+      --sky: #43b5e8;
+      --orange: #f58220;
       --white: #ffffff;
       --off-white: #f4f8fa;
       --light-blue: #e7f2f8;
       --text: #243746;
       --muted: #5f7280;
       --border: #d7e2e8;
+      --green: #167b50;
+      --red: #a62222;
     }
 
     * {
@@ -66,8 +69,8 @@
     }
 
     body {
-      color: var(--text);
       background: var(--off-white);
+      color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.7;
     }
@@ -78,48 +81,51 @@
 
     /* Navigation */
     .top-bar {
-      background: var(--ornl-navy);
-      border-bottom: 4px solid var(--ornl-orange);
+      background: var(--navy);
+      border-bottom: 4px solid var(--orange);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     nav {
-      width: min(1180px, 90%);
-      min-height: 82px;
-      margin: auto;
-      display: flex;
       align-items: center;
-      justify-content: space-between;
+      display: flex;
       gap: 25px;
+      justify-content: space-between;
+      margin: auto;
+      min-height: 82px;
+      width: min(1200px, 92%);
     }
 
     .brand {
       color: var(--white);
-      text-decoration: none;
-      font-size: 1.28rem;
+      font-size: 1.22rem;
       font-weight: 700;
       line-height: 1.25;
+      text-decoration: none;
     }
 
     .brand small {
-      display: block;
-      margin-top: 3px;
       color: #b9d9e8;
-      font-size: 0.72rem;
+      display: block;
+      font-size: 0.68rem;
       font-weight: normal;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.7px;
+      margin-top: 3px;
       text-transform: uppercase;
     }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 16px;
       list-style: none;
     }
 
     .nav-links a {
       color: var(--white);
-      font-size: 0.9rem;
+      font-size: 0.86rem;
       font-weight: 600;
       text-decoration: none;
     }
@@ -128,92 +134,51 @@
       color: #ffd08b;
     }
 
-    /* Hero */
-    .hero {
-      min-height: 600px;
-      display: flex;
-      align-items: center;
-      color: var(--white);
-      background:
-        linear-gradient(
-          90deg,
-          rgba(0, 43, 69, 0.97),
-          rgba(0, 59, 92, 0.92),
-          rgba(0, 119, 182, 0.74)
-        ),
-        linear-gradient(135deg, #003b5c, #0077b6);
+    /* Shared layout */
+    section {
+      padding: 82px 0;
     }
 
-    .hero-content {
-      width: min(1180px, 90%);
+    .container {
       margin: auto;
-      padding: 90px 0;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 50px;
-      align-items: center;
+      width: min(1120px, 90%);
     }
 
-    .hero-label,
     .section-label {
-      color: var(--ornl-orange);
-      font-size: 0.78rem;
-      font-weight: bold;
-      letter-spacing: 1.5px;
+      color: var(--orange);
+      display: block;
+      font-size: 0.77rem;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      margin-bottom: 8px;
       text-transform: uppercase;
     }
 
-    .hero-label {
-      display: inline-block;
+    .section-title {
+      color: var(--navy);
+      font-size: clamp(2rem, 4vw, 2.65rem);
+      line-height: 1.2;
       margin-bottom: 18px;
-      padding: 7px 12px;
-      border-left: 4px solid var(--ornl-orange);
-      background: rgba(255, 255, 255, 0.12);
-      color: #e5f4fb;
     }
 
-    .hero h1 {
-      max-width: 820px;
-      margin-bottom: 16px;
-      font-size: clamp(2.5rem, 5.4vw, 4.4rem);
-      line-height: 1.1;
+    .section-text {
+      color: var(--muted);
+      font-size: 1.02rem;
+      max-width: 880px;
     }
 
-    .hero h1 span {
-      color: #ffd08b;
-    }
-
-    .hero h2 {
-      margin-bottom: 20px;
-      color: #c7eafa;
-      font-size: clamp(1.05rem, 2vw, 1.35rem);
-      font-weight: normal;
-    }
-
-    .hero p {
-      max-width: 740px;
-      margin-bottom: 30px;
-      color: #e1eff6;
-      font-size: 1.06rem;
-    }
-
-    .portrait {
-      width: 240px;
-      height: 240px;
-      border: 5px solid var(--ornl-orange);
-      border-radius: 50%;
-      object-fit: cover;
-      background: var(--ornl-navy);
+    .section-text + .section-text {
+      margin-top: 18px;
     }
 
     .button {
-      display: inline-block;
-      padding: 13px 21px;
-      border: 2px solid var(--ornl-orange);
-      background: var(--ornl-orange);
+      background: var(--orange);
+      border: 2px solid var(--orange);
       color: var(--white);
-      font-size: 0.95rem;
-      font-weight: bold;
+      display: inline-block;
+      font-size: 0.93rem;
+      font-weight: 700;
+      padding: 12px 20px;
       text-decoration: none;
       transition: 0.2s ease;
     }
@@ -224,67 +189,108 @@
     }
 
     .button-outline {
-      margin-left: 10px;
-      border-color: #c8e8f8;
       background: transparent;
+      border-color: #c8e8f8;
+      margin-left: 10px;
     }
 
     .button-outline:hover {
-      background: #ffffff;
-      color: var(--ornl-navy);
+      background: var(--white);
+      color: var(--navy);
     }
 
-    /* General layout */
-    section {
-      padding: 80px 0;
+    /* Hero */
+    .hero {
+      align-items: center;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 43, 69, 0.97),
+          rgba(0, 59, 92, 0.92),
+          rgba(0, 119, 182, 0.74)
+        ),
+        linear-gradient(135deg, #003b5c, #0077b6);
+      color: var(--white);
+      display: flex;
+      min-height: 630px;
     }
 
-    .container {
-      width: min(1100px, 90%);
+    .hero-content {
+      align-items: center;
+      display: grid;
+      gap: 50px;
+      grid-template-columns: 1fr auto;
       margin: auto;
+      padding: 90px 0;
+      width: min(1180px, 90%);
     }
 
-    .section-label {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
+    .hero-label {
+      background: rgba(255, 255, 255, 0.12);
+      border-left: 4px solid var(--orange);
+      color: #e5f4fb;
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
       margin-bottom: 18px;
-      color: var(--ornl-navy);
-      font-size: clamp(2rem, 4vw, 2.65rem);
-      line-height: 1.2;
+      padding: 7px 12px;
+      text-transform: uppercase;
     }
 
-    .section-text {
-      max-width: 850px;
-      color: var(--muted);
-      font-size: 1.03rem;
+    .hero h1 {
+      font-size: clamp(2.5rem, 5.4vw, 4.4rem);
+      line-height: 1.1;
+      margin-bottom: 16px;
+      max-width: 820px;
+    }
+
+    .hero h1 span {
+      color: #ffd08b;
+    }
+
+    .hero h2 {
+      color: #c7eafa;
+      font-size: clamp(1.03rem, 2vw, 1.3rem);
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #e1eff6;
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+      max-width: 760px;
+    }
+
+    .portrait {
+      background: var(--navy);
+      border: 5px solid var(--orange);
+      border-radius: 50%;
+      height: 240px;
+      object-fit: cover;
+      width: 240px;
     }
 
     /* About */
     .about-grid {
-      display: grid;
-      grid-template-columns: 1.65fr 1fr;
-      gap: 55px;
       align-items: start;
-    }
-
-    .about-text p + p {
-      margin-top: 18px;
+      display: grid;
+      gap: 55px;
+      grid-template-columns: 1.65fr 1fr;
     }
 
     .profile-card {
-      padding: 30px;
-      border-top: 6px solid var(--ornl-orange);
-      background: var(--ornl-navy);
-      color: var(--white);
+      background: var(--navy);
+      border-top: 6px solid var(--orange);
       box-shadow: 0 10px 25px rgba(0, 45, 70, 0.17);
+      color: var(--white);
+      padding: 30px;
     }
 
     .profile-card h3 {
-      margin-bottom: 16px;
       font-size: 1.3rem;
+      margin-bottom: 16px;
     }
 
     .profile-card ul {
@@ -292,18 +298,18 @@
     }
 
     .profile-card li {
-      padding: 12px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 12px 0;
     }
 
     .profile-card li:last-child {
-      border-bottom: none;
+      border-bottom: 0;
     }
 
     .profile-card strong {
-      display: block;
       color: #add8ea;
-      font-size: 0.76rem;
+      display: block;
+      font-size: 0.75rem;
       letter-spacing: 0.7px;
       text-transform: uppercase;
     }
@@ -318,100 +324,107 @@
     }
 
     /* Metrics */
-    .metrics {
+    .metrics,
+    .editorial,
+    .two-column {
       background: var(--light-blue);
     }
 
     .metric-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
       margin-top: 35px;
     }
 
     .metric-card {
-      padding: 25px 18px;
-      border-bottom: 5px solid var(--ornl-blue);
       background: var(--white);
-      text-align: center;
+      border-bottom: 5px solid var(--blue);
       box-shadow: 0 7px 18px rgba(0, 59, 92, 0.08);
+      padding: 25px 18px;
+      text-align: center;
     }
 
     .metric-number {
+      color: var(--navy);
       display: block;
-      color: var(--ornl-navy);
-      font-size: 2.1rem;
-      font-weight: bold;
+      font-size: 2.05rem;
+      font-weight: 700;
       line-height: 1.2;
     }
 
-    .metric-card p {
-      margin-top: 8px;
+    .metric-card p,
+    .metric-note {
       color: var(--muted);
       font-size: 0.9rem;
+      margin-top: 8px;
     }
 
     .metric-note {
       margin-top: 20px;
-      color: var(--muted);
-      font-size: 0.86rem;
+    }
+
+    .metric-note a {
+      color: var(--blue);
     }
 
     /* Research */
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 35px;
-    }
-
-    .research-card {
-      min-height: 250px;
-      padding: 28px;
-      border-bottom: 5px solid var(--ornl-blue);
-      background: var(--white);
-      box-shadow: 0 8px 22px rgba(0, 59, 92, 0.09);
-      transition: transform 0.2s ease;
-    }
-
-    .research-card:hover {
-      border-bottom-color: var(--ornl-orange);
-      transform: translateY(-5px);
-    }
-
-    .research-number {
-      color: var(--ornl-orange);
-      font-size: 0.78rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    .research-card h3 {
-      margin: 14px 0 10px;
-      color: var(--ornl-navy);
-      font-size: 1.22rem;
-    }
-
-    .research-card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
     .subhead {
-      margin: 55px 0 0;
-      color: var(--ornl-navy);
-      font-size: 1.3rem;
-      border-left: 5px solid var(--ornl-orange);
+      border-left: 5px solid var(--orange);
+      color: var(--navy);
+      font-size: 1.28rem;
+      margin: 52px 0 10px;
       padding-left: 14px;
     }
 
-    .subhead + .section-text {
-      margin-top: 10px;
+    .research-grid,
+    .insight-grid {
+      display: grid;
+      gap: 22px;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 35px;
+    }
+
+    .research-card,
+    .insight-card {
+      background: var(--white);
+      border-bottom: 5px solid var(--blue);
+      box-shadow: 0 8px 22px rgba(0, 59, 92, 0.09);
+      min-height: 250px;
+      padding: 28px;
+      transition: transform 0.2s ease;
+    }
+
+    .research-card:hover,
+    .insight-card:hover {
+      border-bottom-color: var(--orange);
+      transform: translateY(-5px);
+    }
+
+    .research-number,
+    .insight-card span {
+      color: var(--orange);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .research-card h3,
+    .insight-card h3 {
+      color: var(--navy);
+      font-size: 1.2rem;
+      margin: 14px 0 10px;
+    }
+
+    .research-card p,
+    .insight-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
     }
 
     /* Experience */
     .experience {
-      background: var(--ornl-navy);
+      background: var(--navy);
       color: var(--white);
     }
 
@@ -420,25 +433,25 @@
     }
 
     .timeline {
+      border-left: 3px solid var(--orange);
       margin-top: 35px;
-      border-left: 3px solid var(--ornl-orange);
     }
 
     .timeline-item {
-      position: relative;
       padding: 0 0 35px 30px;
+      position: relative;
     }
 
     .timeline-item::before {
+      background: var(--navy);
+      border: 3px solid var(--orange);
+      border-radius: 50%;
+      content: "";
+      height: 16px;
+      left: -10px;
       position: absolute;
       top: 6px;
-      left: -10px;
       width: 16px;
-      height: 16px;
-      border: 3px solid var(--ornl-orange);
-      border-radius: 50%;
-      background: var(--ornl-navy);
-      content: "";
     }
 
     .timeline-item:last-child {
@@ -447,35 +460,114 @@
 
     .timeline-date {
       color: #9fd5ec;
-      font-size: 0.86rem;
-      font-weight: bold;
+      font-size: 0.84rem;
+      font-weight: 700;
       letter-spacing: 0.8px;
       text-transform: uppercase;
     }
 
     .timeline-item h3 {
-      margin: 5px 0;
       color: #ffd08b;
-      font-size: 1.25rem;
+      font-size: 1.23rem;
+      margin: 5px 0;
     }
 
     .timeline-item h4 {
-      margin-bottom: 8px;
       color: #e0f0f7;
-      font-size: 0.98rem;
+      font-size: 0.97rem;
       font-weight: normal;
+      margin-bottom: 8px;
     }
 
     .timeline-item p {
-      max-width: 860px;
       color: #d1e3ec;
+      max-width: 880px;
     }
 
-    /* Editorial appointments */
-    .editorial {
-      background: var(--light-blue);
+    /* Live editorial opportunities */
+    .opportunities {
+      background: var(--white);
     }
 
+    .event-grid {
+      display: grid;
+      gap: 22px;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 35px;
+    }
+
+    .event-card {
+      background: var(--off-white);
+      border-top: 6px solid var(--orange);
+      box-shadow: 0 8px 20px rgba(0, 59, 92, 0.08);
+      padding: 26px;
+    }
+
+    .event-card .event-type {
+      color: var(--blue);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .event-card h3 {
+      color: var(--navy);
+      font-size: 1.15rem;
+      line-height: 1.35;
+      margin: 12px 0;
+    }
+
+    .event-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .deadline-box {
+      background: var(--navy);
+      color: var(--white);
+      margin: 18px 0;
+      padding: 13px;
+    }
+
+    .deadline-box strong {
+      color: #ffd08b;
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .deadline-box time {
+      display: block;
+      font-size: 0.98rem;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+
+    .countdown {
+      color: #bce7fa !important;
+      font-size: 0.82rem !important;
+      margin-top: 3px;
+    }
+
+    .event-link,
+    .editorial-link {
+      background: var(--blue);
+      color: var(--white);
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 10px 14px;
+      text-decoration: none;
+    }
+
+    .event-link:hover,
+    .editorial-link:hover {
+      background: var(--orange);
+    }
+
+    /* Editorial */
     .editorial-grid {
       display: grid;
       gap: 22px;
@@ -483,91 +575,71 @@
     }
 
     .editorial-card {
-      display: grid;
-      grid-template-columns: 170px 1fr auto;
-      gap: 26px;
       align-items: center;
-      padding: 28px;
-      border-left: 6px solid var(--ornl-orange);
       background: var(--white);
+      border-left: 6px solid var(--orange);
       box-shadow: 0 8px 22px rgba(0, 59, 92, 0.09);
+      display: grid;
+      gap: 26px;
+      grid-template-columns: 165px 1fr auto;
+      padding: 28px;
     }
 
     .editorial-role {
-      display: inline-block;
-      width: fit-content;
-      padding: 7px 11px;
-      background: var(--ornl-navy);
+      background: var(--navy);
       color: var(--white);
-      font-size: 0.74rem;
-      font-weight: bold;
+      display: inline-block;
+      font-size: 0.73rem;
+      font-weight: 700;
       letter-spacing: 0.8px;
+      padding: 7px 11px;
       text-transform: uppercase;
     }
 
+    .editorial-journal {
+      color: var(--blue) !important;
+      font-size: 0.9rem !important;
+      font-weight: 700;
+    }
+
     .editorial-card h3 {
-      margin: 8px 0 6px;
-      color: var(--ornl-navy);
-      font-size: 1.22rem;
+      color: var(--navy);
+      font-size: 1.18rem;
       line-height: 1.35;
+      margin: 8px 0 6px;
     }
 
     .editorial-card p {
       color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .editorial-journal {
-      color: var(--ornl-blue) !important;
-      font-size: 0.9rem !important;
-      font-weight: bold;
+      font-size: 0.93rem;
     }
 
     .editorial-deadline {
+      color: var(--orange) !important;
+      font-size: 0.83rem !important;
+      font-weight: 700;
       margin-top: 8px;
-      color: var(--ornl-orange) !important;
-      font-size: 0.84rem !important;
-      font-weight: bold;
-    }
-
-    .editorial-link {
-      display: inline-block;
-      padding: 11px 15px;
-      background: var(--ornl-blue);
-      color: var(--white);
-      font-size: 0.86rem;
-      font-weight: bold;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .editorial-link:hover {
-      background: var(--ornl-orange);
     }
 
     /* Publications */
     .pub-year {
+      border-bottom: 2px solid var(--orange);
+      color: var(--navy);
+      font-size: 1.15rem;
       margin: 40px 0 0;
       padding-bottom: 6px;
-      border-bottom: 2px solid var(--ornl-orange);
-      color: var(--ornl-navy);
-      font-size: 1.15rem;
-    }
-
-    .publication-list {
-      border-top: none;
     }
 
     .publication {
-      padding: 20px 0;
       border-bottom: 1px solid var(--border);
+      padding: 20px 0;
     }
 
     .publication h3 {
-      margin-bottom: 6px;
-      color: var(--ornl-navy);
-      font-size: 1.02rem;
+      color: var(--navy);
+      font-size: 1.01rem;
       line-height: 1.5;
+      margin-bottom: 6px;
     }
 
     .publication h3 a {
@@ -575,13 +647,13 @@
     }
 
     .publication h3 a:hover {
-      color: var(--ornl-blue);
+      color: var(--blue);
       text-decoration: underline;
     }
 
     .publication p {
       color: var(--muted);
-      font-size: 0.93rem;
+      font-size: 0.92rem;
     }
 
     .publication .authors strong {
@@ -589,78 +661,75 @@
     }
 
     .tag {
+      background: var(--light-blue);
+      color: var(--navy);
       display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.35px;
       margin: 6px 6px 0 0;
       padding: 2px 9px;
-      background: var(--light-blue);
-      color: var(--ornl-navy);
-      font-size: 0.72rem;
-      font-weight: bold;
-      letter-spacing: 0.4px;
       text-transform: uppercase;
     }
 
     .link-button {
+      color: var(--blue);
       display: inline-block;
+      font-weight: 700;
       margin-top: 25px;
-      color: var(--ornl-blue);
-      font-weight: bold;
       text-decoration: none;
     }
 
     .link-button:hover {
-      color: var(--ornl-orange);
+      color: var(--orange);
       text-decoration: underline;
     }
 
-    /* Education, grants, service */
-    .two-column {
-      background: var(--light-blue);
-    }
-
+    /* Education and service */
     .two-column-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
       gap: 55px;
+      grid-template-columns: 1fr 1fr;
     }
 
     .detail-list {
-      margin-top: 25px;
       list-style: none;
+      margin-top: 25px;
     }
 
     .detail-list li {
+      background: var(--white);
+      border-left: 4px solid var(--blue);
       margin-bottom: 16px;
       padding: 18px;
-      border-left: 4px solid var(--ornl-blue);
-      background: var(--white);
     }
 
     .detail-list strong {
+      color: var(--navy);
       display: block;
-      color: var(--ornl-navy);
     }
 
     .detail-list span {
       color: var(--muted);
-      font-size: 0.93rem;
+      font-size: 0.92rem;
     }
 
+    /* Skills */
     .skills {
-      margin-top: 25px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       list-style: none;
+      margin-top: 25px;
     }
 
     .skills li {
-      padding: 7px 14px;
-      border: 1px solid var(--border);
       background: var(--white);
-      color: var(--ornl-navy);
-      font-size: 0.9rem;
+      border: 1px solid var(--border);
+      color: var(--navy);
+      font-size: 0.88rem;
       font-weight: 600;
+      padding: 7px 14px;
     }
 
     /* Contact */
@@ -669,12 +738,12 @@
     }
 
     .contact-box {
-      max-width: 850px;
-      margin: auto;
-      padding: 50px 30px;
-      border-top: 6px solid var(--ornl-orange);
-      background: var(--ornl-navy);
+      background: var(--navy);
+      border-top: 6px solid var(--orange);
       color: var(--white);
+      margin: auto;
+      max-width: 850px;
+      padding: 50px 30px;
     }
 
     .contact-box .section-title {
@@ -682,21 +751,21 @@
     }
 
     .contact-box p {
-      max-width: 650px;
-      margin: 0 auto 25px;
       color: #d6e8f0;
+      margin: 0 auto 25px;
+      max-width: 650px;
     }
 
     .contact-links {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 16px 25px;
+      justify-content: center;
     }
 
     .contact-links a {
       color: #ffd08b;
-      font-weight: bold;
+      font-weight: 700;
       text-decoration: none;
     }
 
@@ -706,47 +775,46 @@
     }
 
     footer {
-      padding: 28px 5%;
-      background: var(--ornl-dark);
+      background: var(--navy-dark);
       color: #bbd2de;
+      font-size: 0.87rem;
+      padding: 28px 5%;
       text-align: center;
-      font-size: 0.88rem;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
       nav {
-        padding: 18px 0;
-        flex-direction: column;
         align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 0;
       }
 
-      .hero-content {
+      .hero-content,
+      .about-grid,
+      .two-column-grid {
+        gap: 35px;
         grid-template-columns: 1fr;
       }
 
       .portrait {
+        height: 175px;
         order: -1;
-        width: 170px;
-        height: 170px;
+        width: 175px;
       }
 
-      .about-grid,
-      .two-column-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .metric-grid {
+      .metric-grid,
+      .event-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .research-grid {
+      .research-grid,
+      .insight-grid {
         grid-template-columns: 1fr;
       }
 
       .editorial-card {
-        grid-template-columns: 1fr;
         gap: 14px;
+        grid-template-columns: 1fr;
       }
 
       .editorial-link {
@@ -764,15 +832,16 @@
       }
 
       .nav-links {
-        gap: 12px;
+        gap: 10px 14px;
       }
 
       .button-outline {
-        margin-top: 12px;
         margin-left: 0;
+        margin-top: 12px;
       }
 
-      .metric-grid {
+      .metric-grid,
+      .event-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -790,7 +859,8 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#research">Research</a></li>
-        <li><a href="#experience">Experience</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#opportunities">SI Opportunities</a></li>
         <li><a href="#editorial">Editorial</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -802,7 +872,9 @@
     <section class="hero" id="home">
       <div class="hero-content">
         <div>
-          <div class="hero-label">Postdoctoral Research Associate · Plant Systems Biology</div>
+          <div class="hero-label">
+            Postdoctoral Research Associate · Plant Systems Biology
+          </div>
 
           <h1>
             How do trees and crops withstand
@@ -815,8 +887,8 @@
 
           <p>
             I study plant responses to heat and drought by combining
-            high-throughput imaging, whole-plant physiology and multi-omics,
-            with a current focus on <em>Populus trichocarpa</em> and on
+            high-throughput imaging, whole-plant physiology, and multi-omics.
+            My current work focuses on <em>Populus trichocarpa</em> and on
             experimental designs that connect phenotypic variation to its
             genetic basis.
           </p>
@@ -827,7 +899,7 @@
             class="button button-outline"
             href="https://scholar.google.com/citations?user=cK9VhfcAAAAJ&hl=en"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             Google Scholar Profile
           </a>
@@ -844,32 +916,35 @@
 
     <section id="about">
       <div class="container about-grid">
-        <div class="about-text">
+        <div>
           <span class="section-label">About Me</span>
-          <h2 class="section-title">Linking phenotype to mechanism under climate stress.</h2>
+          <h2 class="section-title">
+            Linking phenotype to mechanism under climate stress.
+          </h2>
 
           <p class="section-text">
             I am a plant scientist and Postdoctoral Research Associate in Plant
             Systems Biology at Oak Ridge National Laboratory (ORNL). My current
             work uses the Advanced Plant Phenotyping Laboratory to characterise
-            heat and drought responses in <em>Populus trichocarpa</em>, using
-            RGB, chlorophyll fluorescence, thermal and hyperspectral
+            heat and drought responses in <em>Populus trichocarpa</em> through
+            RGB, chlorophyll fluorescence, thermal, and hyperspectral
             (VNIR and SWIR) imaging.
           </p>
 
           <p class="section-text">
             A second strand of my work is method development: designing
-            genome-wide association–scale experiments, optimising stress
-            assays and imaging workflows, and integrating phenotypic data with
-            omics layers so that results are reproducible and interpretable.
+            genome-wide association study (GWAS)-scale experiments, optimising
+            stress assays and imaging workflows, and integrating phenotypic
+            data with omics layers so that results are reproducible and
+            biologically interpretable.
           </p>
 
           <p class="section-text">
             I completed my Ph.D. in Plant and Soil Science at Texas Tech
-            University, where I worked on drought, heat, salinity and
-            waterlogging responses in soybean, cotton and other crops,
-            including the roles of signalling molecules and phytohormones. Earlier
-            field research in Bangladesh addressed agroforestry and
+            University, where I studied drought, heat, salinity, and
+            waterlogging responses in soybean, cotton, and other crops,
+            including the roles of signalling molecules and phytohormones.
+            Earlier field research in Bangladesh addressed agroforestry and
             tree–crop interactions. I retain an affiliation with Gazipur
             Agricultural University, Bangladesh.
           </p>
@@ -913,34 +988,34 @@
         <h2 class="section-title">Research impact at a glance</h2>
 
         <div class="metric-grid">
-          <div class="metric-card">
+          <article class="metric-card">
             <span class="metric-number">80+</span>
             <p>Publications and book chapters</p>
-          </div>
+          </article>
 
-          <div class="metric-card">
+          <article class="metric-card">
             <span class="metric-number">2,465+</span>
             <p>Google Scholar citations</p>
-          </div>
+          </article>
 
-          <div class="metric-card">
+          <article class="metric-card">
             <span class="metric-number">27</span>
             <p>Google Scholar h-index</p>
-          </div>
+          </article>
 
-          <div class="metric-card">
+          <article class="metric-card">
             <span class="metric-number">53+</span>
             <p>Google Scholar i10-index</p>
-          </div>
+          </article>
         </div>
 
         <p class="metric-note">
-          Citation figures are a mid-2025 snapshot and have since increased. For current
-          records, please visit my
+          Citation figures are a mid-2025 snapshot and have since increased.
+          For current records, please visit my
           <a
             href="https://scholar.google.com/citations?user=cK9VhfcAAAAJ&hl=en"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >Google Scholar profile</a>.
         </p>
       </div>
@@ -954,7 +1029,8 @@
         <h3 class="subhead">Current focus at ORNL</h3>
         <p class="section-text">
           Heat and drought physiology of <em>Populus trichocarpa</em>, studied
-          through non-destructive phenotyping and population-scale experimental design.
+          through non-destructive phenotyping and population-scale experimental
+          design.
         </p>
 
         <div class="research-grid">
@@ -962,9 +1038,10 @@
             <span class="research-number">01</span>
             <h3>High-Throughput Phenotyping</h3>
             <p>
-              Image-based quantification of plant status using RGB, chlorophyll
-              fluorescence, thermal, and VNIR and SWIR hyperspectral imaging
-              to track stress onset, severity and recovery non-destructively.
+              Image-based quantification of plant status using RGB,
+              chlorophyll fluorescence, thermal, and VNIR and SWIR
+              hyperspectral imaging to track stress onset, severity, and
+              recovery non-destructively.
             </p>
           </article>
 
@@ -972,9 +1049,9 @@
             <span class="research-number">02</span>
             <h3>Heat and Drought Physiology in Populus</h3>
             <p>
-              Whole-plant and leaf-level responses of <em>P. trichocarpa</em>
-              to heat, drought and their combination, with attention to
-              genotypic variation in tolerance and recovery.
+              Whole-plant and leaf-level responses of
+              <em>P. trichocarpa</em> to heat, drought, and their combination,
+              with attention to genotypic variation in tolerance and recovery.
             </p>
           </article>
 
@@ -982,8 +1059,8 @@
             <span class="research-number">03</span>
             <h3>Experimental Design for Genetic Mapping</h3>
             <p>
-              Planning replicated, GWAS-scale stress experiments across many
-              genotypes, including batching, randomisation and controls that
+              Planning replicated GWAS-scale stress experiments across many
+              genotypes, including batching, randomisation, and controls that
               protect data quality.
             </p>
           </article>
@@ -993,7 +1070,7 @@
             <h3>Phenotyping Method Optimisation</h3>
             <p>
               Developing and benchmarking stress assays and scoring workflows,
-              and testing how assay duration, imaging modality and scoring
+              and testing how assay duration, imaging modality, and scoring
               approach affect the signal that can be recovered.
             </p>
           </article>
@@ -1002,9 +1079,9 @@
             <span class="research-number">05</span>
             <h3>Multi-Omics Integration</h3>
             <p>
-              Relating phenotypic variation to transcriptomic, metabolomic
-              and genomic layers to identify candidate mechanisms of
-              stress tolerance.
+              Relating phenotypic variation to transcriptomic, metabolomic,
+              and genomic layers to identify candidate mechanisms of stress
+              tolerance.
             </p>
           </article>
 
@@ -1012,20 +1089,97 @@
             <span class="research-number">06</span>
             <h3>Photosynthetic Resilience</h3>
             <p>
-              Gas exchange, chlorophyll fluorescence and oxidative stress
+              Gas exchange, chlorophyll fluorescence, and oxidative stress
               measurements as functional readouts that anchor imaging-based
-              traits to physiology.
+              traits to plant physiology.
             </p>
           </article>
         </div>
 
         <h3 class="subhead">Earlier and continuing work</h3>
         <p class="section-text">
-          Crop stress physiology and signalling (soybean, cotton, sorghum and other species),
-          plant–microbe interactions, abiotic stress memory, and agroforestry and
-          tree–crop systems, together with synthesis reviews on stress tolerance
-          and genome editing.
+          Crop stress physiology and signalling in soybean, cotton, sorghum,
+          and other species; plant–microbe interactions; abiotic stress memory;
+          agroforestry and tree–crop systems; and synthesis reviews on stress
+          tolerance and genome editing.
         </p>
+      </div>
+    </section>
+
+    <section id="insights">
+      <div class="container">
+        <span class="section-label">Scientific Insights</span>
+        <h2 class="section-title">Questions guiding my research</h2>
+
+        <p class="section-text">
+          My research connects observable plant traits with physiological and
+          molecular processes to improve understanding of climate-stress
+          tolerance in trees and crops.
+        </p>
+
+        <div class="insight-grid">
+          <article class="insight-card">
+            <span>Insight 01</span>
+            <h3>Stress responses are dynamic</h3>
+            <p>
+              Plant tolerance cannot be understood only from a single
+              end-point measurement. Repeated imaging and physiological
+              observations make it possible to evaluate stress onset,
+              progression, and post-stress recovery.
+            </p>
+          </article>
+
+          <article class="insight-card">
+            <span>Insight 02</span>
+            <h3>Phenotyping needs physiological interpretation</h3>
+            <p>
+              Imaging provides scalable, non-destructive measurements, while
+              gas exchange, chlorophyll fluorescence, and oxidative-stress
+              assays help interpret those patterns in biological terms.
+            </p>
+          </article>
+
+          <article class="insight-card">
+            <span>Insight 03</span>
+            <h3>Genotypic variation is a resource</h3>
+            <p>
+              Screening diverse populations under well-designed stress
+              environments can identify variation in tolerance and recovery,
+              supporting genetic mapping and candidate-mechanism discovery.
+            </p>
+          </article>
+
+          <article class="insight-card">
+            <span>Insight 04</span>
+            <h3>Combined stresses require integrated approaches</h3>
+            <p>
+              Drought, heat, salinity, and waterlogging can interact in ways
+              that cannot always be predicted from individual stress
+              treatments. Integrated experiments are needed to resolve these
+              responses.
+            </p>
+          </article>
+
+          <article class="insight-card">
+            <span>Insight 05</span>
+            <h3>Multi-omics connects trait and mechanism</h3>
+            <p>
+              Integrating phenotyping with transcriptomic, metabolomic, and
+              genomic information helps connect visible stress responses to
+              molecular pathways and candidate genes.
+            </p>
+          </article>
+
+          <article class="insight-card">
+            <span>Insight 06</span>
+            <h3>Reproducible design strengthens discovery</h3>
+            <p>
+              Replication, randomisation, environmental controls, and robust
+              data workflows are essential for producing interpretable results
+              from complex phenotyping and genetic experiments.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -1040,11 +1194,12 @@
             <h3>Postdoctoral Research Associate</h3>
             <h4>Plant Systems Biology, Oak Ridge National Laboratory, USA</h4>
             <p>
-              Leading heat and drought experiments on <em>Populus trichocarpa</em>
-              in the Advanced Plant Phenotyping Laboratory, using multi-modal
-              imaging and physiological measurements. Responsible for experimental
-              design, phenotyping method optimisation, data analysis, and
-              integration with genetic and omics data.
+              Leading heat and drought experiments on
+              <em>Populus trichocarpa</em> in the Advanced Plant Phenotyping
+              Laboratory using multi-modal imaging and physiological
+              measurements. Responsibilities include experimental design,
+              phenotyping method optimisation, data analysis, and integration
+              with genetic and omics data.
             </p>
           </article>
 
@@ -1052,25 +1207,125 @@
             <div class="timeline-date">September 2021 – June 2025</div>
             <h3>Graduate Research Assistant</h3>
             <h4>
-              Institute of Genomics for Crop Abiotic Stress Tolerance, Department of Plant and Soil Science, Texas Tech University, USA
+              Institute of Genomics for Crop Abiotic Stress Tolerance,
+              Department of Plant and Soil Science, Texas Tech University, USA
             </h4>
             <p>
               Studied signalling molecules, phytohormones, combined abiotic
-              stress tolerance, soybean root traits, reciprocal grafting and
-              multi-omics responses. Mentored students, co-authored manuscripts
-              and contributed to grant development.
+              stress tolerance, soybean root traits, reciprocal grafting, and
+              multi-omics responses. Mentored students, co-authored
+              manuscripts, and contributed to grant development.
             </p>
           </article>
 
           <article class="timeline-item">
             <div class="timeline-date">July 2015 – June 2021</div>
             <h3>Researcher</h3>
-            <h4>CIFOR-ICRAF Bangladesh, Gazipur Agricultural University Campus, Bangladesh</h4>
+            <h4>
+              CIFOR-ICRAF Bangladesh, Gazipur Agricultural University Campus,
+              Bangladesh
+            </h4>
             <p>
               Conducted agroforestry, tree–crop interaction, plant stress,
-              germplasm collection, orchard establishment and geospatial
-              mapping research, with international collaborators.
+              germplasm collection, orchard establishment, and geospatial
+              mapping research with international collaborators.
             </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="opportunities" id="opportunities">
+      <div class="container">
+        <span class="section-label">Upcoming Opportunities</span>
+        <h2 class="section-title">Special Issues and Research Topics</h2>
+
+        <p class="section-text">
+          Current editorial calls for papers associated with my Guest Editor
+          and Topic Editor appointments. Countdown labels are automatically
+          calculated by this website using the stated submission deadlines.
+          Please confirm scope, eligibility, and any revised deadlines directly
+          on the publisher webpage before submitting.
+        </p>
+
+        <div class="event-grid">
+          <article class="event-card">
+            <p class="event-type">Elsevier · Plant Stress</p>
+            <h3>
+              Plant Response to Drought and Combined with Other Abiotic
+              Stresses
+            </h3>
+            <p>
+              Physiological, molecular, and genetic mechanisms of tolerance
+              under drought and combined abiotic-stress conditions.
+            </p>
+
+            <div class="deadline-box">
+              <strong>Submission Deadline</strong>
+              <time datetime="2027-04-01">1 April 2027</time>
+              <p class="countdown" data-deadline="2027-04-01"></p>
+            </div>
+
+            <a
+              class="event-link"
+              href="https://www.sciencedirect.com/special-issue/337077/plant-response-to-drought-and-combined-with-other-abiotic-stresses-physiological-molecular-and-genetic-mechanisms-of-tolerance"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Special Issue →
+            </a>
+          </article>
+
+          <article class="event-card">
+            <p class="event-type">Frontiers in Plant Science</p>
+            <h3>
+              Root and Shoot Developmental Plasticity in Response to Stress
+            </h3>
+            <p>
+              Developmental adaptation of roots and shoots under environmental
+              stress, integrating physiological, molecular, genetic, and
+              phenotypic perspectives.
+            </p>
+
+            <div class="deadline-box">
+              <strong>Submission Deadline</strong>
+              <time datetime="2027-03-25">25 March 2027</time>
+              <p class="countdown" data-deadline="2027-03-25"></p>
+            </div>
+
+            <a
+              class="event-link"
+              href="https://www.frontiersin.org/research-topics/82452/root-and-shoot-developmental-plasticity-in-response-to-stress"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Research Topic →
+            </a>
+          </article>
+
+          <article class="event-card">
+            <p class="event-type">MDPI · International Journal of Molecular Sciences</p>
+            <h3>Plant Epigenetic Memory Under Abiotic Stress</h3>
+            <p>
+              Chromatin regulation, epigenetic mechanisms, stress memory, and
+              molecular pathways that shape plant adaptation to adverse
+              environmental conditions.
+            </p>
+
+            <div class="deadline-box">
+              <strong>Submission Deadline</strong>
+              <time datetime="2027-03-31">31 March 2027</time>
+              <p class="countdown" data-deadline="2027-03-31"></p>
+            </div>
+
+            <a
+              class="event-link"
+              href="https://www.mdpi.com/journal/ijms/special_issues"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View IJMS Special Issues →
+            </a>
           </article>
         </div>
       </div>
@@ -1095,19 +1350,16 @@
 
             <div>
               <p class="editorial-journal"><em>Plant Stress</em> · Elsevier</p>
-
               <h3>
                 Plant Response to Drought and Combined with Other Abiotic
                 Stresses: Physiological, Molecular, and Genetic Mechanisms
                 of Tolerance
               </h3>
-
               <p>
                 Special Issue focused on plant physiological, molecular, and
                 genetic mechanisms involved in drought tolerance and responses
                 to combined abiotic stresses.
               </p>
-
               <p class="editorial-deadline">
                 Manuscript submission deadline: 1 April 2027
               </p>
@@ -1129,16 +1381,15 @@
             </div>
 
             <div>
-              <p class="editorial-journal"><em>Frontiers in Plant Science</em> · Frontiers</p>
-
+              <p class="editorial-journal">
+                <em>Frontiers in Plant Science</em> · Frontiers
+              </p>
               <h3>Root and Shoot Developmental Plasticity in Response to Stress</h3>
-
               <p>
                 Research Topic addressing developmental adaptation of roots and
                 shoots under environmental stress, integrating physiological,
                 molecular, genetic, and phenotypic perspectives.
               </p>
-
               <p class="editorial-deadline">
                 Manuscript submission deadline: 25 March 2027
               </p>
@@ -1163,15 +1414,12 @@
               <p class="editorial-journal">
                 <em>International Journal of Molecular Sciences</em> · MDPI
               </p>
-
               <h3>Plant Epigenetic Memory Under Abiotic Stress</h3>
-
               <p>
                 Special Issue focused on chromatin regulation, epigenetic
                 mechanisms, stress memory, and molecular pathways that shape
                 plant adaptation to adverse environmental conditions.
               </p>
-
               <p class="editorial-deadline">
                 Manuscript submission deadline: 31 March 2027
               </p>
@@ -1189,13 +1437,13 @@
         </div>
 
         <h3 class="subhead">Editorial board and peer-review service</h3>
-
         <p class="section-text">
-          I also serve as an Editorial Board Member for <em>BMC Plant Biology</em>
-          and <em>Frontiers in Plant Science</em>, and as a Junior Editorial Board
-          Member for <em>Plant Stress</em>. My editorial and peer-review activities
-          support rigorous, transparent, and impactful research in plant biology,
-          stress physiology, molecular mechanisms, and sustainable agriculture.
+          I also serve as an Editorial Board Member for
+          <em>BMC Plant Biology</em> and <em>Frontiers in Plant Science</em>,
+          and as a Junior Editorial Board Member for <em>Plant Stress</em>.
+          My editorial and peer-review activities support rigorous,
+          transparent, and impactful research in plant biology, stress
+          physiology, molecular mechanisms, and sustainable agriculture.
         </p>
       </div>
     </section>
@@ -1206,149 +1454,192 @@
         <h2 class="section-title">Recent research contributions</h2>
 
         <p class="section-text">
-          Recent papers are listed below, newest first. Please use my
-          Google Scholar profile for the complete and most current record.
+          Recent papers are listed below, newest first. Please use my Google
+          Scholar profile for the complete and most current publication record.
         </p>
 
         <h3 class="pub-year">2026</h3>
+
         <div class="publication-list">
           <article class="publication">
             <h3>
-              <a href="https://doi.org/10.1016/j.ijbiomac.2026.154254" target="_blank" rel="noopener">
+              <a href="https://doi.org/10.1016/j.ijbiomac.2026.154254" target="_blank" rel="noopener noreferrer">
                 Beyond the salt barrier: CRISPR-mediated DNA reprogramming to uncouple yield from tolerance in rice: a review.
               </a>
             </h3>
-            <p class="authors">Bulle M, Kondi RKR, <strong>Rahman MM</strong>, Sharma M, Rana P, Chaudhary C, Subudhi PK.</p>
+            <p class="authors">
+              Bulle M, Kondi RKR, <strong>Rahman MM</strong>, Sharma M, Rana P,
+              Chaudhary C, Subudhi PK.
+            </p>
             <p>International Journal of Biological Macromolecules, 382, 154254.</p>
             <span class="tag">Review</span>
           </article>
 
           <article class="publication">
             <h3>
-              <a href="https://doi.org/10.3390/ijms27167494" target="_blank" rel="noopener">
+              <a href="https://doi.org/10.3390/ijms27167494" target="_blank" rel="noopener noreferrer">
                 Rhizobacteria-mediated reprogramming of phytohormone landscapes for mitigating salinity stress in plants.
               </a>
             </h3>
-            <p class="authors">Moharana A, Dhruw L, Chakraborty A, Pashwan P, Keya SS, <strong>Rahman MM</strong>, Singh A, Bhardwaj M, Tran L-SP, Gupta A.</p>
+            <p class="authors">
+              Moharana A, Dhruw L, Chakraborty A, Pashwan P, Keya SS,
+              <strong>Rahman MM</strong>, Singh A, Bhardwaj M, Tran L-SP,
+              Gupta A.
+            </p>
             <p>International Journal of Molecular Sciences, 27(16), 7494.</p>
             <span class="tag">Review</span>
           </article>
 
           <article class="publication">
             <h3>
-              <a href="https://doi.org/10.3389/fpls.2026.1815325" target="_blank" rel="noopener">
+              <a href="https://doi.org/10.3389/fpls.2026.1815325" target="_blank" rel="noopener noreferrer">
                 Integrative insights into abiotic stress tolerance in finger millet (<em>Eleusine coracana</em> (L.) Gaertn.): linking physiological, biochemical, and molecular perspectives for developing climate-smart cereals.
               </a>
             </h3>
-            <p class="authors">Rakkammal K, Muthuramalingam P, Pandian S, Rahman MA, <strong>Rahman MM</strong>, Islam SMS, Maharajan T, Omondi Awere C, Antony Ceasar S, Shin H, Ramesh M.</p>
+            <p class="authors">
+              Rakkammal K, Muthuramalingam P, Pandian S, Rahman MA,
+              <strong>Rahman MM</strong>, Islam SMS, Maharajan T, Omondi Awere C,
+              Antony Ceasar S, Shin H, Ramesh M.
+            </p>
             <p>Frontiers in Plant Science, 17, 1815325.</p>
             <span class="tag">Review</span>
           </article>
 
           <article class="publication">
             <h3>
-              <a href="https://doi.org/10.1016/j.ijbiomac.2026.150873" target="_blank" rel="noopener">
+              <a href="https://doi.org/10.1016/j.ijbiomac.2026.150873" target="_blank" rel="noopener noreferrer">
                 Advancing chloroplast bioengineering: innovations, regulatory challenges, and translational pathways for sustainable agriculture.
               </a>
             </h3>
-            <p class="authors">Bulle M, <strong>Rahman MM</strong>, Kota S, Islam MR, Keya SS, Abbagani S, Kirti PB.</p>
+            <p class="authors">
+              Bulle M, <strong>Rahman MM</strong>, Kota S, Islam MR, Keya SS,
+              Abbagani S, Kirti PB.
+            </p>
             <p>International Journal of Biological Macromolecules, 350, 150873.</p>
             <span class="tag">Review</span>
           </article>
         </div>
 
         <h3 class="pub-year">2025</h3>
+
         <div class="publication-list">
           <article class="publication">
             <h3>
-              <a href="https://doi.org/10.1071/FP24355" target="_blank" rel="noopener">
+              <a href="https://doi.org/10.1071/FP24355" target="_blank" rel="noopener noreferrer">
                 Past trauma, better future: how stress memory shapes plant adaptation to drought.
               </a>
             </h3>
-            <p class="authors"><strong>Rahman MM</strong>, Keya SS, Bulle M, Ahsan SM, Rahman MA, Roni MS, Al Noor MM, Hasan M.</p>
+            <p class="authors">
+              <strong>Rahman MM</strong>, Keya SS, Bulle M, Ahsan SM,
+              Rahman MA, Roni MS, Al Noor MM, Hasan M.
+            </p>
             <p>Functional Plant Biology, 52, FP24355.</p>
             <span class="tag">Review</span>
-            <span class="tag">First author</span>
+            <span class="tag">First Author</span>
           </article>
 
           <article class="publication">
             <h3>
-              <a href="https://doi.org/10.1016/j.plantsci.2025.112709" target="_blank" rel="noopener">
+              <a href="https://doi.org/10.1016/j.plantsci.2025.112709" target="_blank" rel="noopener noreferrer">
                 Genotypic control of root sodium uptake drives ion imbalance and stress sensitivity under salinity and waterlogging.
               </a>
             </h3>
-            <p class="authors">Akter M, Keya SS, Gupta A, Islam MR, Rahman MA, Motaher Hossain M, Nguyen KH, Tahiat T, Armane Alam K, Duc Le T, Ahmed M, Tran L-SP, <strong>Rahman MM</strong>.</p>
+            <p class="authors">
+              Akter M, Keya SS, Gupta A, Islam MR, Rahman MA, Motaher Hossain M,
+              Nguyen KH, Tahiat T, Armane Alam K, Duc Le T, Ahmed M,
+              Tran L-SP, <strong>Rahman MM</strong>.
+            </p>
             <p>Plant Science, 360, 112709.</p>
-            <span class="tag">Research article</span>
+            <span class="tag">Research Article</span>
             <span class="tag">Soybean</span>
           </article>
 
           <article class="publication">
             <h3>
-              <a href="https://doi.org/10.1016/j.plaphy.2025.110449" target="_blank" rel="noopener">
+              <a href="https://doi.org/10.1016/j.plaphy.2025.110449" target="_blank" rel="noopener noreferrer">
                 CaNAC67, a stress-responsive NAC transcription factor-encoding gene from chickpea (<em>Cicer arietinum</em>), improves drought tolerance in transgenic <em>Arabidopsis thaliana</em>.
               </a>
             </h3>
-            <p class="authors">Tran CD, <strong>Rahman MM</strong>, Chu HD, Nguyen KH, Watanabe Y, Le QTN, La HV, Ha CV, Mochida K, Li W, Tran L-SP.</p>
+            <p class="authors">
+              Tran CD, <strong>Rahman MM</strong>, Chu HD, Nguyen KH,
+              Watanabe Y, Le QTN, La HV, Ha CV, Mochida K, Li W, Tran L-SP.
+            </p>
             <p>Plant Physiology and Biochemistry, 229(Pt B), 110449.</p>
-            <span class="tag">Research article</span>
+            <span class="tag">Research Article</span>
           </article>
 
           <article class="publication">
             <h3>
-              <a href="https://doi.org/10.1016/j.plantsci.2025.112589" target="_blank" rel="noopener">
+              <a href="https://doi.org/10.1016/j.plantsci.2025.112589" target="_blank" rel="noopener noreferrer">
                 Comparative effects of ZnSO<sub>4</sub>- and ZnO-NPs in improving cotton growth and yield under drought stress at early reproductive stage.
               </a>
             </h3>
-            <p class="authors">Anik TR, Mostofa MG, <strong>Rahman MM</strong>, Keya SS, Ha CV, Khan MAR, Abdelrahman M, Dao MNK, Chu HD, Tran L-SP.</p>
+            <p class="authors">
+              Anik TR, Mostofa MG, <strong>Rahman MM</strong>, Keya SS,
+              Ha CV, Khan MAR, Abdelrahman M, Dao MNK, Chu HD, Tran L-SP.
+            </p>
             <p>Plant Science, 359, 112589.</p>
-            <span class="tag">Research article</span>
+            <span class="tag">Research Article</span>
             <span class="tag">Cotton</span>
           </article>
 
           <article class="publication">
             <h3>
-              <a href="https://doi.org/10.1007/s00425-025-04747-5" target="_blank" rel="noopener">
+              <a href="https://doi.org/10.1007/s00425-025-04747-5" target="_blank" rel="noopener noreferrer">
                 Strategies to develop climate-resilient chili peppers: transcription factor optimization through genome editing.
               </a>
             </h3>
-            <p class="authors">Bulle M, <strong>Rahman MM</strong>, Islam MR, Abbagani S.</p>
+            <p class="authors">
+              Bulle M, <strong>Rahman MM</strong>, Islam MR, Abbagani S.
+            </p>
             <p>Planta, 262(2), 30.</p>
             <span class="tag">Review</span>
           </article>
         </div>
 
         <h3 class="pub-year">Earlier selected work</h3>
+
         <div class="publication-list">
           <article class="publication">
             <h3>
-              Rahman, M.M. et al. (2024). Green vanguards: harnessing the power of plant antioxidants, signal catalysts, and genetic engineering to combat reactive oxygen species under multiple abiotic stresses.
+              Rahman, M.M. et al. (2024). Green vanguards: harnessing the
+              power of plant antioxidants, signal catalysts, and genetic
+              engineering to combat reactive oxygen species under multiple
+              abiotic stresses.
             </h3>
             <p>Plant Stress, 23, 100547.</p>
           </article>
 
           <article class="publication">
             <h3>
-              <a href="https://doi.org/10.1007/s44154-024-00167-9" target="_blank" rel="noopener">
+              <a href="https://doi.org/10.1007/s44154-024-00167-9" target="_blank" rel="noopener noreferrer">
                 Acetic acid: a cheap but chief metabolic regulator for abiotic stress tolerance in plants.
               </a>
             </h3>
-            <p class="authors"><strong>Rahman MM</strong>, Keya SS, Sahu A, Gupta A, Dhingra A, Tran L-SP, Mostofa MG.</p>
+            <p class="authors">
+              <strong>Rahman MM</strong>, Keya SS, Sahu A, Gupta A, Dhingra A,
+              Tran L-SP, Mostofa MG.
+            </p>
             <p>Stress Biology, 4(1), 34 (2024).</p>
             <span class="tag">Review</span>
-            <span class="tag">First author</span>
+            <span class="tag">First Author</span>
           </article>
 
           <article class="publication">
             <h3>
-              Rahman, M.M. et al. (2023). Jasmonic acid augments the antioxidant defense system to alleviate the combined drought and heat stress effects in soybean.
+              Rahman, M.M. et al. (2023). Jasmonic acid augments the
+              antioxidant defense system to alleviate the combined drought and
+              heat stress effects in soybean.
             </h3>
             <p>Plant Physiology and Biochemistry, 206, 108193.</p>
           </article>
 
           <article class="publication">
             <h3>
-              Rahman, M.M. et al. (2020). Acetic acid improves drought acclimation in soybean: an integrative response of photosynthesis, osmoregulation, mineral uptake, and antioxidant defense.
+              Rahman, M.M. et al. (2020). Acetic acid improves drought
+              acclimation in soybean: an integrative response of
+              photosynthesis, osmoregulation, mineral uptake, and antioxidant
+              defense.
             </h3>
             <p>Physiologia Plantarum, 172, 334–350.</p>
           </article>
@@ -1358,7 +1649,7 @@
           class="link-button"
           href="https://scholar.google.com/citations?user=cK9VhfcAAAAJ&hl=en"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           View all publications on Google Scholar →
         </a>
@@ -1407,13 +1698,13 @@
 
           <ul class="detail-list">
             <li>
-              <strong>Doctoral research grants, Texas Tech University</strong>
+              <strong>Doctoral Research Grants, Texas Tech University</strong>
               <span>
-                United Soybean Board ($106,671; $112,000; $100,000) for work on
-                PGPR-mediated modulation of soybean root traits and on chemical
-                and genetic strategies for drought-resilient soybean; Cotton
-                Incorporated ($22,000) for zinc oxide nanoparticles and cotton
-                drought tolerance.
+                United Soybean Board grants of $106,671, $112,000, and
+                $100,000 for work on PGPR-mediated modulation of soybean root
+                traits and chemical and genetic strategies for drought-resilient
+                soybean; Cotton Incorporated funding of $22,000 for zinc oxide
+                nanoparticles and cotton drought tolerance.
               </span>
             </li>
 
@@ -1422,8 +1713,8 @@
               <span>
                 Davis College Outstanding Graduate Student Researcher Award,
                 Doctoral Dissertation Completion Fellowship, Helen DeVitt Jones
-                Graduate Fellowship, Water Conservation Research Scholarship, and other
-                Texas Tech University awards.
+                Graduate Fellowship, Water Conservation Research Scholarship,
+                and other Texas Tech University awards.
               </span>
             </li>
 
@@ -1463,13 +1754,13 @@
           <li>Thermal imaging</li>
           <li>VNIR / SWIR hyperspectral imaging</li>
           <li>GWAS-scale experimental design</li>
-          <li>Li-6800 gas exchange</li>
+          <li>LI-6800 gas exchange</li>
           <li>Plant stress physiology</li>
           <li>Transcriptomics &amp; metabolomics</li>
           <li>Hormonomics</li>
           <li>qRT-PCR</li>
           <li>ICP-MS</li>
-          <li>Statistics &amp; data visualisation (R)</li>
+          <li>Statistics &amp; data visualisation using R</li>
           <li>Greenhouse and field trials</li>
           <li>Grant and scientific writing</li>
           <li>Student mentorship</li>
@@ -1484,9 +1775,10 @@
           <h2 class="section-title">Connect with me</h2>
 
           <p>
-            I welcome collaboration in plant stress physiology, high-throughput
-            phenotyping, experimental design for genetic mapping, and
-            multi-omics. Please contact me by email or visit my research profiles.
+            I welcome collaboration in plant stress physiology,
+            high-throughput phenotyping, experimental design for genetic
+            mapping, and multi-omics. Please contact me by email or visit my
+            research profiles.
           </p>
 
           <div class="contact-links">
@@ -1495,7 +1787,7 @@
             <a
               href="https://scholar.google.com/citations?user=cK9VhfcAAAAJ&hl=en"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               Google Scholar
             </a>
@@ -1503,7 +1795,7 @@
             <a
               href="https://orcid.org/0000-0001-8822-9683"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               ORCID: 0000-0001-8822-9683
             </a>
@@ -1511,7 +1803,7 @@
             <a
               href="https://www.researchgate.net/profile/Md_Rahman478"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               ResearchGate
             </a>
@@ -1519,7 +1811,7 @@
             <a
               href="Mezanur-CV.pdf"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               Download CV
             </a>
@@ -1530,7 +1822,42 @@
   </main>
 
   <footer>
-    <p>© 2026 Dr. Md. Mezanur Rahman · Oak Ridge, Tennessee, USA · Last updated October 2026</p>
+    <p>
+      © 2026 Dr. Md. Mezanur Rahman · Oak Ridge, Tennessee, USA ·
+      Last updated October 2026
+    </p>
   </footer>
+
+  <script>
+    /*
+      Automatically calculates time remaining to each listed editorial
+      submission deadline. The publication websites remain the authoritative
+      source for scope and final deadlines.
+    */
+    document.querySelectorAll("[data-deadline]").forEach(function (element) {
+      var deadlineText = element.getAttribute("data-deadline");
+      var deadline = new Date(deadlineText + "T23:59:59");
+      var now = new Date();
+      var difference = deadline.getTime() - now.getTime();
+
+      if (difference < 0) {
+        element.textContent = "Deadline has passed — check the publisher page for updates.";
+        return;
+      }
+
+      var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      var hours = Math.floor(
+        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+
+      if (days === 0) {
+        element.textContent = "Deadline is today (" + hours + " hours remaining).";
+      } else if (days === 1) {
+        element.textContent = "1 day remaining before the stated deadline.";
+      } else {
+        element.textContent = days + " days remaining before the stated deadline.";
+      }
+    });
+  </script>
 </body>
 </html>

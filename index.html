@@ -6,7 +6,7 @@
 
   <meta
     name="description"
-    content="Dr Md. Mezanur Rahman – Plant scientist working on combined abiotic stress biology, high-throughput phenotyping, PopGen, GWAS, multi-omics, and field validation in Populus and crop systems."
+    content="Dr. Md. Mezanur Rahman is a plant scientist working on combined abiotic stress biology, high-throughput phenotyping, plant physiology, population genomics, GWAS, and multi-omics."
   >
 
   <title>Dr. Md. Mezanur Rahman | Plant Scientist</title>
@@ -17,36 +17,16 @@
     href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
   >
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Md. Mezanur Rahman",
-    "honorificPrefix": "Dr",
-    "jobTitle": "Postdoctoral Research Associate",
-    "description": "Plant scientist working on combined abiotic stress biology, high-throughput phenotyping, population genomics, GWAS, multi-omics, and climate resilience.",
-    "affiliation": {
-      "@type": "Organization",
-      "name": "Oak Ridge National Laboratory"
-    },
-    "sameAs": [
-      "https://orcid.org/0000-0001-8822-9683",
-      "https://scholar.google.com/citations?user=cK9VhfcAAAAJ&hl=en",
-      "https://www.researchgate.net/profile/Md_Rahman478"
-    ]
-  }
-  </script>
-
   <style>
     :root {
       --navy: #003b5c;
       --navy-dark: #002b45;
       --blue: #0077b6;
+      --light-blue: #e7f2f8;
       --orange: #f58220;
       --green: #167b50;
       --white: #ffffff;
-      --off-white: #f4f8fa;
-      --light-blue: #e7f2f8;
+      --off-white: #f5f8fa;
       --text: #243746;
       --muted: #5f7280;
       --border: #d7e2e8;
@@ -73,64 +53,13 @@
       color: inherit;
     }
 
-    /* Navigation */
-    .top-bar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 4px solid var(--orange);
-      background: var(--navy);
+    img {
+      max-width: 100%;
+      height: auto;
     }
 
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-      width: min(1200px, 92%);
-      min-height: 82px;
-      margin: auto;
-    }
-
-    .brand {
-      color: var(--white);
-      font-size: 1.2rem;
-      font-weight: 700;
-      line-height: 1.25;
-      text-decoration: none;
-    }
-
-    .brand small {
-      display: block;
-      margin-top: 3px;
-      color: #b9d9e8;
-      font-size: 0.67rem;
-      font-weight: normal;
-      letter-spacing: 0.7px;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--white);
-      font-size: 0.84rem;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .nav-links a:hover {
-      color: #ffd08b;
-    }
-
-    /* Shared Layout */
     section {
-      padding: 82px 0;
+      padding: 80px 0;
     }
 
     .container {
@@ -142,27 +71,27 @@
       display: block;
       margin-bottom: 8px;
       color: var(--orange);
-      font-size: 0.77rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 1.4px;
+      letter-spacing: 1.3px;
       text-transform: uppercase;
     }
 
     .section-title {
       margin-bottom: 18px;
       color: var(--navy);
-      font-size: clamp(2rem, 4vw, 2.65rem);
+      font-size: clamp(2rem, 4vw, 2.7rem);
       line-height: 1.2;
     }
 
     .section-text {
-      max-width: 900px;
+      max-width: 930px;
       color: var(--muted);
       font-size: 1.02rem;
     }
 
     .section-text + .section-text {
-      margin-top: 18px;
+      margin-top: 16px;
     }
 
     .button {
@@ -171,7 +100,7 @@
       border: 2px solid var(--orange);
       background: var(--orange);
       color: var(--white);
-      font-size: 0.93rem;
+      font-size: 0.92rem;
       font-weight: 700;
       text-decoration: none;
       transition: 0.2s ease;
@@ -179,12 +108,13 @@
 
     .button:hover {
       background: transparent;
+      color: var(--white);
       transform: translateY(-2px);
     }
 
     .button-outline {
       margin-left: 10px;
-      border-color: #c8e8f8;
+      border-color: #cae7f5;
       background: transparent;
     }
 
@@ -193,17 +123,78 @@
       color: var(--navy);
     }
 
-    /* Hero */
+    /* =========================================================
+       NAVIGATION
+       ========================================================= */
+
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 5000;
+      border-bottom: 4px solid var(--orange);
+      background: var(--navy);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      width: min(1200px, 92%);
+      min-height: 80px;
+      margin: auto;
+    }
+
+    .brand {
+      color: var(--white);
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.25;
+      text-decoration: none;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 3px;
+      color: #b9d9e8;
+      font-size: 0.67rem;
+      font-weight: normal;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: #ffd08b;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
     .hero {
       display: flex;
       align-items: center;
-      min-height: 660px;
+      min-height: 650px;
       background:
         linear-gradient(
           90deg,
           rgba(0, 43, 69, 0.97),
-          rgba(0, 59, 92, 0.92),
-          rgba(0, 119, 182, 0.74)
+          rgba(0, 59, 92, 0.91),
+          rgba(0, 119, 182, 0.73)
         ),
         linear-gradient(135deg, #003b5c, #0077b6);
       color: var(--white);
@@ -246,7 +237,7 @@
     .hero h2 {
       margin-bottom: 20px;
       color: #c7eafa;
-      font-size: clamp(1.03rem, 2vw, 1.3rem);
+      font-size: clamp(1.03rem, 2vw, 1.28rem);
       font-weight: normal;
     }
 
@@ -254,19 +245,22 @@
       max-width: 820px;
       margin-bottom: 30px;
       color: #e1eff6;
-      font-size: 1.03rem;
+      font-size: 1.02rem;
     }
 
     .portrait {
-      width: 240px;
-      height: 240px;
+      width: 230px;
+      height: 230px;
       border: 5px solid var(--orange);
       border-radius: 50%;
       background: var(--navy);
       object-fit: cover;
     }
 
-    /* About */
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+
     .about-grid {
       display: grid;
       grid-template-columns: 1.65fr 1fr;
@@ -303,7 +297,7 @@
     .profile-card strong {
       display: block;
       color: #add8ea;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       letter-spacing: 0.7px;
       text-transform: uppercase;
     }
@@ -317,10 +311,13 @@
       color: #ffd08b;
     }
 
-    /* Metrics */
+    /* =========================================================
+       METRICS
+       ========================================================= */
+
     .metrics,
-    .two-column,
-    .network-map-section {
+    .network-map-section,
+    .two-column {
       background: var(--light-blue);
     }
 
@@ -360,11 +357,15 @@
 
     .metric-note a {
       color: var(--blue);
+      font-weight: 700;
     }
 
-    /* Research */
+    /* =========================================================
+       RESEARCH CARDS
+       ========================================================= */
+
     .subhead {
-      margin: 52px 0 10px;
+      margin: 50px 0 12px;
       padding-left: 14px;
       border-left: 5px solid var(--orange);
       color: var(--navy);
@@ -387,7 +388,7 @@
       border-bottom: 5px solid var(--blue);
       background: var(--white);
       box-shadow: 0 8px 22px rgba(0, 59, 92, 0.09);
-      transition: transform 0.2s ease;
+      transition: 0.2s ease;
     }
 
     .research-card:hover,
@@ -408,7 +409,7 @@
     .insight-card h3 {
       margin: 14px 0 10px;
       color: var(--navy);
-      font-size: 1.2rem;
+      font-size: 1.18rem;
       line-height: 1.3;
     }
 
@@ -418,7 +419,10 @@
       font-size: 0.94rem;
     }
 
-    /* Experience */
+    /* =========================================================
+       EXPERIENCE
+       ========================================================= */
+
     .experience {
       background: var(--navy);
       color: var(--white);
@@ -450,10 +454,6 @@
       content: "";
     }
 
-    .timeline-item:last-child {
-      padding-bottom: 0;
-    }
-
     .timeline-date {
       color: #9fd5ec;
       font-size: 0.84rem;
@@ -465,7 +465,7 @@
     .timeline-item h3 {
       margin: 5px 0;
       color: #ffd08b;
-      font-size: 1.23rem;
+      font-size: 1.22rem;
     }
 
     .timeline-item h4 {
@@ -476,13 +476,24 @@
     }
 
     .timeline-item p {
-      max-width: 880px;
+      max-width: 900px;
       color: #d1e3ec;
     }
 
-    /* Interactive Map */
+    /* =========================================================
+       GLOBAL COLLABORATION MAP
+       ========================================================= */
+
+    .map-note {
+      max-width: 900px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-style: italic;
+    }
+
     .network-map-wrapper {
-      margin-top: 35px;
+      margin-top: 32px;
       overflow: hidden;
       border-top: 6px solid var(--orange);
       background: var(--white);
@@ -492,10 +503,9 @@
     #collaborator-map {
       position: relative;
       width: 100%;
-      height: 560px;
+      height: 570px;
       overflow: hidden;
       background: #dcecf3;
-      z-index: 1;
     }
 
     .leaflet-container {
@@ -506,22 +516,17 @@
     }
 
     /*
-      Prevents global image styling or browser styling
-      from breaking Leaflet map tile positioning.
+      Important Leaflet repair:
+      This prevents global image styling from making Leaflet tiles
+      resize and causing blank white rectangular spaces on the map.
     */
+    .leaflet-container img,
     .leaflet-tile-container img,
     .leaflet-marker-pane img,
     .leaflet-shadow-pane img,
     .leaflet-overlay-pane img {
       max-width: none !important;
       max-height: none !important;
-      width: 256px !important;
-      height: 256px !important;
-    }
-
-    .leaflet-marker-pane img {
-      width: auto !important;
-      height: auto !important;
     }
 
     .leaflet-control-container {
@@ -551,29 +556,30 @@
       border-radius: 50%;
     }
 
-    .legend-current {
+    .legend-primary {
       background: var(--orange);
     }
 
-    .legend-academic {
+    .legend-collaboration {
       background: var(--blue);
     }
 
-    .legend-research {
-      background: var(--green);
+    .map-popup {
+      min-width: 220px;
+      max-width: 310px;
     }
 
     .map-popup h3 {
-      margin-bottom: 6px;
+      margin: 0 0 7px;
       color: var(--navy);
       font-size: 1rem;
       line-height: 1.3;
     }
 
     .map-popup p {
-      margin: 0 0 7px;
+      margin: 0 0 8px;
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       line-height: 1.5;
     }
 
@@ -581,11 +587,11 @@
       margin-bottom: 0;
     }
 
-    .network-location-label {
-      border: 1px solid #d7e2e8;
+    .country-tooltip {
+      border: 1px solid var(--border);
       border-radius: 3px;
-      background: rgba(255, 255, 255, 0.94);
-      color: #003b5c;
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--navy);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 0.74rem;
       font-weight: 700;
@@ -594,11 +600,14 @@
       box-shadow: 0 2px 6px rgba(0, 43, 69, 0.18);
     }
 
-    .network-location-label::before {
+    .country-tooltip::before {
       display: none;
     }
 
-    /* Special Issue Opportunities */
+    /* =========================================================
+       OPPORTUNITIES
+       ========================================================= */
+
     .opportunities {
       background: var(--white);
     }
@@ -672,7 +681,10 @@
       background: var(--orange);
     }
 
-    /* Publications */
+    /* =========================================================
+       PUBLICATIONS
+       ========================================================= */
+
     .pub-year {
       margin: 40px 0 0;
       padding-bottom: 6px;
@@ -713,7 +725,7 @@
 
     .tag {
       display: inline-block;
-      margin: 6px 6px 0 0;
+      margin: 7px 6px 0 0;
       padding: 2px 9px;
       background: var(--light-blue);
       color: var(--navy);
@@ -736,7 +748,10 @@
       text-decoration: underline;
     }
 
-    /* Education and Achievements */
+    /* =========================================================
+       EDUCATION, SKILLS, CONTACT
+       ========================================================= */
+
     .two-column-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -765,7 +780,6 @@
       font-size: 0.92rem;
     }
 
-    /* Skills */
     .skills {
       display: flex;
       flex-wrap: wrap;
@@ -783,7 +797,6 @@
       font-weight: 600;
     }
 
-    /* Contact */
     .contact {
       text-align: center;
     }
@@ -832,6 +845,10 @@
       font-size: 0.87rem;
       text-align: center;
     }
+
+    /* =========================================================
+       RESPONSIVE DESIGN
+       ========================================================= */
 
     @media (max-width: 950px) {
       nav {
@@ -890,11 +907,13 @@
       }
 
       #collaborator-map {
-        height: 430px;
+        height: 440px;
       }
 
-      .network-location-label {
-        font-size: 0.66rem;
+      .map-legend {
+        gap: 10px;
+        padding: 15px;
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -912,8 +931,8 @@
         <li><a href="#about">About</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#insights">Insights</a></li>
-        <li><a href="#network">Network</a></li>
-        <li><a href="#opportunities">SI Opportunities</a></li>
+        <li><a href="#network">Global Network</a></li>
+        <li><a href="#opportunities">Opportunities</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -921,12 +940,12 @@
   </header>
 
   <main>
-    <!-- Hero -->
+    <!-- HERO -->
     <section class="hero" id="home">
       <div class="hero-content">
         <div>
           <div class="hero-label">
-            Postdoctoral Research Associate · Plant Systems Biology · Combined Stress Biology
+            Postdoctoral Research Associate · Plant Systems Biology
           </div>
 
           <h1>
@@ -941,16 +960,9 @@
           <p>
             I investigate how trees and crops respond to interacting abiotic
             stresses, including heat, drought, salinity, waterlogging, and
-            their combinations. By integrating high-throughput imaging,
-            whole-plant physiology, stress-biomarker analysis, population
-            genomics (PopGen), genome-wide association studies (GWAS), and
-            multi-omics—including transcriptomics, metabolomics, and
-            proteomics—I identify stress-response traits and mechanisms that
-            support climate resilience. My research includes <em>Populus</em>
-            species and crop systems such as soybean, wheat, barley, chilli,
-            and tomato. Findings from controlled-environment studies are
-            further validated under field conditions to support biologically
-            meaningful and agriculturally relevant outcomes.
+            their combinations. My research integrates high-throughput imaging,
+            plant physiology, stress biomarkers, population genomics, GWAS, and
+            multi-omics to identify resilience traits and mechanisms.
           </p>
 
           <a class="button" href="#research">Explore My Research</a>
@@ -974,7 +986,7 @@
       </div>
     </section>
 
-    <!-- About -->
+    <!-- ABOUT -->
     <section id="about">
       <div class="container about-grid">
         <div>
@@ -986,39 +998,25 @@
 
           <p class="section-text">
             I am a plant scientist and Postdoctoral Research Associate in Plant
-            Systems Biology at Oak Ridge National Laboratory (ORNL). My
-            research investigates the responses of trees and crops to combined
-            abiotic stresses, including heat, drought, salinity, waterlogging,
-            and stress combinations that are increasingly important under
-            climate change.
+            Systems Biology at Oak Ridge National Laboratory. My research
+            investigates how trees and crops respond to combined abiotic
+            stresses, including heat, drought, salinity, waterlogging, and
+            interacting environmental challenges under climate change.
           </p>
 
           <p class="section-text">
-            At ORNL, I use the Advanced Plant Phenotyping Laboratory to study
-            <em>Populus</em> species through RGB, chlorophyll fluorescence,
-            thermal, and hyperspectral imaging across VNIR and SWIR regions. I
-            integrate non-destructive phenotyping with whole-plant physiology,
-            stress biomarkers, population genomics, GWAS, and multi-omics
-            approaches, including transcriptomics, metabolomics, and
-            proteomics.
+            My work combines RGB imaging, chlorophyll fluorescence, thermal
+            imaging, VNIR/SWIR hyperspectral imaging, whole-plant physiology,
+            stress-biomarker analysis, population genomics, genome-wide
+            association studies, transcriptomics, metabolomics, and proteomics.
           </p>
 
           <p class="section-text">
-            My broader research includes soybean, wheat, barley, chilli,
-            tomato, cotton, sorghum, and other plant systems. I combine
-            controlled-environment experiments with field validation to
-            identify robust stress-response traits, candidate mechanisms, and
-            climate-resilient strategies relevant to both basic biology and
-            agriculture.
-          </p>
-
-          <p class="section-text">
-            I completed my Ph.D. in Plant and Soil Science at Texas Tech
-            University, where I studied crop responses to drought, heat,
-            salinity, waterlogging, and combined stresses, including the roles
-            of signalling molecules and phytohormones. Earlier field research
-            in Bangladesh addressed agroforestry, tree–crop interactions, and
-            environmental resilience.
+            My research includes <em>Populus</em> species and crops such as
+            soybean, wheat, barley, chilli, tomato, cotton, and sorghum. I aim
+            to connect controlled-environment phenotyping with field validation
+            to identify biologically meaningful and agriculturally useful
+            resilience traits.
           </p>
         </div>
 
@@ -1037,13 +1035,13 @@
             </li>
 
             <li>
-              <strong>Facility</strong>
-              Advanced Plant Phenotyping Laboratory
+              <strong>Research Focus</strong>
+              Combined abiotic stress biology and climate resilience
             </li>
 
             <li>
-              <strong>Research Focus</strong>
-              Combined abiotic stress biology and climate resilience
+              <strong>Methods</strong>
+              Phenotyping, physiology, PopGen, GWAS, and multi-omics
             </li>
 
             <li>
@@ -1055,17 +1053,12 @@
               <strong>Email</strong>
               <a href="mailto:mrahman@gau.edu.bd">mrahman@gau.edu.bd</a>
             </li>
-
-            <li>
-              <strong>Secondary Email</strong>
-              <a href="mailto:mdmerahm@ttu.edu">mdmerahm@ttu.edu</a>
-            </li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <!-- Research Metrics -->
+    <!-- METRICS -->
     <section class="metrics">
       <div class="container">
         <span class="section-label">Research Profile</span>
@@ -1094,33 +1087,27 @@
         </div>
 
         <p class="metric-note">
-          Citation figures are a mid-2025 snapshot and may have increased.
-          Please visit my
+          Citation figures may change over time. Please visit my
           <a
             href="https://scholar.google.com/citations?user=cK9VhfcAAAAJ&hl=en"
             target="_blank"
             rel="noopener noreferrer"
           >Google Scholar profile</a>
-          for current citation records.
+          for current records.
         </p>
       </div>
     </section>
 
-    <!-- Research -->
+    <!-- RESEARCH -->
     <section id="research">
       <div class="container">
         <span class="section-label">Research Expertise</span>
         <h2 class="section-title">Research areas</h2>
 
-        <h3 class="subhead">Combined stress biology in trees and crops</h3>
-
         <p class="section-text">
-          My research examines how plants respond to interacting stresses,
-          rather than treating drought, heat, salinity, or waterlogging as
-          isolated conditions. I investigate stress responses in
-          <em>Populus</em> species and crop systems, with emphasis on traits
-          that can be measured, validated, and translated across controlled
-          and field environments.
+          My research examines plant performance under multiple interacting
+          environmental stresses and links visible phenotypic traits with
+          physiological, genetic, and molecular mechanisms.
         </p>
 
         <div class="research-grid">
@@ -1128,10 +1115,9 @@
             <span class="research-number">01</span>
             <h3>Combined Abiotic Stress Physiology</h3>
             <p>
-              Physiological and biochemical responses to drought, heat,
-              salinity, waterlogging, and their combinations in trees and
-              crops, including effects on growth, photosynthesis, water
-              relations, and recovery.
+              Plant responses to drought, heat, salinity, waterlogging, and
+              their combinations, including growth, photosynthesis, water
+              relations, oxidative stress, and recovery.
             </p>
           </article>
 
@@ -1139,19 +1125,19 @@
             <span class="research-number">02</span>
             <h3>High-Throughput Plant Phenotyping</h3>
             <p>
-              Non-destructive characterisation of plant performance using RGB,
-              chlorophyll fluorescence, thermal, and hyperspectral imaging
-              across VNIR and SWIR wavelengths.
+              Non-destructive plant characterisation using RGB, chlorophyll
+              fluorescence, thermal, and hyperspectral imaging across VNIR and
+              SWIR wavelengths.
             </p>
           </article>
 
           <article class="research-card">
             <span class="research-number">03</span>
-            <h3>Stress Biomarkers and Plant Physiology</h3>
+            <h3>Stress Biomarkers and Physiology</h3>
             <p>
-              Integration of whole-plant physiology, gas exchange,
-              chlorophyll fluorescence, oxidative-stress indicators, hormonal
-              regulation, ion balance, and other stress biomarkers.
+              Gas exchange, chlorophyll fluorescence, plant water status,
+              oxidative-stress indicators, hormone responses, ion balance, and
+              other physiological stress biomarkers.
             </p>
           </article>
 
@@ -1159,9 +1145,9 @@
             <span class="research-number">04</span>
             <h3>Population Genomics and GWAS</h3>
             <p>
-              Population genomics (PopGen), genotype screening, and
-              genome-wide association studies to connect natural variation in
-              stress responses with genetic loci and candidate genes.
+              Population genomics and genome-wide association studies to connect
+              natural genetic variation with stress-response traits and
+              candidate genes.
             </p>
           </article>
 
@@ -1169,55 +1155,39 @@
             <span class="research-number">05</span>
             <h3>Multi-Omics Integration</h3>
             <p>
-              Combining phenotypic and physiological data with transcriptomics,
-              metabolomics, proteomics, genomics, and other omics layers to
-              identify molecular mechanisms of resilience.
+              Integration of transcriptomics, metabolomics, proteomics,
+              genomics, physiology, and phenomics to understand resilience
+              mechanisms under stress.
             </p>
           </article>
 
           <article class="research-card">
             <span class="research-number">06</span>
-            <h3>Field Validation and Translation</h3>
+            <h3>Field Validation</h3>
             <p>
-              Validating key findings from controlled-environment research
-              under field conditions to identify robust, agriculturally
-              relevant traits and stress-tolerance strategies.
+              Validating key traits and stress-response mechanisms under field
+              conditions to improve agricultural relevance and climate
+              resilience.
             </p>
           </article>
         </div>
-
-        <h3 class="subhead">Plant systems and applications</h3>
-
-        <p class="section-text">
-          My work includes <em>Populus</em> species and crop systems such as
-          soybean, wheat, barley, chilli, tomato, cotton, sorghum, and other
-          species. Research applications include climate resilience,
-          stress-tolerant crop development, plant–microbe interactions,
-          agroforestry, stress memory, and sustainable agriculture.
-        </p>
       </div>
     </section>
 
-    <!-- Insights -->
+    <!-- INSIGHTS -->
     <section id="insights">
       <div class="container">
         <span class="section-label">Scientific Insights</span>
         <h2 class="section-title">Questions guiding my research</h2>
-
-        <p class="section-text">
-          My research connects visible plant traits with physiology, stress
-          biomarkers, genetics, and molecular mechanisms to improve
-          understanding of climate-stress resilience.
-        </p>
 
         <div class="insight-grid">
           <article class="insight-card">
             <span>Insight 01</span>
             <h3>Combined stresses are not simply additive</h3>
             <p>
-              Heat, drought, salinity, and waterlogging can interact in complex
-              ways. Plant responses to combined stress cannot always be
-              predicted from responses to each stress individually.
+              Plant responses to drought plus heat, salinity plus waterlogging,
+              or other stress combinations cannot always be predicted from
+              responses to individual stresses.
             </p>
           </article>
 
@@ -1225,9 +1195,9 @@
             <span>Insight 02</span>
             <h3>Stress responses are dynamic</h3>
             <p>
-              Repeated imaging, physiology, and biomarker measurements allow
-              stress onset, progression, acclimation, and recovery to be
-              evaluated rather than relying only on single end-point traits.
+              Repeated phenotyping and physiology measurements help identify
+              stress onset, acclimation, injury, recovery, and resilience over
+              time.
             </p>
           </article>
 
@@ -1235,9 +1205,8 @@
             <span>Insight 03</span>
             <h3>Phenotyping requires biological interpretation</h3>
             <p>
-              Imaging produces scalable plant traits, while gas exchange,
-              fluorescence, biochemical markers, and other physiological
-              measurements help explain what those traits mean biologically.
+              Imaging provides scalable trait data, while physiological and
+              biochemical measurements help explain their biological meaning.
             </p>
           </article>
 
@@ -1245,9 +1214,8 @@
             <span>Insight 04</span>
             <h3>Natural variation enables discovery</h3>
             <p>
-              Diverse <em>Populus</em> and crop populations offer valuable
-              variation in stress tolerance. PopGen and GWAS help connect this
-              variation to candidate genomic regions and genes.
+              Diverse tree and crop populations contain valuable variation in
+              stress tolerance that can be explored through PopGen and GWAS.
             </p>
           </article>
 
@@ -1255,9 +1223,9 @@
             <span>Insight 05</span>
             <h3>Multi-omics connects phenotype to mechanism</h3>
             <p>
-              Transcriptomics, metabolomics, proteomics, and genomics can
-              reveal pathways associated with phenotypic differences in
-              tolerance, susceptibility, and stress recovery.
+              Omics data can reveal pathways and candidate genes associated
+              with phenotypic differences in tolerance, susceptibility, and
+              recovery.
             </p>
           </article>
 
@@ -1265,17 +1233,17 @@
             <span>Insight 06</span>
             <h3>Field validation is essential</h3>
             <p>
-              Controlled experiments provide precision, but field validation
-              is essential for determining whether stress-response traits are
-              stable, reproducible, and relevant to agriculture.
+              Controlled experiments provide precision, while field validation
+              determines whether traits remain stable and relevant in real
+              agricultural systems.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Experience -->
-    <section class="experience" id="experience">
+    <!-- EXPERIENCE -->
+    <section class="experience">
       <div class="container">
         <span class="section-label">Professional Experience</span>
         <h2 class="section-title">Research and academic appointments</h2>
@@ -1289,95 +1257,89 @@
               Investigating combined abiotic stress responses in
               <em>Populus</em> using high-throughput phenotyping, plant
               physiology, stress biomarkers, population genomics, GWAS, and
-              multi-omics. Responsibilities include experimental design,
-              phenotyping workflow optimisation, data analysis, and integration
-              of phenotypic, genetic, and omics information.
+              multi-omics approaches.
             </p>
           </article>
 
           <article class="timeline-item">
             <div class="timeline-date">September 2021 – June 2025</div>
             <h3>Graduate Research Assistant</h3>
-            <h4>
-              Institute of Genomics for Crop Abiotic Stress Tolerance,
-              Department of Plant and Soil Science, Texas Tech University, USA
-            </h4>
+            <h4>Texas Tech University, USA</h4>
             <p>
-              Conducted research on drought, heat, salinity, waterlogging, and
-              combined stress tolerance in crop systems. Research included
-              signalling molecules, phytohormones, soybean root traits,
-              reciprocal grafting, stress biomarkers, and multi-omics analysis.
+              Conducted research on crop responses to drought, heat, salinity,
+              waterlogging, and combined abiotic stresses, including signalling
+              molecules, phytohormones, and soybean stress tolerance.
             </p>
           </article>
 
           <article class="timeline-item">
             <div class="timeline-date">July 2015 – June 2021</div>
             <h3>Researcher</h3>
-            <h4>
-              CIFOR-ICRAF Bangladesh, Gazipur Agricultural University Campus,
-              Bangladesh
-            </h4>
+            <h4>CIFOR-ICRAF Bangladesh, Bangladesh</h4>
             <p>
               Conducted agroforestry, tree–crop interaction, plant stress,
-              germplasm collection, orchard establishment, and geospatial
-              mapping research with national and international collaborators.
+              germplasm collection, orchard establishment, and environmental
+              resilience research.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Network Map -->
+    <!-- GLOBAL COLLABORATION MAP -->
     <section class="network-map-section" id="network">
       <div class="container">
-        <span class="section-label">Research Network</span>
-        <h2 class="section-title">Institutional and research connections</h2>
+        <span class="section-label">Global Collaboration Network</span>
+
+        <h2 class="section-title">International research collaborations</h2>
 
         <p class="section-text">
-          My research network connects institutions in the United States and
-          Bangladesh through plant stress physiology, high-throughput
-          phenotyping, population genomics, crop improvement, agroforestry,
-          and climate-resilience research.
+          My research collaborations extend across multiple countries through
+          co-authored scientific publications in plant stress physiology,
+          combined abiotic stress biology, crop resilience, plant molecular
+          biology, genomics, high-throughput phenotyping, and sustainable
+          agriculture.
+        </p>
+
+        <p class="map-note">
+          This map represents countries associated with collaborating
+          researchers and co-author affiliations in published scientific work.
+          Markers indicate countries or broad geographical locations, not
+          individual research centres or universities.
         </p>
 
         <div class="network-map-wrapper">
           <div
             id="collaborator-map"
             role="application"
-            aria-label="Interactive map of research institutions and professional connections"
+            aria-label="Interactive world map showing international research collaborator countries"
           ></div>
 
           <div class="map-legend">
             <div class="map-legend-item">
-              <span class="legend-marker legend-current"></span>
-              Current research appointment
+              <span class="legend-marker legend-primary"></span>
+              Primary research and collaboration country
             </div>
 
             <div class="map-legend-item">
-              <span class="legend-marker legend-academic"></span>
-              Academic institution
-            </div>
-
-            <div class="map-legend-item">
-              <span class="legend-marker legend-research"></span>
-              Research and field-network connection
+              <span class="legend-marker legend-collaboration"></span>
+              International co-author collaboration country
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Special Issue Opportunities -->
+    <!-- OPPORTUNITIES -->
     <section class="opportunities" id="opportunities">
       <div class="container">
         <span class="section-label">Upcoming Opportunities</span>
         <h2 class="section-title">Special Issues and Research Topics</h2>
 
         <p class="section-text">
-          Current editorial calls for papers associated with my Guest Editor
-          and Topic Editor appointments. Please confirm scope, eligibility, and
-          the most recent deadline directly on the publisher webpage before
-          submitting.
+          Current editorial calls for papers associated with Guest Editor and
+          Topic Editor appointments. Please confirm the scope and deadline on
+          the official publisher webpage before submission.
         </p>
 
         <div class="event-grid">
@@ -1385,8 +1347,7 @@
             <p class="event-type">Elsevier · Plant Stress</p>
 
             <h3>
-              Plant Response to Drought and Combined with Other Abiotic
-              Stresses
+              Plant Response to Drought and Combined with Other Abiotic Stresses
             </h3>
 
             <p>
@@ -1419,7 +1380,7 @@
 
             <p>
               Developmental adaptation of roots and shoots under environmental
-              stress, integrating physiological, molecular, genetic, and
+              stress, including physiological, molecular, genetic, and
               phenotypic perspectives.
             </p>
 
@@ -1440,16 +1401,13 @@
           </article>
 
           <article class="event-card">
-            <p class="event-type">
-              MDPI · International Journal of Molecular Sciences
-            </p>
+            <p class="event-type">MDPI · International Journal of Molecular Sciences</p>
 
             <h3>Plant Epigenetic Memory Under Abiotic Stress</h3>
 
             <p>
               Chromatin regulation, epigenetic mechanisms, stress memory, and
-              molecular pathways that shape plant adaptation to adverse
-              environmental conditions.
+              molecular pathways that shape plant adaptation to abiotic stress.
             </p>
 
             <div class="deadline-box">
@@ -1471,15 +1429,16 @@
       </div>
     </section>
 
-    <!-- Publications -->
+    <!-- PUBLICATIONS -->
     <section id="publications">
       <div class="container">
         <span class="section-label">Selected Publications</span>
         <h2 class="section-title">Recent research contributions</h2>
 
         <p class="section-text">
-          Recent papers are listed below. Please use my Google Scholar profile
-          for the complete and current publication record.
+          A selection of research publications is listed below. Please visit my
+          Google Scholar profile for the complete and current publication
+          record.
         </p>
 
         <h3 class="pub-year">2026</h3>
@@ -1520,27 +1479,6 @@
             Gupta A.
           </p>
           <p>International Journal of Molecular Sciences, 27(16), 7494.</p>
-          <span class="tag">Review</span>
-        </article>
-
-        <article class="publication">
-          <h3>
-            <a
-              href="https://doi.org/10.3389/fpls.2026.1815325"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Integrative insights into abiotic stress tolerance in finger
-              millet: linking physiological, biochemical, and molecular
-              perspectives for developing climate-smart cereals.
-            </a>
-          </h3>
-          <p class="authors">
-            Rakkammal K, Muthuramalingam P, Pandian S, Rahman MA,
-            <strong>Rahman MM</strong>, Islam SMS, Maharajan T, Omondi Awere C,
-            Antony Ceasar S, Shin H, Ramesh M.
-          </p>
-          <p>Frontiers in Plant Science, 17, 1815325.</p>
           <span class="tag">Review</span>
         </article>
 
@@ -1587,48 +1525,7 @@
           <span class="tag">Soybean</span>
         </article>
 
-        <article class="publication">
-          <h3>
-            <a
-              href="https://doi.org/10.1016/j.plaphy.2025.110449"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              CaNAC67, a stress-responsive NAC transcription factor-encoding
-              gene from chickpea, improves drought tolerance in transgenic
-              <em>Arabidopsis thaliana</em>.
-            </a>
-          </h3>
-          <p class="authors">
-            Tran CD, <strong>Rahman MM</strong>, Chu HD, Nguyen KH,
-            Watanabe Y, Le QTN, La HV, Ha CV, Mochida K, Li W, Tran L-SP.
-          </p>
-          <p>Plant Physiology and Biochemistry, 229(Pt B), 110449.</p>
-          <span class="tag">Research Article</span>
-        </article>
-
-        <article class="publication">
-          <h3>
-            <a
-              href="https://doi.org/10.1016/j.plantsci.2025.112589"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Comparative effects of ZnSO<sub>4</sub>- and ZnO-NPs in improving
-              cotton growth and yield under drought stress at early
-              reproductive stage.
-            </a>
-          </h3>
-          <p class="authors">
-            Anik TR, Mostofa MG, <strong>Rahman MM</strong>, Keya SS,
-            Ha CV, Khan MAR, Abdelrahman M, Dao MNK, Chu HD, Tran L-SP.
-          </p>
-          <p>Plant Science, 359, 112589.</p>
-          <span class="tag">Research Article</span>
-          <span class="tag">Cotton</span>
-        </article>
-
-        <h3 class="pub-year">Earlier selected work</h3>
+        <h3 class="pub-year">Earlier Selected Work</h3>
 
         <article class="publication">
           <h3>
@@ -1650,28 +1547,6 @@
           <span class="tag">First Author</span>
         </article>
 
-        <article class="publication">
-          <h3>
-            Rahman, M.M. et al. (2023). Jasmonic acid augments the antioxidant
-            defense system to alleviate the combined drought and heat stress
-            effects in soybean.
-          </h3>
-          <p>Plant Physiology and Biochemistry, 206, 108193.</p>
-          <span class="tag">Combined Stress</span>
-          <span class="tag">Soybean</span>
-        </article>
-
-        <article class="publication">
-          <h3>
-            Rahman, M.M. et al. (2020). Acetic acid improves drought
-            acclimation in soybean: an integrative response of photosynthesis,
-            osmoregulation, mineral uptake, and antioxidant defense.
-          </h3>
-          <p>Physiologia Plantarum, 172, 334–350.</p>
-          <span class="tag">Soybean</span>
-          <span class="tag">Stress Physiology</span>
-        </article>
-
         <a
           class="link-button"
           href="https://scholar.google.com/citations?user=cK9VhfcAAAAJ&hl=en"
@@ -1683,7 +1558,7 @@
       </div>
     </section>
 
-    <!-- Education, Grants and Service -->
+    <!-- EDUCATION AND ACHIEVEMENTS -->
     <section class="two-column">
       <div class="container two-column-grid">
         <div>
@@ -1694,10 +1569,7 @@
             <li>
               <strong>Ph.D. in Plant and Soil Science</strong>
               <span>
-                Texas Tech University, USA · 2021–2025 · CGPA: 4.00/4.00<br>
-                Dissertation: Combining chemical and genetic strategies for
-                improvement of growth and yield potential of soybean under
-                drought stress.
+                Texas Tech University, USA · 2021–2025 · CGPA: 4.00/4.00
               </span>
             </li>
 
@@ -1713,56 +1585,46 @@
               <strong>B.S. (Honours) in Agriculture</strong>
               <span>
                 Patuakhali Science and Technology University, Bangladesh ·
-                2008–2012 · CGPA: 3.86/4.00 · Merit position: 8th of 132
-                students.
+                2008–2012 · CGPA: 3.86/4.00
               </span>
             </li>
           </ul>
         </div>
 
         <div>
-          <span class="section-label">Funding, Recognition & Service</span>
+          <span class="section-label">Recognition and Service</span>
           <h2 class="section-title">Grants and achievements</h2>
 
           <ul class="detail-list">
             <li>
-              <strong>Doctoral Research Grants, Texas Tech University</strong>
+              <strong>Research Funding</strong>
               <span>
-                United Soybean Board grants of $106,671, $112,000, and
-                $100,000 for work on PGPR-mediated modulation of soybean root
-                traits and chemical and genetic strategies for drought-resilient
-                soybean; Cotton Incorporated funding of $22,000 for zinc oxide
-                nanoparticles and cotton drought tolerance.
+                Research support for soybean drought tolerance, plant growth
+                promotion, abiotic stress resilience, and crop improvement.
               </span>
             </li>
 
             <li>
               <strong>Academic Recognition</strong>
               <span>
-                Davis College Outstanding Graduate Student Researcher Award,
-                Doctoral Dissertation Completion Fellowship, Helen DeVitt Jones
-                Graduate Fellowship, Water Conservation Research Scholarship,
-                and other Texas Tech University awards.
+                Graduate fellowships, research awards, dissertation support,
+                and academic recognition for research achievement.
               </span>
             </li>
 
             <li>
               <strong>Editorial Service</strong>
               <span>
-                Guest Editor for <em>Plant Stress</em> and the
-                <em>International Journal of Molecular Sciences</em>; Topic
-                Editor for <em>Frontiers in Plant Science</em>; Editorial Board
-                Member for <em>BMC Plant Biology</em> and
-                <em>Frontiers in Plant Science</em>; and Junior Editorial Board
-                Member for <em>Plant Stress</em>.
+                Guest Editor, Topic Editor, editorial board member, reviewer,
+                and contributor to plant science and stress biology journals.
               </span>
             </li>
 
             <li>
               <strong>Professional Memberships</strong>
               <span>
-                American Society of Agronomy; Crop Science Society of America;
-                Soil Science Society of America.
+                American Society of Agronomy, Crop Science Society of America,
+                and Soil Science Society of America.
               </span>
             </li>
           </ul>
@@ -1770,10 +1632,10 @@
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- SKILLS -->
     <section>
       <div class="container">
-        <span class="section-label">Methods & Technical Skills</span>
+        <span class="section-label">Methods and Technical Skills</span>
         <h2 class="section-title">Research capabilities</h2>
 
         <ul class="skills">
@@ -1784,10 +1646,10 @@
           <li>Thermal imaging</li>
           <li>VNIR / SWIR hyperspectral imaging</li>
           <li>Plant physiology</li>
-          <li>Stress-biomarker analysis</li>
+          <li>Stress biomarker analysis</li>
           <li>LI-6800 gas exchange</li>
-          <li>Population genomics (PopGen)</li>
-          <li>Genome-wide association studies (GWAS)</li>
+          <li>Population genomics</li>
+          <li>Genome-wide association studies</li>
           <li>Transcriptomics</li>
           <li>Metabolomics</li>
           <li>Proteomics</li>
@@ -1797,23 +1659,23 @@
           <li>R statistics and visualisation</li>
           <li>Greenhouse and field trials</li>
           <li>Experimental design</li>
-          <li>Grant and scientific writing</li>
+          <li>Scientific writing</li>
           <li>Student mentorship</li>
         </ul>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section class="contact" id="contact">
       <div class="container">
         <div class="contact-box">
-          <span class="section-label">Contact & Research Profiles</span>
+          <span class="section-label">Contact and Research Profiles</span>
           <h2 class="section-title">Connect with me</h2>
 
           <p>
             I welcome collaboration in combined abiotic stress biology,
             high-throughput phenotyping, plant physiology, population genomics,
-            GWAS, multi-omics, and field validation.
+            GWAS, multi-omics, and climate-resilient agriculture.
           </p>
 
           <div class="contact-links">
@@ -1832,7 +1694,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              ORCID: 0000-0001-8822-9683
+              ORCID
             </a>
 
             <a
@@ -1857,23 +1719,30 @@
   </main>
 
   <footer>
-    <p>© 2026 Dr. Md. Mezanur Rahman · Oak Ridge, Tennessee, USA</p>
+    <p>© 2026 Dr. Md. Mezanur Rahman · Plant Scientist · Combined Abiotic Stress Biology</p>
   </footer>
 
   <!-- Leaflet JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <script>
-    /* Interactive Research Network Map */
+    /* =========================================================
+       GLOBAL COLLABORATION MAP
+       Markers represent collaborator/co-author COUNTRIES,
+       not research institutions or research centres.
+       ========================================================= */
+
     var collaboratorMap = L.map("collaborator-map", {
       scrollWheelZoom: false,
       zoomControl: true,
       worldCopyJump: true
     });
 
+    collaboratorMap.setView([22, 20], 2);
+
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
       minZoom: 2,
+      maxZoom: 19,
       subdomains: ["a", "b", "c"],
       crossOrigin: true,
       attribution:
@@ -1881,65 +1750,91 @@
     }).addTo(collaboratorMap);
 
     var markerColours = {
-      current: "#f58220",
-      academic: "#0077b6",
-      research: "#167b50"
+      primary: "#f58220",
+      collaboration: "#0077b6"
     };
 
-    var networkLocations = [
+    /*
+      IMPORTANT:
+      Edit this list if you identify additional co-author countries
+      from the affiliations in your DOI papers.
+
+      Each marker is placed at a broad country-level geographic point,
+      not at a university, city, laboratory, or research centre.
+    */
+    var collaboratorCountries = [
       {
-        name: "Oak Ridge National Laboratory",
-        role: "Current Research Appointment",
-        institution: "Plant Systems Biology · Advanced Plant Phenotyping Laboratory",
-        location: "Oak Ridge, Tennessee, USA",
-        latitude: 36.0104,
-        longitude: -84.2696,
-        category: "current",
-        description:
-          "Postdoctoral research on combined abiotic stresses in Populus species using high-throughput phenotyping, physiology, stress biomarkers, population genomics, GWAS, and multi-omics."
+        country: "United States",
+        role: "Primary Research and Collaboration Country",
+        category: "primary",
+        latitude: 39.8283,
+        longitude: -98.5795,
+        focus:
+          "Plant phenotyping, combined abiotic stress biology, crop physiology, population genomics, GWAS, multi-omics, and climate-resilient agriculture."
       },
       {
-        name: "Texas Tech University",
-        role: "Doctoral Research and Academic Connection",
-        institution: "Department of Plant and Soil Science · Institute of Genomics for Crop Abiotic Stress Tolerance",
-        location: "Lubbock, Texas, USA",
-        latitude: 33.5843,
-        longitude: -101.8783,
-        category: "academic",
-        description:
-          "Ph.D. research in plant and soil science focusing on crop responses to drought, heat, salinity, waterlogging, combined stress, phytohormones, and stress signalling."
+        country: "Bangladesh",
+        role: "International Co-Author Collaboration",
+        category: "collaboration",
+        latitude: 23.6850,
+        longitude: 90.3563,
+        focus:
+          "Agroforestry, crop stress biology, sustainable agriculture, tree–crop interactions, environmental resilience, and plant science research."
       },
       {
-        name: "Gazipur Agricultural University",
-        role: "Academic and Research Connection",
-        institution: "Gazipur Agricultural University",
-        location: "Gazipur, Bangladesh",
-        latitude: 23.9987,
-        longitude: 90.4203,
-        category: "academic",
-        description:
-          "Academic affiliation and research connection in agriculture, agroforestry, environmental science, tree–crop systems, and climate resilience."
+        country: "India",
+        role: "International Co-Author Collaboration",
+        category: "collaboration",
+        latitude: 20.5937,
+        longitude: 78.9629,
+        focus:
+          "Plant molecular biology, drought tolerance, salinity tolerance, stress memory, phytohormones, crop improvement, and climate-smart agriculture."
       },
       {
-        name: "CIFOR-ICRAF Bangladesh",
-        role: "Research and Field Network Connection",
-        institution: "CIFOR-ICRAF Bangladesh · Gazipur Agricultural University Campus",
-        location: "Gazipur, Bangladesh",
-        latitude: 24.0087,
-        longitude: 90.4303,
-        category: "research",
-        description:
-          "Research experience in agroforestry, tree–crop interactions, plant stress, germplasm collection, orchard establishment, and field-based environmental research."
+        country: "China",
+        role: "International Co-Author Collaboration",
+        category: "collaboration",
+        latitude: 35.8617,
+        longitude: 104.1954,
+        focus:
+          "Crop stress physiology, salinity adaptation, molecular biology, plant resilience, and sustainable crop production."
+      },
+      {
+        country: "Japan",
+        role: "International Co-Author Collaboration",
+        category: "collaboration",
+        latitude: 36.2048,
+        longitude: 138.2529,
+        focus:
+          "Plant functional genomics, molecular stress biology, gene regulation, transcriptomics, crop resilience, and stress-response mechanisms."
+      },
+      {
+        country: "South Korea",
+        role: "International Co-Author Collaboration",
+        category: "collaboration",
+        latitude: 35.9078,
+        longitude: 127.7669,
+        focus:
+          "Plant stress signalling, crop molecular biology, abiotic stress tolerance, genomics, and multi-omics research."
+      },
+      {
+        country: "Vietnam",
+        role: "International Co-Author Collaboration",
+        category: "collaboration",
+        latitude: 14.0583,
+        longitude: 108.2772,
+        focus:
+          "Plant biotechnology, transcription-factor research, drought tolerance, crop physiology, and molecular mechanisms of stress resilience."
       }
     ];
 
-    var networkBounds = L.latLngBounds([]);
+    var collaboratorBounds = L.latLngBounds([]);
 
-    networkLocations.forEach(function (site) {
-      var locationMarker = L.circleMarker(
+    collaboratorCountries.forEach(function (site) {
+      var marker = L.circleMarker(
         [site.latitude, site.longitude],
         {
-          radius: 9,
+          radius: site.category === "primary" ? 10 : 8,
           color: "#ffffff",
           weight: 3,
           fillColor: markerColours[site.category],
@@ -1949,45 +1844,46 @@
 
       var popupContent =
         '<div class="map-popup">' +
-          "<h3>" + site.name + "</h3>" +
+          "<h3>" + site.country + "</h3>" +
           "<p><strong>" + site.role + "</strong></p>" +
-          "<p>" + site.institution + "</p>" +
-          "<p>" + site.location + "</p>" +
-          "<p>" + site.description + "</p>" +
+          "<p><strong>Collaboration focus:</strong> " + site.focus + "</p>" +
         "</div>";
 
-      locationMarker.bindPopup(popupContent);
+      marker.bindPopup(popupContent);
 
-      locationMarker.bindTooltip(site.name, {
-        permanent: true,
+      marker.bindTooltip(site.country, {
         direction: "top",
         offset: [0, -10],
         opacity: 0.96,
-        className: "network-location-label"
+        className: "country-tooltip",
+        sticky: true
       });
 
-      networkBounds.extend([site.latitude, site.longitude]);
+      collaboratorBounds.extend([site.latitude, site.longitude]);
     });
 
-    function showAllNetworkLocations() {
+    function fitCollaboratorMap() {
       collaboratorMap.invalidateSize();
 
-      collaboratorMap.fitBounds(networkBounds, {
-        padding: [60, 60],
-        maxZoom: 3
+      collaboratorMap.fitBounds(collaboratorBounds, {
+        padding: [55, 55],
+        maxZoom: 2
       });
     }
 
     window.addEventListener("load", function () {
-      setTimeout(showAllNetworkLocations, 500);
+      setTimeout(fitCollaboratorMap, 500);
     });
 
     window.addEventListener("resize", function () {
       collaboratorMap.invalidateSize();
-      showAllNetworkLocations();
+      fitCollaboratorMap();
     });
 
-    /* Special Issue Countdown */
+    /* =========================================================
+       SPECIAL ISSUE DEADLINE COUNTDOWNS
+       ========================================================= */
+
     function updateDeadlineCountdowns() {
       document.querySelectorAll("[data-deadline]").forEach(function (element) {
         var deadlineText = element.getAttribute("data-deadline");
@@ -1997,21 +1893,16 @@
 
         if (difference < 0) {
           element.textContent =
-            "Deadline has passed — check the publisher page for updates.";
+            "Deadline has passed — please check the publisher page for updates.";
           return;
         }
 
         var days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        var hours = Math.floor(
-          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
 
         if (days === 0) {
-          element.textContent =
-            "Deadline is today (" + hours + " hours remaining).";
+          element.textContent = "Deadline is today.";
         } else if (days === 1) {
-          element.textContent =
-            "1 day remaining before the stated deadline.";
+          element.textContent = "1 day remaining before the stated deadline.";
         } else {
           element.textContent =
             days + " days remaining before the stated deadline.";

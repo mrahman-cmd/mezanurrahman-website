@@ -21,7 +21,7 @@
   <link
     rel="icon"
     type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23003b5c'/%3E%3Cpath d='M32 49C20 42 16 31 19 18C31 18 41 23 45 34C40 41 36 45 32 49Z' fill='%23f59e0b'/%3E%3Cpath d='M24 40C29 35 34 30 40 26' fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-width='3'/%3E%3Ctext x='32' y='58' fill='%23ffffff' font-family='Arial' font-size='10' font-weight='700' text-anchor='middle'%3EMR%3C/text%3E%3C/svg%3E"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23003b5c'/%3E%3Cpath d='M32 49C20 42 16 31 19 18C31 18 41 23 45 34C40 41 36 45 32 49Z' fill='%23f59e0b'/%3E%3Cpath d='M24 40C29 35 34 30 40 26' fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-width='3'/%3E%3C/svg%3E"
   >
 
   <meta property="og:type" content="website">
@@ -38,24 +38,12 @@
     property="og:image"
     content="https://mrahman-cmd.github.io/mezanurrahman-website/Md_Mezanur_Rahman-466.jpg"
   >
-  <meta property="og:image:alt" content="Portrait of Dr. Md. Mezanur Rahman">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Dr. Md. Mezanur Rahman | Plant Scientist">
-  <meta
-    name="twitter:description"
-    content="Researcher in combined abiotic stress biology, plant phenotyping, physiology, genomics, and climate-resilient agriculture."
-  >
-  <meta
-    name="twitter:image"
-    content="https://mrahman-cmd.github.io/mezanurrahman-website/Md_Mezanur_Rahman-466.jpg"
-  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap"
     rel="stylesheet"
   >
 
@@ -84,17 +72,6 @@
         "https://scholar.google.com/citations?user=cK9VhfcAAAAJ&hl=en",
         "https://orcid.org/0000-0001-8822-9683",
         "https://www.researchgate.net/profile/Md_Rahman478"
-      ],
-      "knowsAbout": [
-        "Combined abiotic stress biology",
-        "Plant phenotyping",
-        "Plant physiology",
-        "Population genomics",
-        "Genome-wide association studies",
-        "Transcriptomics",
-        "Metabolomics",
-        "Proteomics",
-        "Climate-resilient agriculture"
       ]
     }
   </script>
@@ -113,7 +90,7 @@
       --text: #243746;
       --muted: #526b7a;
       --border: #cbdce5;
-      --shadow: 0 8px 22px rgba(0, 59, 92, 0.1);
+      --shadow: 0 8px 22px rgba(0, 59, 92, 0.10);
     }
 
     * {
@@ -441,7 +418,7 @@
       text-decoration: underline;
     }
 
-    /* Metrics */
+    /* Shared cards */
 
     .metrics,
     .network-map-section,
@@ -489,12 +466,9 @@
       font-weight: 800;
     }
 
-    /* Cards */
-
     .research-grid,
     .project-grid,
-    .insight-grid,
-    .event-grid {
+    .insight-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
@@ -561,7 +535,37 @@
       font-weight: 700;
     }
 
-    /* Abiotic-Stress Discovery News */
+    /* Journal discovery news */
+
+    .news-heading-row {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .refresh-news-button {
+      padding: 10px 16px;
+      border: 2px solid var(--blue-dark);
+      background: var(--white);
+      color: var(--blue-dark);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.94rem;
+      font-weight: 800;
+    }
+
+    .refresh-news-button:hover {
+      border-color: var(--orange);
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .refresh-news-button:disabled {
+      cursor: wait;
+      opacity: 0.7;
+    }
 
     .news-ticker-box {
       display: flex;
@@ -601,12 +605,12 @@
       min-width: 100%;
       padding: 13px 0;
       white-space: nowrap;
-      animation: plantNewsScroll 110s linear infinite;
+      animation: plantNewsScroll 120s linear infinite;
     }
 
     .news-ticker-track a {
       display: inline-block;
-      margin-right: 62px;
+      margin-right: 54px;
       color: var(--blue-dark);
       font-size: 0.97rem;
       font-weight: 700;
@@ -619,7 +623,7 @@
     }
 
     .news-ticker-track a::after {
-      margin-left: 62px;
+      margin-left: 54px;
       color: var(--orange);
       content: "•";
     }
@@ -786,7 +790,7 @@
       font-size: 1.02rem;
     }
 
-    /* Collaboration map */
+    /* Map */
 
     .map-note {
       max-width: 900px;
@@ -892,82 +896,7 @@
       font-weight: 700;
     }
 
-    /* Opportunities */
-
-    .opportunities {
-      background: var(--white);
-    }
-
-    .event-card {
-      padding: 26px;
-      border-top: 6px solid var(--orange);
-      background: var(--off-white);
-      box-shadow: var(--shadow);
-    }
-
-    .event-type {
-      color: var(--blue-dark) !important;
-      font-size: 0.82rem !important;
-      font-weight: 800;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-    }
-
-    .event-card h3 {
-      margin: 12px 0;
-      color: var(--navy);
-      font-size: 1.22rem;
-      line-height: 1.35;
-    }
-
-    .event-card p {
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .deadline-box {
-      margin: 18px 0;
-      padding: 13px;
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    .deadline-box strong {
-      display: block;
-      color: #ffd08b;
-      font-size: 0.82rem;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .deadline-box time {
-      display: block;
-      margin-top: 3px;
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    .countdown {
-      margin-top: 4px;
-      color: #bce7fa !important;
-      font-size: 0.88rem !important;
-    }
-
-    .event-link {
-      display: inline-block;
-      padding: 10px 14px;
-      background: var(--blue-dark);
-      color: var(--white);
-      font-size: 0.94rem;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .event-link:hover {
-      background: var(--orange);
-    }
-
-    /* Publications */
+    /* Publications, education, skills */
 
     .pub-year {
       margin: 40px 0 0;
@@ -1032,8 +961,6 @@
       color: var(--orange);
       text-decoration: underline;
     }
-
-    /* Education and skills */
 
     .two-column-grid {
       display: grid;
@@ -1185,8 +1112,7 @@
         height: 180px;
       }
 
-      .metric-grid,
-      .event-grid {
+      .metric-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -1237,9 +1163,12 @@
         margin-left: 0;
       }
 
-      .metric-grid,
-      .event-grid {
+      .metric-grid {
         grid-template-columns: 1fr;
+      }
+
+      .news-heading-row {
+        align-items: flex-start;
       }
 
       .news-ticker-box {
@@ -1321,7 +1250,6 @@
         <li><a href="#insights">Insights</a></li>
         <li><a href="#plant-news">Abiotic-Stress News</a></li>
         <li><a href="#network">Collaborators</a></li>
-        <li><a href="#opportunities">Opportunities</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -1719,28 +1647,37 @@
       </div>
     </section>
 
-    <!-- Abiotic Stress Discovery News -->
     <section class="plant-news" id="plant-news">
       <div class="container">
-        <span class="section-label">Plant Abiotic Stress Discovery News</span>
+        <div class="news-heading-row">
+          <div>
+            <span class="section-label">Plant Abiotic Stress Discovery News</span>
 
-        <h2 class="section-title">
-          Latest discoveries in plant abiotic stress and climate resilience
-        </h2>
+            <h2 class="section-title">
+              Latest discoveries in plant abiotic stress and climate resilience
+            </h2>
+          </div>
+
+          <button
+            class="refresh-news-button"
+            id="refresh-news-button"
+            type="button"
+          >
+            ↻ Refresh discoveries
+          </button>
+        </div>
 
         <p class="section-text">
-          Recent peer-reviewed research records are retrieved from Crossref and
-          filtered for plant and crop abiotic-stress discoveries. The section
-          prioritizes titles from journals including <em>Nature</em>,
-          <em>Science</em>, <em>Nature Communications</em>,
-          <em>Plant Physiology</em>, <em>The Plant Cell</em>,
-          <em>New Phytologist</em>, <em>Plant, Cell &amp; Environment</em>,
-          and related plant-science journals.
+          This live research feed retrieves current Crossref metadata from
+          selected peer-reviewed journals and displays only titles relevant to
+          plant or crop responses to drought, heat, salinity, flooding,
+          waterlogging, cold, temperature stress, stress tolerance, or climate
+          resilience.
         </p>
 
         <div
           class="news-ticker-box"
-          aria-label="Scrolling latest plant abiotic stress research headlines"
+          aria-label="Scrolling latest plant abiotic-stress research headlines"
         >
           <div class="news-ticker-label">
             🌿 Abiotic-Stress Discoveries
@@ -1752,27 +1689,28 @@
               id="plant-news-ticker"
               aria-live="polite"
             >
-              Searching for recent plant abiotic-stress discoveries...
+              Searching selected plant-science journals...
             </div>
           </div>
         </div>
 
         <p class="news-status" id="plant-news-status">
-          Retrieving recent peer-reviewed plant stress research...
+          Retrieving current peer-reviewed research records...
         </p>
 
         <div class="news-grid" id="plant-news-grid" aria-live="polite">
           <div class="news-empty">
-            Searching Crossref for recent plant abiotic-stress research...
+            Searching current plant abiotic-stress discovery records...
           </div>
         </div>
 
         <p class="news-source-note">
-          <strong>Research-discovery feed:</strong>
-          Article metadata are retrieved from Crossref. Each headline opens its
-          DOI record or publisher landing page. Publication metadata can change,
-          and readers should consult the original paper and journal webpage for
-          full details.
+          <strong>Selected journal feed:</strong>
+          Metadata are retrieved live from Crossref on each page load or when
+          the refresh button is used. The feed does not use
+          <code>data/plant-news.json</code>, GitHub Actions, browser storage,
+          university announcements, job advertisements, conferences, student
+          programs, or general plant-biology headlines.
         </p>
       </div>
     </section>
@@ -1797,8 +1735,7 @@
               Investigating combined abiotic stress responses in
               <em>Populus</em> using high-throughput phenotyping, plant
               physiology, stress biomarkers, population genomics, GWAS, and
-              multi-omics approaches. Comprehensive phenotyping research uses
-              Advanced Plant Phenotyping Laboratory facilities.
+              multi-omics approaches.
             </p>
           </article>
 
@@ -1878,111 +1815,10 @@
 
           <p>
             This text list is provided as an accessible alternative to the
-            interactive map. Retain only countries that you have confirmed from
-            co-author affiliations in published work.
+            interactive map.
           </p>
 
           <ul class="country-list" id="collaborator-country-list"></ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="opportunities" id="opportunities">
-      <div class="container">
-        <span class="section-label">Upcoming Opportunities</span>
-        <h2 class="section-title">Special Issues and Research Topics</h2>
-
-        <p class="section-text">
-          Current editorial calls for papers associated with Guest Editor and
-          Topic Editor appointments. Please confirm the scope and deadline on
-          the official publisher webpage before submission.
-        </p>
-
-        <div class="event-grid">
-          <article class="event-card">
-            <p class="event-type">Elsevier · Plant Stress</p>
-
-            <h3>
-              Plant Response to Drought and Combined with Other Abiotic Stresses
-            </h3>
-
-            <p>
-              Physiological, molecular, and genetic mechanisms of tolerance
-              under drought and combined abiotic-stress conditions.
-            </p>
-
-            <div class="deadline-box">
-              <strong>Submission Deadline</strong>
-              <time datetime="2027-04-01">1 April 2027</time>
-              <p class="countdown" data-deadline="2027-04-01"></p>
-            </div>
-
-            <a
-              class="event-link"
-              href="https://www.sciencedirect.com/special-issue/337077/plant-response-to-drought-and-combined-with-other-abiotic-stresses-physiological-molecular-and-genetic-mechanisms-of-tolerance"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Special Issue →
-            </a>
-          </article>
-
-          <article class="event-card">
-            <p class="event-type">Frontiers in Plant Science</p>
-
-            <h3>
-              Root and Shoot Developmental Plasticity in Response to Stress
-            </h3>
-
-            <p>
-              Developmental adaptation of roots and shoots under environmental
-              stress, including physiological, molecular, genetic, and
-              phenotypic perspectives.
-            </p>
-
-            <div class="deadline-box">
-              <strong>Submission Deadline</strong>
-              <time datetime="2027-03-25">25 March 2027</time>
-              <p class="countdown" data-deadline="2027-03-25"></p>
-            </div>
-
-            <a
-              class="event-link"
-              href="https://www.frontiersin.org/research-topics/82452/root-and-shoot-developmental-plasticity-in-response-to-stress"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Research Topic →
-            </a>
-          </article>
-
-          <article class="event-card">
-            <p class="event-type">
-              MDPI · International Journal of Molecular Sciences
-            </p>
-
-            <h3>Plant Epigenetic Memory Under Abiotic Stress</h3>
-
-            <p>
-              Chromatin regulation, epigenetic mechanisms, stress memory, and
-              molecular pathways that shape plant adaptation to abiotic stress.
-            </p>
-
-            <div class="deadline-box">
-              <strong>Submission Deadline</strong>
-              <time datetime="2027-03-31">31 March 2027</time>
-              <p class="countdown" data-deadline="2027-03-31"></p>
-            </div>
-
-            <a
-              class="event-link"
-              href="https://www.mdpi.com/journal/ijms/special_issues"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View IJMS Special Issues →
-            </a>
-          </article>
         </div>
       </div>
     </section>
@@ -2300,7 +2136,6 @@
       const menuIsOpen = navigationMenu.classList.toggle("open");
 
       menuButton.setAttribute("aria-expanded", menuIsOpen);
-
       menuButton.textContent = menuIsOpen ? "Close" : "Menu";
     });
 
@@ -2315,75 +2150,133 @@
     });
 
     /*
-      PLANT ABIOTIC-STRESS DISCOVERY NEWS
+      LIVE JOURNAL DISCOVERY FEED
 
-      This section directly queries Crossref.
+      No browser cache.
+      No localStorage.
+      No data/plant-news.json.
+      No GitHub Action.
+      No broad university-news search.
 
-      It does not use:
-      - data/plant-news.json
-      - GitHub Actions
-      - RSS feeds
-      - general university-news pages
-      - conference advertisements
-      - student-program announcements
-
-      It retrieves peer-reviewed article metadata and filters for:
-      - plant/crop context
-      - drought
-      - heat stress
-      - salinity
-      - waterlogging
-      - flooding
-      - cold stress
-      - temperature stress
-      - abiotic stress
-      - stress tolerance
-      - climate resilience
+      Every request is made directly to a selected journal ISSN endpoint
+      in Crossref when the page loads or the refresh button is pressed.
     */
 
-    const CACHE_KEY = "plantAbioticStressNewsCacheV2";
-    const CACHE_DURATION_MS = 6 * 60 * 60 * 1000;
-    const MAX_ARTICLES = 9;
-
-    const preferredJournals = [
-      "nature",
-      "science",
-      "nature communications",
-      "science advances",
-      "communications biology",
-      "plant physiology",
-      "the plant cell",
-      "new phytologist",
-      "plant, cell & environment",
-      "plant journal",
-      "plant biotechnology journal",
-      "journal of experimental botany",
-      "plant science",
-      "plant communications",
-      "stress biology",
-      "frontiers in plant science",
-      "functional plant biology",
-      "environmental and experimental botany",
-      "physiologia plantarum",
-      "tree physiology",
-      "annals of botany",
-      "bmc plant biology",
-      "global change biology",
-      "field crops research",
-      "crop science"
+    const JOURNALS = [
+      {
+        name: "Nature",
+        issn: "0028-0836",
+        general: true,
+        priority: 100
+      },
+      {
+        name: "Science",
+        issn: "0036-8075",
+        general: true,
+        priority: 98
+      },
+      {
+        name: "Nature Communications",
+        issn: "2041-1723",
+        general: true,
+        priority: 96
+      },
+      {
+        name: "Science Advances",
+        issn: "2375-2548",
+        general: true,
+        priority: 94
+      },
+      {
+        name: "Plant Physiology",
+        issn: "0032-0889",
+        general: false,
+        priority: 90
+      },
+      {
+        name: "The Plant Cell",
+        issn: "1040-4651",
+        general: false,
+        priority: 88
+      },
+      {
+        name: "New Phytologist",
+        issn: "0028-646X",
+        general: false,
+        priority: 86
+      },
+      {
+        name: "Plant, Cell & Environment",
+        issn: "0140-7791",
+        general: false,
+        priority: 84
+      },
+      {
+        name: "Plant Biotechnology Journal",
+        issn: "1467-7644",
+        general: false,
+        priority: 82
+      },
+      {
+        name: "Journal of Experimental Botany",
+        issn: "0022-0957",
+        general: false,
+        priority: 80
+      },
+      {
+        name: "The Plant Journal",
+        issn: "0960-7412",
+        general: false,
+        priority: 78
+      },
+      {
+        name: "Plant Communications",
+        issn: "2590-3322",
+        general: false,
+        priority: 76
+      },
+      {
+        name: "Plant Science",
+        issn: "0168-9452",
+        general: false,
+        priority: 74
+      },
+      {
+        name: "Stress Biology",
+        issn: "2523-3971",
+        general: false,
+        priority: 72
+      }
     ];
 
-    const generalScienceJournals = [
-      "nature",
-      "science",
-      "nature communications",
-      "science advances",
-      "communications biology",
-      "proceedings of the national academy of sciences",
-      "pnas"
+    const STRESS_TERMS = [
+      "abiotic stress",
+      "drought",
+      "water deficit",
+      "dehydration",
+      "heat stress",
+      "heat tolerance",
+      "heat resilience",
+      "salinity",
+      "salt stress",
+      "salt tolerance",
+      "waterlogging",
+      "flooding",
+      "submergence",
+      "cold stress",
+      "cold tolerance",
+      "chilling",
+      "freezing",
+      "temperature stress",
+      "thermal stress",
+      "osmotic stress",
+      "stress tolerance",
+      "stress resilience",
+      "climate resilience",
+      "climate adaptation"
     ];
 
-    const plantContextTerms = [
+    const PLANT_TERMS = [
       "plant",
       "crop",
       "rice",
@@ -2409,26 +2302,7 @@
       "phytohormone"
     ];
 
-    const stressTerms = [
-      "abiotic stress",
-      "drought",
-      "heat stress",
-      "heat tolerance",
-      "salinity",
-      "salt stress",
-      "waterlogging",
-      "flooding",
-      "cold stress",
-      "chilling",
-      "temperature stress",
-      "thermal stress",
-      "stress tolerance",
-      "climate resilience",
-      "osmotic stress",
-      "dehydration"
-    ];
-
-    const excludedTitleTerms = [
+    const EXCLUDED_TERMS = [
       "editorial",
       "correction",
       "corrigendum",
@@ -2450,16 +2324,8 @@
       "fellowship"
     ];
 
-    const crossrefSearchQueries = [
-      "plant drought stress",
-      "plant heat stress",
-      "plant salinity stress",
-      "plant waterlogging stress",
-      "plant flooding stress",
-      "plant cold stress",
-      "plant abiotic stress",
-      "crop climate resilience"
-    ];
+    const MAX_ARTICLES = 9;
+    const DAYS_BACK = 730;
 
     function cleanText(value) {
       if (!value) {
@@ -2470,20 +2336,6 @@
         .replace(/<[^>]*>/g, " ")
         .replace(/\s+/g, " ")
         .trim();
-    }
-
-    function safeExternalUrl(value) {
-      try {
-        const url = new URL(value);
-
-        if (url.protocol === "https:" || url.protocol === "http:") {
-          return url.href;
-        }
-      } catch (error) {
-        return "";
-      }
-
-      return "";
     }
 
     function formatNewsDate(dateValue) {
@@ -2504,8 +2356,8 @@
       });
     }
 
-    function crossrefDateToISO(item) {
-      const possibleDateFields = [
+    function getArticleDate(item) {
+      const possibleFields = [
         "published-online",
         "published-print",
         "published",
@@ -2513,22 +2365,21 @@
         "created"
       ];
 
-      for (const field of possibleDateFields) {
+      for (const field of possibleFields) {
         const dateParts = item[field]?.["date-parts"];
 
-        if (Array.isArray(dateParts) && Array.isArray(dateParts[0])) {
+        if (
+          Array.isArray(dateParts) &&
+          Array.isArray(dateParts[0]) &&
+          dateParts[0].length > 0
+        ) {
           const parts = dateParts[0];
-
           const year = Number(parts[0]);
           const month = Number(parts[1] || 1);
           const day = Number(parts[2] || 1);
 
           if (year) {
-            const isoDate = new Date(
-              Date.UTC(year, month - 1, day)
-            );
-
-            return isoDate.toISOString();
+            return new Date(Date.UTC(year, month - 1, day)).toISOString();
           }
         }
       }
@@ -2536,103 +2387,50 @@
       return "";
     }
 
-    function articleIsRelevant(article) {
-      const title = cleanText(
-        Array.isArray(article.title) ? article.title[0] : article.title
-      ).toLowerCase();
-
-      const journal = cleanText(
-        Array.isArray(article["container-title"])
-          ? article["container-title"][0]
-          : article["container-title"]
-      ).toLowerCase();
-
-      if (!title || !journal) {
-        return false;
-      }
-
-      if (excludedTitleTerms.some(function (term) {
-        return title.includes(term);
-      })) {
-        return false;
-      }
-
-      const hasStressTerm = stressTerms.some(function (term) {
-        return title.includes(term);
+    function hasAnyTerm(text, terms) {
+      return terms.some(function (term) {
+        return text.includes(term);
       });
+    }
 
-      if (!hasStressTerm) {
+    function articleIsRelevant(item, journal) {
+      const title = cleanText(item.title?.[0]).toLowerCase();
+
+      if (!title) {
         return false;
       }
 
-      const isPreferredJournal = preferredJournals.some(function (journalName) {
-        return journal.includes(journalName);
-      });
-
-      if (!isPreferredJournal) {
+      if (hasAnyTerm(title, EXCLUDED_TERMS)) {
         return false;
       }
 
-      const isGeneralScienceJournal = generalScienceJournals.some(
-        function (journalName) {
-          return journal.includes(journalName);
-        }
-      );
+      if (!hasAnyTerm(title, STRESS_TERMS)) {
+        return false;
+      }
 
-      if (isGeneralScienceJournal) {
-        const hasPlantContext = plantContextTerms.some(function (term) {
-          return title.includes(term);
-        });
-
-        if (!hasPlantContext) {
-          return false;
-        }
+      /*
+        For Nature, Science, Nature Communications, and Science Advances,
+        require both plant/crop wording and abiotic-stress wording in the title.
+        The specialist journals are already plant-focused.
+      */
+      if (journal.general && !hasAnyTerm(title, PLANT_TERMS)) {
+        return false;
       }
 
       return true;
     }
 
-    function getJournalPriority(journalName) {
-      const journal = journalName.toLowerCase();
-
-      const highPriority = [
-        "nature communications",
-        "nature",
-        "science advances",
-        "science",
-        "plant physiology",
-        "the plant cell",
-        "new phytologist",
-        "plant, cell & environment",
-        "plant biotechnology journal",
-        "journal of experimental botany",
-        "plant communications"
-      ];
-
-      const highPriorityIndex = highPriority.findIndex(function (name) {
-        return journal.includes(name);
-      });
-
-      if (highPriorityIndex !== -1) {
-        return 100 - highPriorityIndex;
-      }
-
-      return 10;
-    }
-
-    function getRelevanceScore(article) {
+    function relevanceScore(article) {
       const title = article.title.toLowerCase();
-      const journal = article.source.toLowerCase();
+      let score = article.priority;
 
-      let score = getJournalPriority(journal);
-
-      stressTerms.forEach(function (term) {
+      STRESS_TERMS.forEach(function (term) {
         if (title.includes(term)) {
           score += 5;
         }
       });
 
-      plantContextTerms.forEach(function (term) {
+      PLANT_TERMS.forEach(function (term) {
         if (title.includes(term)) {
           score += 2;
         }
@@ -2641,14 +2439,22 @@
       return score;
     }
 
-    async function fetchCrossrefArticles(query) {
+    function getCutoffDate() {
+      const cutoff = new Date();
+      cutoff.setDate(cutoff.getDate() - DAYS_BACK);
+
+      return cutoff.toISOString().slice(0, 10);
+    }
+
+    async function fetchJournalArticles(journal) {
       const parameters = new URLSearchParams({
-        "query.title": query,
-        "filter": "type:journal-article,from-pub-date:2024-01-01",
-        "sort": "published",
-        "order": "desc",
-        "rows": "35",
-        "select": [
+        filter:
+          "from-pub-date:" + getCutoffDate() +
+          ",type:journal-article",
+        sort: "published",
+        order: "desc",
+        rows: "50",
+        select: [
           "DOI",
           "title",
           "container-title",
@@ -2660,120 +2466,101 @@
         ].join(",")
       });
 
-      const response = await fetch(
-        "https://api.crossref.org/works?" + parameters.toString(),
-        {
-          headers: {
-            "Accept": "application/json"
-          }
+      const url =
+        "https://api.crossref.org/journals/" +
+        encodeURIComponent(journal.issn) +
+        "/works?" +
+        parameters.toString();
+
+      const response = await fetch(url, {
+        headers: {
+          "Accept": "application/json"
         }
-      );
+      });
 
       if (!response.ok) {
-        throw new Error("Crossref request failed.");
+        throw new Error("Unable to retrieve " + journal.name + " records.");
       }
 
       const data = await response.json();
 
-      return data.message?.items || [];
+      return {
+        journal: journal,
+        items: data.message?.items || []
+      };
     }
 
-    async function getAbioticStressResearchArticles() {
-      const cachedData = localStorage.getItem(CACHE_KEY);
+    async function getLatestAbioticStressArticles() {
+      const requests = JOURNALS.map(function (journal) {
+        return fetchJournalArticles(journal);
+      });
 
-      if (cachedData) {
-        try {
-          const parsed = JSON.parse(cachedData);
+      const results = await Promise.allSettled(requests);
+      const articles = [];
+      const seen = new Set();
 
-          if (
-            parsed.savedAt &&
-            Array.isArray(parsed.items) &&
-            Date.now() - parsed.savedAt < CACHE_DURATION_MS
-          ) {
-            return parsed.items;
-          }
-        } catch (error) {
-          localStorage.removeItem(CACHE_KEY);
-        }
-      }
-
-      const requestResults = await Promise.allSettled(
-        crossrefSearchQueries.map(function (query) {
-          return fetchCrossrefArticles(query);
-        })
-      );
-
-      const seenArticles = new Set();
-      const selectedArticles = [];
-
-      requestResults.forEach(function (result) {
+      results.forEach(function (result) {
         if (result.status !== "fulfilled") {
           return;
         }
 
-        result.value.forEach(function (item) {
-          if (!articleIsRelevant(item)) {
+        const journal = result.value.journal;
+
+        result.value.items.forEach(function (item) {
+          if (!articleIsRelevant(item, journal)) {
             return;
           }
 
           const title = cleanText(item.title?.[0]);
-          const source = cleanText(item["container-title"]?.[0]);
           const doi = cleanText(item.DOI);
+          const url = doi
+            ? "https://doi.org/" + doi
+            : cleanText(item.URL);
+
           const identifier = doi || title.toLowerCase();
 
-          if (!identifier || seenArticles.has(identifier)) {
+          if (!title || !url || seen.has(identifier)) {
             return;
           }
 
-          seenArticles.add(identifier);
+          seen.add(identifier);
 
-          const doiLink = doi
-            ? "https://doi.org/" + doi
-            : safeExternalUrl(item.URL);
+          const source =
+            cleanText(item["container-title"]?.[0]) || journal.name;
 
-          if (!doiLink) {
-            return;
-          }
-
-          const publicationDate = crossrefDateToISO(item);
-
-          selectedArticles.push({
+          const article = {
             title: title,
             source: source,
-            link: doiLink,
-            pubDate: publicationDate,
-            score: getRelevanceScore({
-              title: title,
-              source: source
-            })
-          });
+            link: url,
+            pubDate: getArticleDate(item),
+            priority: journal.priority
+          };
+
+          article.score = relevanceScore(article);
+
+          articles.push(article);
         });
       });
 
-      selectedArticles.sort(function (first, second) {
+      articles.sort(function (first, second) {
         const scoreDifference = second.score - first.score;
 
         if (scoreDifference !== 0) {
           return scoreDifference;
         }
 
-        const firstDate = new Date(first.pubDate || "1900-01-01").getTime();
-        const secondDate = new Date(second.pubDate || "1900-01-01").getTime();
+        const firstDate = new Date(
+          first.pubDate || "1900-01-01"
+        ).getTime();
+
+        const secondDate = new Date(
+          second.pubDate || "1900-01-01"
+        ).getTime();
 
         return secondDate - firstDate;
       });
 
-      const finalArticles = selectedArticles.slice(0, MAX_ARTICLES);
-
-      localStorage.setItem(
-        CACHE_KEY,
-        JSON.stringify({
-          savedAt: Date.now(),
-          items: finalArticles
-        })
-      );
-
-      return finalArticles;
+      return articles.slice(0, MAX_ARTICLES);
     }
 
     function createNewsCard(article) {
@@ -2786,8 +2573,8 @@
         article.source + " · " + formatNewsDate(article.pubDate);
 
       const title = document.createElement("h3");
-
       const titleLink = document.createElement("a");
+
       titleLink.href = article.link;
       titleLink.target = "_blank";
       titleLink.rel = "noopener noreferrer";
@@ -2798,12 +2585,11 @@
       const summary = document.createElement("p");
       summary.className = "news-summary";
       summary.textContent =
-        "Peer-reviewed plant abiotic-stress or climate-resilience research discovery.";
+        "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience.";
 
       const readLink = document.createElement("p");
       readLink.className = "news-read-link";
-      readLink.textContent =
-        "Read the article through DOI / publisher page →";
+      readLink.textContent = "Read the original research article →";
 
       card.appendChild(meta);
       card.appendChild(title);
@@ -2817,20 +2603,24 @@
       const ticker = document.getElementById("plant-news-ticker");
       const grid = document.getElementById("plant-news-grid");
       const status = document.getElementById("plant-news-status");
+      const button = document.getElementById("refresh-news-button");
+
+      button.disabled = true;
+      button.textContent = "Loading discoveries...";
+
+      ticker.textContent = "Searching selected peer-reviewed journals...";
+      grid.innerHTML =
+        '<div class="news-empty">Retrieving current plant abiotic-stress discovery records...</div>';
 
       try {
-        const articles = await getAbioticStressResearchArticles();
+        const articles = await getLatestAbioticStressArticles();
 
         if (!articles.length) {
-          throw new Error("No relevant research articles found.");
+          throw new Error("No relevant selected-journal records found.");
         }
 
         ticker.innerHTML = "";
 
-        /*
-          Articles are listed once only.
-          This avoids immediate duplicate headlines.
-        */
         articles.forEach(function (article) {
           const tickerLink = document.createElement("a");
 
@@ -2849,12 +2639,19 @@
           grid.appendChild(createNewsCard(article));
         });
 
+        const now = new Date();
+
         status.textContent =
           articles.length +
-          " recent peer-reviewed plant abiotic-stress research records loaded.";
+          " current selected-journal research records loaded at " +
+          now.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit"
+          }) +
+          ".";
 
       } catch (error) {
-        console.error("Abiotic-stress news loading error:", error);
+        console.error("Journal news loading error:", error);
 
         ticker.innerHTML = "";
 
@@ -2866,36 +2663,34 @@
         fallbackLink.target = "_blank";
         fallbackLink.rel = "noopener noreferrer";
         fallbackLink.textContent =
-          "🌿 Unable to load the live research feed. Search Crossref for plant abiotic-stress publications →";
+          "🌿 Live journal metadata are temporarily unavailable. Search Crossref for plant abiotic-stress research →";
 
         ticker.appendChild(fallbackLink);
 
-        grid.innerHTML = "";
-
-        const message = document.createElement("div");
-        message.className = "news-empty";
-        message.textContent =
-          "The live research feed could not be retrieved at this moment. Please refresh the page or use the Crossref search link above.";
-
-        grid.appendChild(message);
+        grid.innerHTML =
+          '<div class="news-empty">The live selected-journal feed could not be retrieved right now. Please use “Refresh discoveries” or reload the webpage.</div>';
 
         status.textContent =
-          "Live Crossref research feed temporarily unavailable.";
+          "Live selected-journal feed temporarily unavailable.";
+      } finally {
+        button.disabled = false;
+        button.textContent = "↻ Refresh discoveries";
       }
     }
 
+    document
+      .getElementById("refresh-news-button")
+      .addEventListener("click", loadPlantAbioticStressNews);
+
     loadPlantAbioticStressNews();
 
-    /*
-      INTERNATIONAL COLLABORATION MAP
-    */
+    /* Collaboration map */
 
     const collaboratorCountries = [
       {
         country: "United States",
         role: "Primary Research and Collaboration Country",
         category: "primary",
-        verified: true,
         latitude: 39.8283,
         longitude: -98.5795,
         focus:
@@ -2905,7 +2700,6 @@
         country: "Bangladesh",
         role: "International Co-Author Collaboration",
         category: "collaboration",
-        verified: true,
         latitude: 23.6850,
         longitude: 90.3563,
         focus:
@@ -2915,7 +2709,6 @@
         country: "India",
         role: "International Co-Author Collaboration",
         category: "collaboration",
-        verified: true,
         latitude: 20.5937,
         longitude: 78.9629,
         focus:
@@ -2925,7 +2718,6 @@
         country: "China",
         role: "International Co-Author Collaboration",
         category: "collaboration",
-        verified: true,
         latitude: 35.8617,
         longitude: 104.1954,
         focus:
@@ -2935,7 +2727,6 @@
         country: "Japan",
         role: "International Co-Author Collaboration",
         category: "collaboration",
-        verified: true,
         latitude: 36.2048,
         longitude: 138.2529,
         focus:
@@ -2945,7 +2736,6 @@
         country: "South Korea",
         role: "International Co-Author Collaboration",
         category: "collaboration",
-        verified: true,
         latitude: 35.9078,
         longitude: 127.7669,
         focus:
@@ -2955,7 +2745,6 @@
         country: "Vietnam",
         role: "International Co-Author Collaboration",
         category: "collaboration",
-        verified: true,
         latitude: 14.0583,
         longitude: 108.2772,
         focus:
@@ -2963,113 +2752,78 @@
       }
     ];
 
-    const verifiedCountries = collaboratorCountries.filter(function (country) {
-      return country.verified === true;
-    });
-
     const countryList = document.getElementById("collaborator-country-list");
 
-    verifiedCountries.forEach(function (site) {
+    collaboratorCountries.forEach(function (site) {
       const countryItem = document.createElement("li");
       countryItem.textContent = site.country;
       countryList.appendChild(countryItem);
     });
 
-    const collaboratorMap = L.map("collaborator-map", {
-      scrollWheelZoom: false,
-      zoomControl: true,
-      worldCopyJump: true
-    });
+    if (typeof L !== "undefined") {
+      const collaboratorMap = L.map("collaborator-map", {
+        scrollWheelZoom: false,
+        zoomControl: true,
+        worldCopyJump: true
+      });
 
-    collaboratorMap.setView([22, 20], 2);
+      collaboratorMap.setView([22, 20], 2);
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      minZoom: 2,
-      maxZoom: 19,
-      subdomains: ["a", "b", "c"],
-      crossOrigin: true,
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors'
-    }).addTo(collaboratorMap);
-
-    const markerColours = {
-      primary: "#a8460a",
-      collaboration: "#0077b6"
-    };
-
-    const collaboratorBounds = L.latLngBounds([]);
-
-    verifiedCountries.forEach(function (site) {
-      const marker = L.circleMarker(
-        [site.latitude, site.longitude],
+      L.tileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
         {
-          radius: site.category === "primary" ? 10 : 8,
-          color: "#ffffff",
-          weight: 3,
-          fillColor: markerColours[site.category],
-          fillOpacity: 1
+          minZoom: 2,
+          maxZoom: 19,
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors'
         }
       ).addTo(collaboratorMap);
 
-      marker.bindPopup(
-        "<strong>" + site.country + "</strong><br><br>" +
-        "<strong>" + site.role + "</strong><br><br>" +
-        site.focus
-      );
+      const markerColours = {
+        primary: "#a8460a",
+        collaboration: "#0077b6"
+      };
 
-      collaboratorBounds.extend([site.latitude, site.longitude]);
-    });
+      const collaboratorBounds = L.latLngBounds([]);
 
-    function fitCollaboratorMap() {
-      collaboratorMap.invalidateSize();
+      collaboratorCountries.forEach(function (site) {
+        const marker = L.circleMarker(
+          [site.latitude, site.longitude],
+          {
+            radius: site.category === "primary" ? 10 : 8,
+            color: "#ffffff",
+            weight: 3,
+            fillColor: markerColours[site.category],
+            fillOpacity: 1
+          }
+        ).addTo(collaboratorMap);
 
-      if (verifiedCountries.length > 0) {
+        marker.bindPopup(
+          "<strong>" + site.country + "</strong><br><br>" +
+          "<strong>" + site.role + "</strong><br><br>" +
+          site.focus
+        );
+
+        collaboratorBounds.extend([site.latitude, site.longitude]);
+      });
+
+      function fitCollaboratorMap() {
+        collaboratorMap.invalidateSize();
+
         collaboratorMap.fitBounds(collaboratorBounds, {
           padding: [55, 55],
           maxZoom: 2
         });
       }
-    }
 
-    window.addEventListener("load", function () {
-      setTimeout(fitCollaboratorMap, 500);
-    });
+      window.addEventListener("load", function () {
+        setTimeout(fitCollaboratorMap, 500);
+      });
 
-    window.addEventListener("resize", function () {
-      collaboratorMap.invalidateSize();
-      fitCollaboratorMap();
-    });
-
-    /* Deadline countdowns */
-
-    function updateDeadlineCountdowns() {
-      document.querySelectorAll("[data-deadline]").forEach(function (element) {
-        const deadlineText = element.getAttribute("data-deadline");
-        const deadline = new Date(deadlineText + "T23:59:59");
-        const now = new Date();
-        const difference = deadline.getTime() - now.getTime();
-
-        if (difference < 0) {
-          element.textContent =
-            "Deadline has passed — please check the publisher page for updates.";
-          return;
-        }
-
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-
-        if (days === 0) {
-          element.textContent = "Deadline is today.";
-        } else if (days === 1) {
-          element.textContent = "1 day remaining before the stated deadline.";
-        } else {
-          element.textContent =
-            days + " days remaining before the stated deadline.";
-        }
+      window.addEventListener("resize", function () {
+        collaboratorMap.invalidateSize();
       });
     }
-
-    updateDeadlineCountdowns();
-    setInterval(updateDeadlineCountdowns, 60000);
   </script>
 </body>
 </html>

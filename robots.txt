@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mrahman-cmd.github.io/mezanurrahman-website/sitemap.xml

@@ -6,12 +6,12 @@
 
   <meta
     name="description"
-    content="Dr. Md. Mezanur Rahman is a plant scientist working on combined abiotic stress biology, high-throughput phenotyping, plant physiology, population genomics, GWAS, and multi-omics."
+    content="Dr. Md. Mezanur Rahman – Plant scientist working on combined abiotic stress biology, high-throughput phenotyping, population genomics, GWAS, multi-omics, and climate-resilient agriculture."
   >
 
   <title>Dr. Md. Mezanur Rahman | Plant Scientist</title>
 
-  <!-- Leaflet Map CSS -->
+  <!-- Leaflet interactive map CSS -->
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
@@ -123,9 +123,7 @@
       color: var(--navy);
     }
 
-    /* =========================================================
-       NAVIGATION
-       ========================================================= */
+    /* Navigation */
 
     .top-bar {
       position: sticky;
@@ -181,9 +179,7 @@
       color: #ffd08b;
     }
 
-    /* =========================================================
-       HERO
-       ========================================================= */
+    /* Hero */
 
     .hero {
       display: flex;
@@ -257,9 +253,7 @@
       object-fit: cover;
     }
 
-    /* =========================================================
-       ABOUT
-       ========================================================= */
+    /* About */
 
     .about-grid {
       display: grid;
@@ -311,9 +305,7 @@
       color: #ffd08b;
     }
 
-    /* =========================================================
-       METRICS
-       ========================================================= */
+    /* Metrics */
 
     .metrics,
     .network-map-section,
@@ -360,17 +352,7 @@
       font-weight: 700;
     }
 
-    /* =========================================================
-       RESEARCH CARDS
-       ========================================================= */
-
-    .subhead {
-      margin: 50px 0 12px;
-      padding-left: 14px;
-      border-left: 5px solid var(--orange);
-      color: var(--navy);
-      font-size: 1.28rem;
-    }
+    /* Research cards */
 
     .research-grid,
     .insight-grid,
@@ -419,9 +401,7 @@
       font-size: 0.94rem;
     }
 
-    /* =========================================================
-       EXPERIENCE
-       ========================================================= */
+    /* Experience */
 
     .experience {
       background: var(--navy);
@@ -480,9 +460,7 @@
       color: #d1e3ec;
     }
 
-    /* =========================================================
-       GLOBAL COLLABORATION MAP
-       ========================================================= */
+    /* Global collaboration map */
 
     .map-note {
       max-width: 900px;
@@ -515,11 +493,7 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    /*
-      Important Leaflet repair:
-      This prevents global image styling from making Leaflet tiles
-      resize and causing blank white rectangular spaces on the map.
-    */
+    /* Prevents the normal img CSS from breaking Leaflet map tiles */
     .leaflet-container img,
     .leaflet-tile-container img,
     .leaflet-marker-pane img,
@@ -604,9 +578,7 @@
       display: none;
     }
 
-    /* =========================================================
-       OPPORTUNITIES
-       ========================================================= */
+    /* Opportunities */
 
     .opportunities {
       background: var(--white);
@@ -681,9 +653,7 @@
       background: var(--orange);
     }
 
-    /* =========================================================
-       PUBLICATIONS
-       ========================================================= */
+    /* Publications */
 
     .pub-year {
       margin: 40px 0 0;
@@ -748,9 +718,7 @@
       text-decoration: underline;
     }
 
-    /* =========================================================
-       EDUCATION, SKILLS, CONTACT
-       ========================================================= */
+    /* Education, skills, and contact */
 
     .two-column-grid {
       display: grid;
@@ -846,9 +814,7 @@
       text-align: center;
     }
 
-    /* =========================================================
-       RESPONSIVE DESIGN
-       ========================================================= */
+    /* Responsive design */
 
     @media (max-width: 950px) {
       nav {
@@ -931,7 +897,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#insights">Insights</a></li>
-        <li><a href="#network">Global Network</a></li>
+        <li><a href="#network">Collaborators</a></li>
         <li><a href="#opportunities">Opportunities</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -940,7 +906,7 @@
   </header>
 
   <main>
-    <!-- HERO -->
+    <!-- Hero -->
     <section class="hero" id="home">
       <div class="hero-content">
         <div>
@@ -986,7 +952,7 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- About -->
     <section id="about">
       <div class="container about-grid">
         <div>
@@ -1058,7 +1024,7 @@
       </div>
     </section>
 
-    <!-- METRICS -->
+    <!-- Metrics -->
     <section class="metrics">
       <div class="container">
         <span class="section-label">Research Profile</span>
@@ -1098,7 +1064,7 @@
       </div>
     </section>
 
-    <!-- RESEARCH -->
+    <!-- Research -->
     <section id="research">
       <div class="container">
         <span class="section-label">Research Expertise</span>
@@ -1174,7 +1140,7 @@
       </div>
     </section>
 
-    <!-- INSIGHTS -->
+    <!-- Insights -->
     <section id="insights">
       <div class="container">
         <span class="section-label">Scientific Insights</span>
@@ -1242,7 +1208,7 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- Experience -->
     <section class="experience">
       <div class="container">
         <span class="section-label">Professional Experience</span>
@@ -1286,7 +1252,7 @@
       </div>
     </section>
 
-    <!-- GLOBAL COLLABORATION MAP -->
+    <!-- Global Collaboration Map -->
     <section class="network-map-section" id="network">
       <div class="container">
         <span class="section-label">Global Collaboration Network</span>
@@ -1304,15 +1270,15 @@
         <p class="map-note">
           This map represents countries associated with collaborating
           researchers and co-author affiliations in published scientific work.
-          Markers indicate countries or broad geographical locations, not
-          individual research centres or universities.
+          Markers show broad country-level locations, not research centres,
+          universities, laboratories, or institutional locations.
         </p>
 
         <div class="network-map-wrapper">
           <div
             id="collaborator-map"
             role="application"
-            aria-label="Interactive world map showing international research collaborator countries"
+            aria-label="Interactive world map showing countries of international research collaborators"
           ></div>
 
           <div class="map-legend">
@@ -1330,7 +1296,7 @@
       </div>
     </section>
 
-    <!-- OPPORTUNITIES -->
+    <!-- Opportunities -->
     <section class="opportunities" id="opportunities">
       <div class="container">
         <span class="section-label">Upcoming Opportunities</span>
@@ -1401,7 +1367,9 @@
           </article>
 
           <article class="event-card">
-            <p class="event-type">MDPI · International Journal of Molecular Sciences</p>
+            <p class="event-type">
+              MDPI · International Journal of Molecular Sciences
+            </p>
 
             <h3>Plant Epigenetic Memory Under Abiotic Stress</h3>
 
@@ -1429,7 +1397,7 @@
       </div>
     </section>
 
-    <!-- PUBLICATIONS -->
+    <!-- Publications -->
     <section id="publications">
       <div class="container">
         <span class="section-label">Selected Publications</span>
@@ -1454,11 +1422,14 @@
               uncouple yield from tolerance in rice: a review.
             </a>
           </h3>
+
           <p class="authors">
             Bulle M, Kondi RKR, <strong>Rahman MM</strong>, Sharma M, Rana P,
             Chaudhary C, Subudhi PK.
           </p>
+
           <p>International Journal of Biological Macromolecules, 382, 154254.</p>
+
           <span class="tag">Review</span>
         </article>
 
@@ -1473,12 +1444,15 @@
               for mitigating salinity stress in plants.
             </a>
           </h3>
+
           <p class="authors">
             Moharana A, Dhruw L, Chakraborty A, Pashwan P, Keya SS,
             <strong>Rahman MM</strong>, Singh A, Bhardwaj M, Tran L-SP,
             Gupta A.
           </p>
+
           <p>International Journal of Molecular Sciences, 27(16), 7494.</p>
+
           <span class="tag">Review</span>
         </article>
 
@@ -1495,11 +1469,14 @@
               adaptation to drought.
             </a>
           </h3>
+
           <p class="authors">
             <strong>Rahman MM</strong>, Keya SS, Bulle M, Ahsan SM,
             Rahman MA, Roni MS, Al Noor MM, Hasan M.
           </p>
+
           <p>Functional Plant Biology, 52, FP24355.</p>
+
           <span class="tag">Review</span>
           <span class="tag">First Author</span>
         </article>
@@ -1515,12 +1492,15 @@
               stress sensitivity under salinity and waterlogging.
             </a>
           </h3>
+
           <p class="authors">
             Akter M, Keya SS, Gupta A, Islam MR, Rahman MA, Motaher Hossain M,
             Nguyen KH, Tahiat T, Armane Alam K, Duc Le T, Ahmed M,
             Tran L-SP, <strong>Rahman MM</strong>.
           </p>
+
           <p>Plant Science, 360, 112709.</p>
+
           <span class="tag">Research Article</span>
           <span class="tag">Soybean</span>
         </article>
@@ -1538,11 +1518,14 @@
               stress tolerance in plants.
             </a>
           </h3>
+
           <p class="authors">
             <strong>Rahman MM</strong>, Keya SS, Sahu A, Gupta A, Dhingra A,
             Tran L-SP, Mostofa MG.
           </p>
+
           <p>Stress Biology, 4(1), 34 (2024).</p>
+
           <span class="tag">Review</span>
           <span class="tag">First Author</span>
         </article>
@@ -1558,7 +1541,7 @@
       </div>
     </section>
 
-    <!-- EDUCATION AND ACHIEVEMENTS -->
+    <!-- Education and achievements -->
     <section class="two-column">
       <div class="container two-column-grid">
         <div>
@@ -1632,7 +1615,7 @@
       </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- Skills -->
     <section>
       <div class="container">
         <span class="section-label">Methods and Technical Skills</span>
@@ -1665,7 +1648,7 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- Contact -->
     <section class="contact" id="contact">
       <div class="container">
         <div class="contact-box">
@@ -1719,17 +1702,21 @@
   </main>
 
   <footer>
-    <p>© 2026 Dr. Md. Mezanur Rahman · Plant Scientist · Combined Abiotic Stress Biology</p>
+    <p>
+      © 2026 Dr. Md. Mezanur Rahman · Plant Scientist · Combined Abiotic Stress Biology
+    </p>
   </footer>
 
-  <!-- Leaflet JavaScript -->
+  <!-- Leaflet interactive map JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <script>
     /* =========================================================
        GLOBAL COLLABORATION MAP
-       Markers represent collaborator/co-author COUNTRIES,
-       not research institutions or research centres.
+
+       Each marker represents a COUNTRY of co-authors or research
+       collaborators, not a research centre, university, laboratory,
+       or individual institution.
        ========================================================= */
 
     var collaboratorMap = L.map("collaborator-map", {
@@ -1755,12 +1742,9 @@
     };
 
     /*
-      IMPORTANT:
-      Edit this list if you identify additional co-author countries
-      from the affiliations in your DOI papers.
-
-      Each marker is placed at a broad country-level geographic point,
-      not at a university, city, laboratory, or research centre.
+      Add or remove countries in this list when you identify
+      additional collaborator countries from your publication DOI
+      records and co-author affiliations.
     */
     var collaboratorCountries = [
       {
@@ -1880,9 +1864,7 @@
       fitCollaboratorMap();
     });
 
-    /* =========================================================
-       SPECIAL ISSUE DEADLINE COUNTDOWNS
-       ========================================================= */
+    /* Special issue deadline countdowns */
 
     function updateDeadlineCountdowns() {
       document.querySelectorAll("[data-deadline]").forEach(function (element) {

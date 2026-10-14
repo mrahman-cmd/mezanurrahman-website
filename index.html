@@ -11,7 +11,6 @@
 
   <title>Dr. Md. Mezanur Rahman | Plant Scientist</title>
 
-  <!-- Leaflet map stylesheet -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -75,7 +74,6 @@
       color: inherit;
     }
 
-    /* Navigation */
     .top-bar {
       position: sticky;
       top: 0;
@@ -130,7 +128,6 @@
       color: #ffd08b;
     }
 
-    /* Shared layout */
     section {
       padding: 82px 0;
     }
@@ -195,7 +192,6 @@
       color: var(--navy);
     }
 
-    /* Hero */
     .hero {
       display: flex;
       align-items: center;
@@ -268,7 +264,6 @@
       object-fit: cover;
     }
 
-    /* About */
     .about-grid {
       display: grid;
       grid-template-columns: 1.65fr 1fr;
@@ -319,9 +314,7 @@
       color: #ffd08b;
     }
 
-    /* Metrics */
     .metrics,
-    .editorial,
     .two-column,
     .network-map-section {
       background: var(--light-blue);
@@ -365,7 +358,6 @@
       color: var(--blue);
     }
 
-    /* Research */
     .subhead {
       margin: 52px 0 10px;
       padding-left: 14px;
@@ -421,7 +413,6 @@
       font-size: 0.94rem;
     }
 
-    /* Experience */
     .experience {
       background: var(--navy);
       color: var(--white);
@@ -483,7 +474,6 @@
       color: #d1e3ec;
     }
 
-    /* Network map */
     .network-map-wrapper {
       margin-top: 35px;
       overflow: hidden;
@@ -550,7 +540,6 @@
       margin-bottom: 0;
     }
 
-    /* Special Issue opportunities */
     .opportunities {
       background: var(--white);
     }
@@ -610,8 +599,7 @@
       font-size: 0.82rem !important;
     }
 
-    .event-link,
-    .editorial-link {
+    .event-link {
       display: inline-block;
       padding: 10px 14px;
       background: var(--blue);
@@ -621,66 +609,10 @@
       text-decoration: none;
     }
 
-    .event-link:hover,
-    .editorial-link:hover {
+    .event-link:hover {
       background: var(--orange);
     }
 
-    /* Editorial */
-    .editorial-grid {
-      display: grid;
-      gap: 22px;
-      margin-top: 35px;
-    }
-
-    .editorial-card {
-      display: grid;
-      grid-template-columns: 165px 1fr auto;
-      gap: 26px;
-      align-items: center;
-      padding: 28px;
-      border-left: 6px solid var(--orange);
-      background: var(--white);
-      box-shadow: 0 8px 22px rgba(0, 59, 92, 0.09);
-    }
-
-    .editorial-role {
-      display: inline-block;
-      padding: 7px 11px;
-      background: var(--navy);
-      color: var(--white);
-      font-size: 0.73rem;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-    }
-
-    .editorial-journal {
-      color: var(--blue) !important;
-      font-size: 0.9rem !important;
-      font-weight: 700;
-    }
-
-    .editorial-card h3 {
-      margin: 8px 0 6px;
-      color: var(--navy);
-      font-size: 1.18rem;
-      line-height: 1.35;
-    }
-
-    .editorial-card p {
-      color: var(--muted);
-      font-size: 0.93rem;
-    }
-
-    .editorial-deadline {
-      margin-top: 8px;
-      color: var(--orange) !important;
-      font-size: 0.83rem !important;
-      font-weight: 700;
-    }
-
-    /* Publications */
     .pub-year {
       margin: 40px 0 0;
       padding-bottom: 6px;
@@ -744,7 +676,6 @@
       text-decoration: underline;
     }
 
-    /* Education and funding */
     .two-column-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -773,7 +704,6 @@
       font-size: 0.92rem;
     }
 
-    /* Skills */
     .skills {
       display: flex;
       flex-wrap: wrap;
@@ -791,7 +721,6 @@
       font-weight: 600;
     }
 
-    /* Contact */
     .contact {
       text-align: center;
     }
@@ -870,15 +799,6 @@
       .insight-grid {
         grid-template-columns: 1fr;
       }
-
-      .editorial-card {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-
-      .editorial-link {
-        width: fit-content;
-      }
     }
 
     @media (max-width: 600px) {
@@ -927,7 +847,6 @@
         <li><a href="#insights">Insights</a></li>
         <li><a href="#network">Network</a></li>
         <li><a href="#opportunities">SI Opportunities</a></li>
-        <li><a href="#editorial">Editorial</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -935,7 +854,6 @@
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero" id="home">
       <div class="hero-content">
         <div>
@@ -988,7 +906,6 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about">
       <div class="container about-grid">
         <div>
@@ -1079,7 +996,6 @@
       </div>
     </section>
 
-    <!-- METRICS -->
     <section class="metrics">
       <div class="container">
         <span class="section-label">Research Profile</span>
@@ -1120,7 +1036,6 @@
       </div>
     </section>
 
-    <!-- RESEARCH -->
     <section id="research">
       <div class="container">
         <span class="section-label">Research Expertise</span>
@@ -1212,7 +1127,6 @@
       </div>
     </section>
 
-    <!-- INSIGHTS -->
     <section id="insights">
       <div class="container">
         <span class="section-label">Scientific Insights</span>
@@ -1288,7 +1202,6 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
     <section class="experience" id="experience">
       <div class="container">
         <span class="section-label">Professional Experience</span>
@@ -1341,7 +1254,6 @@
       </div>
     </section>
 
-    <!-- NETWORK MAP -->
     <section class="network-map-section" id="network">
       <div class="container">
         <span class="section-label">Research Network</span>
@@ -1381,7 +1293,6 @@
       </div>
     </section>
 
-    <!-- SPECIAL ISSUE OPPORTUNITIES -->
     <section class="opportunities" id="opportunities">
       <div class="container">
         <span class="section-label">Upcoming Opportunities</span>
@@ -1485,135 +1396,6 @@
       </div>
     </section>
 
-    <!-- EDITORIAL -->
-    <section class="editorial" id="editorial">
-      <div class="container">
-        <span class="section-label">Editorial Contributions</span>
-        <h2 class="section-title">Editorial appointments</h2>
-
-        <p class="section-text">
-          I contribute to international scholarly publishing as a Guest Editor,
-          Topic Editor, and editorial-board member in plant science, plant
-          stress biology, molecular biology, and crop resilience research.
-        </p>
-
-        <div class="editorial-grid">
-          <article class="editorial-card">
-            <div>
-              <span class="editorial-role">Guest Editor</span>
-            </div>
-
-            <div>
-              <p class="editorial-journal"><em>Plant Stress</em> · Elsevier</p>
-
-              <h3>
-                Plant Response to Drought and Combined with Other Abiotic
-                Stresses: Physiological, Molecular, and Genetic Mechanisms of
-                Tolerance
-              </h3>
-
-              <p>
-                Special Issue focused on plant physiological, molecular, and
-                genetic mechanisms involved in drought tolerance and responses
-                to combined abiotic stresses.
-              </p>
-
-              <p class="editorial-deadline">
-                Manuscript submission deadline: 1 April 2027
-              </p>
-            </div>
-
-            <a
-              class="editorial-link"
-              href="https://www.sciencedirect.com/special-issue/337077/plant-response-to-drought-and-combined-with-other-abiotic-stresses-physiological-molecular-and-genetic-mechanisms-of-tolerance"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Special Issue →
-            </a>
-          </article>
-
-          <article class="editorial-card">
-            <div>
-              <span class="editorial-role">Topic Editor</span>
-            </div>
-
-            <div>
-              <p class="editorial-journal">
-                <em>Frontiers in Plant Science</em> · Frontiers
-              </p>
-
-              <h3>Root and Shoot Developmental Plasticity in Response to Stress</h3>
-
-              <p>
-                Research Topic addressing developmental adaptation of roots and
-                shoots under environmental stress, integrating physiological,
-                molecular, genetic, and phenotypic perspectives.
-              </p>
-
-              <p class="editorial-deadline">
-                Manuscript submission deadline: 25 March 2027
-              </p>
-            </div>
-
-            <a
-              class="editorial-link"
-              href="https://www.frontiersin.org/research-topics/82452/root-and-shoot-developmental-plasticity-in-response-to-stress"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Research Topic →
-            </a>
-          </article>
-
-          <article class="editorial-card">
-            <div>
-              <span class="editorial-role">Guest Editor</span>
-            </div>
-
-            <div>
-              <p class="editorial-journal">
-                <em>International Journal of Molecular Sciences</em> · MDPI
-              </p>
-
-              <h3>Plant Epigenetic Memory Under Abiotic Stress</h3>
-
-              <p>
-                Special Issue focused on chromatin regulation, epigenetic
-                mechanisms, stress memory, and molecular pathways that shape
-                plant adaptation to adverse environmental conditions.
-              </p>
-
-              <p class="editorial-deadline">
-                Manuscript submission deadline: 31 March 2027
-              </p>
-            </div>
-
-            <a
-              class="editorial-link"
-              href="https://www.mdpi.com/journal/ijms/special_issues"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View IJMS Issues →
-            </a>
-          </article>
-        </div>
-
-        <h3 class="subhead">Editorial board and peer-review service</h3>
-
-        <p class="section-text">
-          I also serve as an Editorial Board Member for
-          <em>BMC Plant Biology</em> and <em>Frontiers in Plant Science</em>,
-          and as a Junior Editorial Board Member for <em>Plant Stress</em>. My
-          editorial and peer-review activities support rigorous, transparent,
-          and impactful research in plant biology, stress physiology, molecular
-          mechanisms, and sustainable agriculture.
-        </p>
-      </div>
-    </section>
-
-    <!-- PUBLICATIONS -->
     <section id="publications">
       <div class="container">
         <span class="section-label">Selected Publications</span>
@@ -1825,7 +1607,6 @@
       </div>
     </section>
 
-    <!-- EDUCATION, GRANTS AND SERVICE -->
     <section class="two-column">
       <div class="container two-column-grid">
         <div>
@@ -1912,7 +1693,6 @@
       </div>
     </section>
 
-    <!-- SKILLS -->
     <section>
       <div class="container">
         <span class="section-label">Methods & Technical Skills</span>
@@ -1945,7 +1725,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section class="contact" id="contact">
       <div class="container">
         <div class="contact-box">
@@ -2002,7 +1781,6 @@
     <p>© 2026 Dr. Md. Mezanur Rahman · Oak Ridge, Tennessee, USA</p>
   </footer>
 
-  <!-- Leaflet Map JavaScript -->
   <script
     src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
@@ -2010,7 +1788,6 @@
   ></script>
 
   <script>
-    /* Interactive research network map */
     var collaboratorMap = L.map("collaborator-map", {
       scrollWheelZoom: false
     }).setView([25, 15], 2);
@@ -2107,7 +1884,6 @@
         .bindPopup(popupContent);
     });
 
-    /* Countdown for Special Issue deadlines */
     function updateDeadlineCountdowns() {
       document.querySelectorAll("[data-deadline]").forEach(function (element) {
         var deadlineText = element.getAttribute("data-deadline");

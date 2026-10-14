@@ -1,22 +1,20 @@
-name: Update Plant Science News
+name: Update Plant Abiotic Stress Discovery News
 
 on:
-  schedule:
-    # Runs every day at 5:17 UTC
-    - cron: "17 5 * * *"
-
-  # Lets you run it manually from the GitHub Actions page
   workflow_dispatch:
+
+  schedule:
+    - cron: "15 */6 * * *"
 
 permissions:
   contents: write
 
 jobs:
-  update-news:
+  update-plant-news:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download repository files
+      - name: Check out repository
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -24,13 +22,422 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Download latest plant science news
-        run: python scripts/update_plant_news.py
+      - name: Retrieve selected-journal abiotic stress research
+        run: |
+          python <<'PYTHON'
+          import json
+          import os
+          import re
+          import time
+          import urllib.parse
+          import urllib.request
+          from datetime import datetime, timedelta, timezone
 
-      - name: Save updated news file
+          OUTPUT_FILE = "data/plant-news.json"
+          MAX_ARTICLES = 12
+          DAYS_BACK = 730
+
+          JOURNALS = [
+              {
+                  "name": "Nature",
+                  "issn": "0028-0836",
+                  "general": True,
+                  "priority": 100
+              },
+              {
+                  "name": "Science",
+                  "issn": "0036-8075",
+                  "general": True,
+                  "priority": 98
+              },
+              {
+                  "name": "Nature Communications",
+                  "issn": "2041-1723",
+                  "general": True,
+                  "priority": 96
+              },
+              {
+                  "name": "Science Advances",
+                  "issn": "2375-2548",
+                  "general": True,
+                  "priority": 94
+              },
+              {
+                  "name": "Plant Physiology",
+                  "issn": "0032-0889",
+                  "general": False,
+                  "priority": 90
+              },
+              {
+                  "name": "The Plant Cell",
+                  "issn": "1040-4651",
+                  "general": False,
+                  "priority": 88
+              },
+              {
+                  "name": "New Phytologist",
+                  "issn": "0028-646X",
+                  "general": False,
+                  "priority": 86
+              },
+              {
+                  "name": "Plant, Cell & Environment",
+                  "issn": "0140-7791",
+                  "general": False,
+                  "priority": 84
+              },
+              {
+                  "name": "Plant Biotechnology Journal",
+                  "issn": "1467-7644",
+                  "general": False,
+                  "priority": 82
+              },
+              {
+                  "name": "Journal of Experimental Botany",
+                  "issn": "0022-0957",
+                  "general": False,
+                  "priority": 80
+              },
+              {
+                  "name": "The Plant Journal",
+                  "issn": "0960-7412",
+                  "general": False,
+                  "priority": 78
+              },
+              {
+                  "name": "Plant Communications",
+                  "issn": "2590-3322",
+                  "general": False,
+                  "priority": 76
+              },
+              {
+                  "name": "Plant Science",
+                  "issn": "0168-9452",
+                  "general": False,
+                  "priority": 74
+              }
+          ]
+
+          STRESS_TERMS = [
+              "abiotic stress",
+              "drought",
+              "water deficit",
+              "dehydration",
+              "heat stress",
+              "heat tolerance",
+              "heat resilience",
+              "salinity",
+              "salt stress",
+              "salt tolerance",
+              "waterlogging",
+              "flooding",
+              "submergence",
+              "cold stress",
+              "cold tolerance",
+              "chilling",
+              "freezing",
+              "temperature stress",
+              "thermal stress",
+              "osmotic stress",
+              "stress tolerance",
+              "stress resilience",
+              "climate resilience",
+              "climate adaptation"
+          ]
+
+          PLANT_TERMS = [
+              "plant",
+              "crop",
+              "rice",
+              "wheat",
+              "maize",
+              "corn",
+              "soybean",
+              "barley",
+              "sorghum",
+              "tomato",
+              "cotton",
+              "potato",
+              "arabidopsis",
+              "populus",
+              "tree",
+              "root",
+              "leaf",
+              "stomata",
+              "photosynthesis",
+              "seed",
+              "germination",
+              "chlorophyll",
+              "phytohormone"
+          ]
+
+          EXCLUDED_TERMS = [
+              "editorial",
+              "correction",
+              "corrigendum",
+              "retraction",
+              "erratum",
+              "obituary",
+              "memoriam",
+              "conference",
+              "congress",
+              "symposium",
+              "webinar",
+              "job",
+              "vacancy",
+              "position available",
+              "call for papers",
+              "degree",
+              "student",
+              "program",
+              "fellowship"
+          ]
+
+          def clean_text(value):
+              if not value:
+                  return ""
+
+              return re.sub(
+                  r"\s+",
+                  " ",
+                  re.sub(r"<[^>]+>", " ", str(value))
+              ).strip()
+
+          def get_article_date(item):
+              possible_fields = [
+                  "published-online",
+                  "published-print",
+                  "published",
+                  "issued",
+                  "created"
+              ]
+
+              for field in possible_fields:
+                  date_parts = item.get(field, {}).get("date-parts", [])
+
+                  if date_parts and date_parts[0]:
+                      parts = date_parts[0]
+
+                      try:
+                          year = int(parts[0])
+                          month = int(parts[1]) if len(parts) > 1 else 1
+                          day = int(parts[2]) if len(parts) > 2 else 1
+
+                          return datetime(
+                              year,
+                              month,
+                              day,
+                              tzinfo=timezone.utc
+                          ).isoformat().replace("+00:00", "Z")
+                      except (ValueError, IndexError):
+                          continue
+
+              return ""
+
+          def contains_any(text, terms):
+              return any(term in text for term in terms)
+
+          def is_relevant(item, journal):
+              title_list = item.get("title", [])
+              title = clean_text(
+                  title_list[0] if title_list else ""
+              ).lower()
+
+              if not title:
+                  return False
+
+              if contains_any(title, EXCLUDED_TERMS):
+                  return False
+
+              if not contains_any(title, STRESS_TERMS):
+                  return False
+
+              # Nature, Science, Nature Communications, and Science Advances
+              # must explicitly contain plant/crop context in the title.
+              if journal["general"] and not contains_any(
+                  title,
+                  PLANT_TERMS
+              ):
+                  return False
+
+              return True
+
+          def calculate_score(article):
+              title = article["title"].lower()
+              score = article["priority"]
+
+              for term in STRESS_TERMS:
+                  if term in title:
+                      score += 5
+
+              for term in PLANT_TERMS:
+                  if term in title:
+                      score += 2
+
+              return score
+
+          def get_journal_articles(journal, from_date):
+              params = {
+                  "filter": (
+                      f"from-pub-date:{from_date},"
+                      "type:journal-article"
+                  ),
+                  "sort": "published",
+                  "order": "desc",
+                  "rows": "100"
+              }
+
+              url = (
+                  "https://api.crossref.org/journals/"
+                  + urllib.parse.quote(journal["issn"])
+                  + "/works?"
+                  + urllib.parse.urlencode(params)
+              )
+
+              request = urllib.request.Request(
+                  url,
+                  headers={
+                      "Accept": "application/json",
+                      "User-Agent": (
+                          "MezanurRahmanPlantResearchNewsBot/1.0 "
+                          "(mailto:mrahman@gau.edu.bd)"
+                      )
+                  }
+              )
+
+              with urllib.request.urlopen(request, timeout=45) as response:
+                  payload = json.loads(
+                      response.read().decode("utf-8")
+                  )
+
+              return payload.get("message", {}).get("items", [])
+
+          today = datetime.now(timezone.utc).date()
+          from_date = today - timedelta(days=DAYS_BACK)
+
+          selected_articles = []
+          seen_articles = set()
+
+          for journal in JOURNALS:
+              try:
+                  journal_articles = get_journal_articles(
+                      journal,
+                      from_date.isoformat()
+                  )
+
+                  print(
+                      f"Retrieved {len(journal_articles)} records from "
+                      f"{journal['name']}"
+                  )
+
+              except Exception as error:
+                  print(
+                      f"Could not retrieve {journal['name']}: {error}"
+                  )
+                  continue
+
+              for item in journal_articles:
+                  if not is_relevant(item, journal):
+                      continue
+
+                  title_list = item.get("title", [])
+                  title = clean_text(
+                      title_list[0] if title_list else ""
+                  )
+
+                  doi = clean_text(item.get("DOI", ""))
+                  source_list = item.get("container-title", [])
+                  source = clean_text(
+                      source_list[0]
+                      if source_list
+                      else journal["name"]
+                  )
+
+                  link = (
+                      "https://doi.org/" + doi
+                      if doi
+                      else clean_text(item.get("URL", ""))
+                  )
+
+                  identifier = doi.lower() if doi else title.lower()
+
+                  if not title or not link or identifier in seen_articles:
+                      continue
+
+                  seen_articles.add(identifier)
+
+                  article = {
+                      "title": title,
+                      "link": link,
+                      "source": source,
+                      "pubDate": get_article_date(item),
+                      "priority": journal["priority"],
+                      "summary": (
+                          "Peer-reviewed research related to plant abiotic "
+                          "stress, stress tolerance, or climate resilience."
+                      )
+                  }
+
+                  article["score"] = calculate_score(article)
+
+                  selected_articles.append(article)
+
+              # Avoid making many requests too quickly.
+              time.sleep(1)
+
+          selected_articles.sort(
+              key=lambda article: (
+                  article["pubDate"] or "1900-01-01T00:00:00Z",
+                  article["score"]
+              ),
+              reverse=True
+          )
+
+          final_articles = selected_articles[:MAX_ARTICLES]
+
+          output = {
+              "updated": datetime.now(timezone.utc)
+                  .replace(microsecond=0)
+                  .isoformat()
+                  .replace("+00:00", "Z"),
+              "items": [
+                  {
+                      "title": article["title"],
+                      "link": article["link"],
+                      "source": article["source"],
+                      "pubDate": article["pubDate"],
+                      "summary": article["summary"]
+                  }
+                  for article in final_articles
+              ]
+          }
+
+          os.makedirs("data", exist_ok=True)
+
+          with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
+              json.dump(
+                  output,
+                  file,
+                  ensure_ascii=False,
+                  indent=2
+              )
+
+          print(
+              f"Saved {len(final_articles)} selected-journal articles to "
+              f"{OUTPUT_FILE}"
+          )
+          PYTHON
+
+      - name: Commit updated news data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add data/plant-news.json
-          git diff --cached --quiet || git commit -m "Update plant science news"
-          git push
+
+          if git diff --cached --quiet; then
+            echo "No news changes to commit."
+          else
+            git commit -m "Update plant abiotic-stress discovery news"
+            git push
+          fi

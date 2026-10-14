@@ -583,6 +583,156 @@
       font-weight: 700;
     }
 
+    /* Plant Science News */
+
+    .plant-news {
+      background: var(--light-blue);
+    }
+
+    .news-ticker-box {
+      display: flex;
+      align-items: stretch;
+      margin-top: 30px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-top: 6px solid var(--orange);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .news-ticker-label {
+      display: flex;
+      align-items: center;
+      padding: 15px 18px;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.94rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .news-ticker-window {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      min-width: 0;
+      overflow: hidden;
+      background: #f7fbfd;
+    }
+
+    .news-ticker-track {
+      display: inline-flex;
+      align-items: center;
+      width: max-content;
+      min-width: 100%;
+      padding: 13px 0;
+      white-space: nowrap;
+      animation: plantNewsScroll 75s linear infinite;
+    }
+
+    .news-ticker-track a {
+      display: inline-block;
+      margin-right: 62px;
+      color: var(--blue-dark);
+      font-size: 0.97rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .news-ticker-track a:hover {
+      color: var(--orange);
+      text-decoration: underline;
+    }
+
+    .news-ticker-track a::after {
+      margin-left: 62px;
+      color: var(--orange);
+      content: "•";
+    }
+
+    .news-ticker-window:hover .news-ticker-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes plantNewsScroll {
+      from {
+        transform: translateX(100%);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .news-status {
+      margin-top: 15px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .news-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 250px;
+      padding: 26px;
+      border-bottom: 5px solid var(--blue);
+      background: var(--white);
+      box-shadow: var(--shadow);
+      transition: 0.2s ease;
+    }
+
+    .news-card:hover {
+      border-bottom-color: var(--orange);
+      transform: translateY(-5px);
+    }
+
+    .news-card-meta {
+      margin-bottom: 12px;
+      color: var(--orange);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.75px;
+      text-transform: uppercase;
+    }
+
+    .news-card h3 {
+      margin-bottom: 14px;
+      color: var(--navy);
+      font-size: 1.18rem;
+      line-height: 1.35;
+    }
+
+    .news-card h3 a {
+      text-decoration: none;
+    }
+
+    .news-card h3 a:hover {
+      color: var(--blue-dark);
+      text-decoration: underline;
+    }
+
+    .news-card p {
+      margin-top: auto;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .news-empty {
+      grid-column: 1 / -1;
+      padding: 26px;
+      border-left: 5px solid var(--orange);
+      background: var(--white);
+      color: var(--muted);
+      box-shadow: var(--shadow);
+    }
+
     /* Experience */
 
     .experience {
@@ -1086,7 +1236,8 @@
 
       .research-grid,
       .project-grid,
-      .insight-grid {
+      .insight-grid,
+      .news-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -1135,6 +1286,18 @@
         grid-template-columns: 1fr;
       }
 
+      .news-ticker-box {
+        flex-direction: column;
+      }
+
+      .news-ticker-label {
+        justify-content: center;
+      }
+
+      .news-ticker-track {
+        animation-duration: 55s;
+      }
+
       #collaborator-map {
         height: 420px;
       }
@@ -1147,6 +1310,29 @@
 
       .country-list-box {
         padding: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .news-ticker-track {
+        display: block;
+        min-width: auto;
+        padding: 14px;
+        white-space: normal;
+        animation: none;
+      }
+
+      .news-ticker-track a {
+        display: block;
+        margin: 0 0 12px;
+      }
+
+      .news-ticker-track a::after {
+        content: "";
       }
     }
   </style>
@@ -1177,6 +1363,7 @@
         <li><a href="#research">Research</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#insights">Insights</a></li>
+        <li><a href="#plant-news">Plant News</a></li>
         <li><a href="#network">Collaborators</a></li>
         <li><a href="#opportunities">Opportunities</a></li>
         <li><a href="#publications">Publications</a></li>
@@ -1578,6 +1765,52 @@
               agricultural systems.
             </p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plant Science News -->
+    <section class="plant-news" id="plant-news">
+      <div class="container">
+        <span class="section-label">Plant Science News</span>
+
+        <h2 class="section-title">
+          Latest plant science, crop research, and climate-resilience news
+        </h2>
+
+        <p class="section-text">
+          Recent headlines are collected automatically by the GitHub Actions
+          workflow named “Update Plant Science News.” Select a headline to read
+          the article at its original publisher website.
+        </p>
+
+        <div
+          class="news-ticker-box"
+          aria-label="Scrolling latest plant science news headlines"
+        >
+          <div class="news-ticker-label">
+            🌿 Latest Headlines
+          </div>
+
+          <div class="news-ticker-window">
+            <div
+              class="news-ticker-track"
+              id="plant-news-ticker"
+              aria-live="polite"
+            >
+              Loading the latest plant science news...
+            </div>
+          </div>
+        </div>
+
+        <p class="news-status" id="plant-news-status">
+          Checking the latest news file...
+        </p>
+
+        <div class="news-grid" id="plant-news-grid" aria-live="polite">
+          <div class="news-empty">
+            Loading recent plant science news...
+          </div>
         </div>
       </div>
     </section>
@@ -2130,6 +2363,226 @@
         }
       });
     });
+
+    /*
+      PLANT SCIENCE NEWS
+
+      This loads the file created by your GitHub Actions workflow:
+
+      data/plant-news.json
+
+      The script accepts any of these JSON structures:
+
+      [
+        {
+          "title": "News headline",
+          "link": "https://example.com/article",
+          "source": "Publisher name",
+          "date": "2026-10-14"
+        }
+      ]
+
+      OR:
+
+      {
+        "items": [
+          {
+            "title": "News headline",
+            "link": "https://example.com/article",
+            "source": "Publisher name",
+            "pubDate": "2026-10-14"
+          }
+        ]
+      }
+    */
+
+    function safeNewsLink(link) {
+      try {
+        const url = new URL(link);
+
+        if (url.protocol === "https:" || url.protocol === "http:") {
+          return url.href;
+        }
+      } catch (error) {
+        return "";
+      }
+
+      return "";
+    }
+
+    function getNewsDate(article) {
+      return (
+        article.pubDate ||
+        article.published ||
+        article.publishedAt ||
+        article.date ||
+        article.created_at ||
+        ""
+      );
+    }
+
+    function formatNewsDate(dateValue) {
+      if (!dateValue) {
+        return "Latest Plant Science News";
+      }
+
+      const date = new Date(dateValue);
+
+      if (Number.isNaN(date.getTime())) {
+        return "Latest Plant Science News";
+      }
+
+      return date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric"
+      });
+    }
+
+    async function loadPlantScienceNews() {
+      const ticker = document.getElementById("plant-news-ticker");
+      const newsGrid = document.getElementById("plant-news-grid");
+      const newsStatus = document.getElementById("plant-news-status");
+
+      try {
+        /*
+          This is the file your GitHub Action must create and commit.
+          ?v= prevents browsers from showing an old cached news file.
+        */
+        const response = await fetch(
+          "data/plant-news.json?v=" + Date.now(),
+          {
+            cache: "no-store"
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("The plant-news.json file is not available yet.");
+        }
+
+        const data = await response.json();
+
+        const possibleArticles =
+          Array.isArray(data)
+            ? data
+            : (
+              data.items ||
+              data.articles ||
+              data.news ||
+              data.headlines ||
+              []
+            );
+
+        const articles = possibleArticles
+          .filter(function (article) {
+            return article && article.title && (article.link || article.url);
+          })
+          .map(function (article) {
+            return {
+              title: String(article.title).trim(),
+              link: safeNewsLink(article.link || article.url),
+              source: String(
+                article.source ||
+                article.publisher ||
+                article.site ||
+                "Plant Science News"
+              ).trim(),
+              date: getNewsDate(article)
+            };
+          })
+          .filter(function (article) {
+            return article.title && article.link;
+          })
+          .slice(0, 9);
+
+        if (articles.length === 0) {
+          throw new Error("No valid plant science articles were found.");
+        }
+
+        /* Create the scrolling news ticker */
+        ticker.innerHTML = "";
+
+        const tickerArticles = articles.concat(articles);
+
+        tickerArticles.forEach(function (article) {
+          const tickerLink = document.createElement("a");
+
+          tickerLink.href = article.link;
+          tickerLink.target = "_blank";
+          tickerLink.rel = "noopener noreferrer";
+          tickerLink.textContent = "🌿 " + article.title;
+
+          ticker.appendChild(tickerLink);
+        });
+
+        /* Create the latest-news cards */
+        newsGrid.innerHTML = "";
+
+        articles.slice(0, 6).forEach(function (article) {
+          const card = document.createElement("article");
+          card.className = "news-card";
+
+          const meta = document.createElement("p");
+          meta.className = "news-card-meta";
+          meta.textContent =
+            article.source + " · " + formatNewsDate(article.date);
+
+          const title = document.createElement("h3");
+          const titleLink = document.createElement("a");
+
+          titleLink.href = article.link;
+          titleLink.target = "_blank";
+          titleLink.rel = "noopener noreferrer";
+          titleLink.textContent = article.title;
+
+          title.appendChild(titleLink);
+
+          const sourceText = document.createElement("p");
+          sourceText.textContent =
+            "Read the original article at " + article.source + " →";
+
+          card.appendChild(meta);
+          card.appendChild(title);
+          card.appendChild(sourceText);
+
+          newsGrid.appendChild(card);
+        });
+
+        newsStatus.textContent =
+          articles.length +
+          " current headlines loaded automatically from the GitHub Actions news file.";
+
+      } catch (error) {
+        console.error("Plant Science News error:", error);
+
+        ticker.innerHTML = "";
+
+        const fallbackLink = document.createElement("a");
+
+        fallbackLink.href =
+          "https://news.google.com/search?q=plant%20science%20OR%20plant%20biology%20OR%20crop%20research";
+        fallbackLink.target = "_blank";
+        fallbackLink.rel = "noopener noreferrer";
+        fallbackLink.textContent =
+          "🌿 Plant Science News is temporarily unavailable. Open Google News plant science results →";
+
+        ticker.appendChild(fallbackLink);
+
+        newsGrid.innerHTML = "";
+
+        const emptyMessage = document.createElement("div");
+        emptyMessage.className = "news-empty";
+        emptyMessage.textContent =
+          "News headlines will appear here after the “Update Plant Science News” GitHub Actions workflow creates data/plant-news.json.";
+
+        newsGrid.appendChild(emptyMessage);
+
+        newsStatus.textContent =
+          "The automatic news file is not available yet. Run the GitHub Actions workflow once, then refresh this page.";
+      }
+    }
+
+    loadPlantScienceNews();
 
     /*
       INTERNATIONAL COLLABORATION MAP

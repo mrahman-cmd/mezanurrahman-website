@@ -11,11 +11,10 @@
 
   <title>Dr. Md. Mezanur Rahman | Plant Scientist</title>
 
+  <!-- Leaflet Map CSS -->
   <link
     rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIINfQ1PKlgLlnUYgJkR7Kx1QYfEJkAAQyM="
-    crossorigin=""
+    href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
   >
 
   <script type="application/ld+json">
@@ -74,6 +73,7 @@
       color: inherit;
     }
 
+    /* Navigation */
     .top-bar {
       position: sticky;
       top: 0;
@@ -128,6 +128,7 @@
       color: #ffd08b;
     }
 
+    /* Shared Layout */
     section {
       padding: 82px 0;
     }
@@ -192,6 +193,7 @@
       color: var(--navy);
     }
 
+    /* Hero */
     .hero {
       display: flex;
       align-items: center;
@@ -264,6 +266,7 @@
       object-fit: cover;
     }
 
+    /* About */
     .about-grid {
       display: grid;
       grid-template-columns: 1.65fr 1fr;
@@ -314,6 +317,7 @@
       color: #ffd08b;
     }
 
+    /* Metrics */
     .metrics,
     .two-column,
     .network-map-section {
@@ -358,6 +362,7 @@
       color: var(--blue);
     }
 
+    /* Research */
     .subhead {
       margin: 52px 0 10px;
       padding-left: 14px;
@@ -413,6 +418,7 @@
       font-size: 0.94rem;
     }
 
+    /* Experience */
     .experience {
       background: var(--navy);
       color: var(--white);
@@ -474,6 +480,7 @@
       color: #d1e3ec;
     }
 
+    /* Interactive Map */
     .network-map-wrapper {
       margin-top: 35px;
       overflow: hidden;
@@ -483,9 +490,43 @@
     }
 
     #collaborator-map {
+      position: relative;
       width: 100%;
       height: 560px;
+      overflow: hidden;
+      background: #dcecf3;
       z-index: 1;
+    }
+
+    .leaflet-container {
+      width: 100%;
+      height: 100%;
+      background: #dcecf3;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /*
+      Prevents global image styling or browser styling
+      from breaking Leaflet map tile positioning.
+    */
+    .leaflet-tile-container img,
+    .leaflet-marker-pane img,
+    .leaflet-shadow-pane img,
+    .leaflet-overlay-pane img {
+      max-width: none !important;
+      max-height: none !important;
+      width: 256px !important;
+      height: 256px !important;
+    }
+
+    .leaflet-marker-pane img {
+      width: auto !important;
+      height: auto !important;
+    }
+
+    .leaflet-control-container {
+      position: absolute;
+      z-index: 1000;
     }
 
     .map-legend {
@@ -540,6 +581,24 @@
       margin-bottom: 0;
     }
 
+    .network-location-label {
+      border: 1px solid #d7e2e8;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.94);
+      color: #003b5c;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 4px 7px;
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(0, 43, 69, 0.18);
+    }
+
+    .network-location-label::before {
+      display: none;
+    }
+
+    /* Special Issue Opportunities */
     .opportunities {
       background: var(--white);
     }
@@ -613,6 +672,7 @@
       background: var(--orange);
     }
 
+    /* Publications */
     .pub-year {
       margin: 40px 0 0;
       padding-bottom: 6px;
@@ -676,6 +736,7 @@
       text-decoration: underline;
     }
 
+    /* Education and Achievements */
     .two-column-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -704,6 +765,7 @@
       font-size: 0.92rem;
     }
 
+    /* Skills */
     .skills {
       display: flex;
       flex-wrap: wrap;
@@ -721,6 +783,7 @@
       font-weight: 600;
     }
 
+    /* Contact */
     .contact {
       text-align: center;
     }
@@ -829,6 +892,10 @@
       #collaborator-map {
         height: 430px;
       }
+
+      .network-location-label {
+        font-size: 0.66rem;
+      }
     }
   </style>
 </head>
@@ -854,6 +921,7 @@
   </header>
 
   <main>
+    <!-- Hero -->
     <section class="hero" id="home">
       <div class="hero-content">
         <div>
@@ -863,7 +931,7 @@
 
           <h1>
             How do trees and crops withstand
-            <span>combined environmental stresses?</span>
+            <span>combined abiotic stresses?</span>
           </h1>
 
           <h2>
@@ -906,6 +974,7 @@
       </div>
     </section>
 
+    <!-- About -->
     <section id="about">
       <div class="container about-grid">
         <div>
@@ -996,6 +1065,7 @@
       </div>
     </section>
 
+    <!-- Research Metrics -->
     <section class="metrics">
       <div class="container">
         <span class="section-label">Research Profile</span>
@@ -1036,6 +1106,7 @@
       </div>
     </section>
 
+    <!-- Research -->
     <section id="research">
       <div class="container">
         <span class="section-label">Research Expertise</span>
@@ -1127,6 +1198,7 @@
       </div>
     </section>
 
+    <!-- Insights -->
     <section id="insights">
       <div class="container">
         <span class="section-label">Scientific Insights</span>
@@ -1202,6 +1274,7 @@
       </div>
     </section>
 
+    <!-- Experience -->
     <section class="experience" id="experience">
       <div class="container">
         <span class="section-label">Professional Experience</span>
@@ -1213,7 +1286,7 @@
             <h3>Postdoctoral Research Associate</h3>
             <h4>Plant Systems Biology, Oak Ridge National Laboratory, USA</h4>
             <p>
-              Investigating combined environmental stress responses in
+              Investigating combined abiotic stress responses in
               <em>Populus</em> using high-throughput phenotyping, plant
               physiology, stress biomarkers, population genomics, GWAS, and
               multi-omics. Responsibilities include experimental design,
@@ -1254,6 +1327,7 @@
       </div>
     </section>
 
+    <!-- Network Map -->
     <section class="network-map-section" id="network">
       <div class="container">
         <span class="section-label">Research Network</span>
@@ -1293,6 +1367,7 @@
       </div>
     </section>
 
+    <!-- Special Issue Opportunities -->
     <section class="opportunities" id="opportunities">
       <div class="container">
         <span class="section-label">Upcoming Opportunities</span>
@@ -1396,6 +1471,7 @@
       </div>
     </section>
 
+    <!-- Publications -->
     <section id="publications">
       <div class="container">
         <span class="section-label">Selected Publications</span>
@@ -1607,6 +1683,7 @@
       </div>
     </section>
 
+    <!-- Education, Grants and Service -->
     <section class="two-column">
       <div class="container two-column-grid">
         <div>
@@ -1693,6 +1770,7 @@
       </div>
     </section>
 
+    <!-- Skills -->
     <section>
       <div class="container">
         <span class="section-label">Methods & Technical Skills</span>
@@ -1725,6 +1803,7 @@
       </div>
     </section>
 
+    <!-- Contact -->
     <section class="contact" id="contact">
       <div class="container">
         <div class="contact-box">
@@ -1781,19 +1860,22 @@
     <p>© 2026 Dr. Md. Mezanur Rahman · Oak Ridge, Tennessee, USA</p>
   </footer>
 
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""
-  ></script>
+  <!-- Leaflet JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <script>
+    /* Interactive Research Network Map */
     var collaboratorMap = L.map("collaborator-map", {
-      scrollWheelZoom: false
-    }).setView([25, 15], 2);
+      scrollWheelZoom: false,
+      zoomControl: true,
+      worldCopyJump: true
+    });
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 18,
+      maxZoom: 19,
+      minZoom: 2,
+      subdomains: ["a", "b", "c"],
+      crossOrigin: true,
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors'
     }).addTo(collaboratorMap);
@@ -1814,7 +1896,7 @@
         longitude: -84.2696,
         category: "current",
         description:
-          "Postdoctoral research on combined environmental stresses in Populus species using high-throughput phenotyping, physiology, stress biomarkers, population genomics, GWAS, and multi-omics."
+          "Postdoctoral research on combined abiotic stresses in Populus species using high-throughput phenotyping, physiology, stress biomarkers, population genomics, GWAS, and multi-omics."
       },
       {
         name: "Texas Tech University",
@@ -1851,22 +1933,19 @@
       }
     ];
 
+    var networkBounds = L.latLngBounds([]);
+
     networkLocations.forEach(function (site) {
-      var markerIcon = L.divIcon({
-        className: "custom-network-marker",
-        html:
-          '<div style="' +
-          "background:" + markerColours[site.category] + ";" +
-          "width:18px;" +
-          "height:18px;" +
-          "border:3px solid #ffffff;" +
-          "border-radius:50%;" +
-          "box-shadow:0 1px 5px rgba(0,0,0,0.45);" +
-          '"></div>',
-        iconSize: [18, 18],
-        iconAnchor: [9, 9],
-        popupAnchor: [0, -10]
-      });
+      var locationMarker = L.circleMarker(
+        [site.latitude, site.longitude],
+        {
+          radius: 9,
+          color: "#ffffff",
+          weight: 3,
+          fillColor: markerColours[site.category],
+          fillOpacity: 1
+        }
+      ).addTo(collaboratorMap);
 
       var popupContent =
         '<div class="map-popup">' +
@@ -1877,13 +1956,38 @@
           "<p>" + site.description + "</p>" +
         "</div>";
 
-      L.marker([site.latitude, site.longitude], {
-        icon: markerIcon
-      })
-        .addTo(collaboratorMap)
-        .bindPopup(popupContent);
+      locationMarker.bindPopup(popupContent);
+
+      locationMarker.bindTooltip(site.name, {
+        permanent: true,
+        direction: "top",
+        offset: [0, -10],
+        opacity: 0.96,
+        className: "network-location-label"
+      });
+
+      networkBounds.extend([site.latitude, site.longitude]);
     });
 
+    function showAllNetworkLocations() {
+      collaboratorMap.invalidateSize();
+
+      collaboratorMap.fitBounds(networkBounds, {
+        padding: [60, 60],
+        maxZoom: 3
+      });
+    }
+
+    window.addEventListener("load", function () {
+      setTimeout(showAllNetworkLocations, 500);
+    });
+
+    window.addEventListener("resize", function () {
+      collaboratorMap.invalidateSize();
+      showAllNetworkLocations();
+    });
+
+    /* Special Issue Countdown */
     function updateDeadlineCountdowns() {
       document.querySelectorAll("[data-deadline]").forEach(function (element) {
         var deadlineText = element.getAttribute("data-deadline");

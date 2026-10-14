@@ -1,0 +1,36 @@
+name: Update Plant Science News
+
+on:
+  schedule:
+    # Runs every day at 5:17 UTC
+    - cron: "17 5 * * *"
+
+  # Lets you run it manually from the GitHub Actions page
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository files
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download latest plant science news
+        run: python scripts/update_plant_news.py
+
+      - name: Save updated news file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/plant-news.json
+          git diff --cached --quiet || git commit -m "Update plant science news"
+          git push

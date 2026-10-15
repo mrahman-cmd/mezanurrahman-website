@@ -1,3 +1,52 @@
 {
-  "slides": []
+  "slides": [
+    {
+      "src": "images/slideshow/01-drone-view-of-twelve-replicated-crop-plots.jpg",
+      "alt": "Drone view of twelve replicated crop plots",
+      "caption": "",
+      "contain": false,
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "images/slideshow/02-drone-view-of-healthy-and-waterlogged-plots.jpg",
+      "alt": "Drone view of healthy and waterlogged plots",
+      "caption": "",
+      "contain": false,
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "src": "images/slideshow/03-drone-view-of-crop-rows-on-plastic-mulch.jpg",
+      "alt": "Drone view of crop rows on plastic mulch",
+      "caption": "",
+      "contain": false,
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "src": "images/slideshow/04-field-trial-rows-beside-a-cereal-plot.jpg",
+      "alt": "Field trial rows beside a cereal plot",
+      "caption": "",
+      "contain": false,
+      "width": 1600,
+      "height": 898
+    },
+    {
+      "src": "images/slideshow/05-cereal-plots-with-ripening-ears.jpg",
+      "alt": "Cereal plots with ripening ears",
+      "caption": "",
+      "contain": false,
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "src": "images/slideshow/06-figure-stress-and-ROS-diagram.jpg",
+      "alt": "Stress and ROS diagram",
+      "caption": "",
+      "contain": true,
+      "width": 1900,
+      "height": 1278
+    }
+  ]
 }

@@ -902,6 +902,28 @@
       }
     }
 
+
+    /* Large monitors (QHD / 4K at 100% scaling): enlarge type and keep the
+       same proportions as on a laptop. Widths below are in rem so they grow
+       with the font size (1rem = 17px on the base layout). */
+    @media (min-width: 2200px) {
+      html { font-size: 125%; }
+      .container, nav, .hero-content { width: min(87rem, 92%); }
+      .hero h1 { max-width: 57.6rem; }
+      .hero .hero-affiliation { max-width: 50.6rem; }
+      .hero p { max-width: 48.8rem; }
+      .section-text, .news-list, .notes-older, .note { max-width: 54.1rem; }
+      .timeline-item p, .map-note { max-width: 52.9rem; }
+      .contact-box { max-width: 50rem; }
+      .contact-box p { max-width: 38.2rem; }
+      footer p + p { max-width: 48.2rem; }
+      .slides { max-height: 30.6rem; }
+    }
+
+    @media (min-width: 3000px) {
+      html { font-size: 150%; }
+    }
+
     /* Metrics */
 
     .metrics,
@@ -4692,6 +4714,19 @@
             figure.className = "slide" + (i === 0 ? " active" : "") + (item.contain ? " slide-figure" : "");
             img.src = item.src;
             img.alt = typeof item.alt === "string" ? item.alt : "";
+
+            // Several sizes of the same picture: the browser downloads the one that
+            // fits the screen (small for phones, full size for 4K monitors).
+            const sources = Array.isArray(item.sources) ? item.sources.filter(function (entry) {
+              return entry && typeof entry.src === "string" && Number(entry.w) > 0 &&
+                (entry.src.indexOf("images/slideshow/") === 0 || entry.src.indexOf("images/slideshow-sizes/") === 0);
+            }) : [];
+
+            if (sources.length > 1) {
+              img.srcset = sources.map(function (entry) { return entry.src + " " + Number(entry.w) + "w"; }).join(", ");
+              img.sizes = "100vw";
+            }
+
             img.loading = i === 0 ? "eager" : "lazy";
 
             if (item.width && item.height) {

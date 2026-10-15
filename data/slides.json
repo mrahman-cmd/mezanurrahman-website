@@ -55,6 +55,14 @@
       "contain": true,
       "width": 1900,
       "height": 1328
+    },
+    {
+      "src": "images/slideshow/08-figure-Workflow.jpg",
+      "alt": "Workflow",
+      "caption": "",
+      "contain": true,
+      "width": 1900,
+      "height": 1411
     }
   ]
 }

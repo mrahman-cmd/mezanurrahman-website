@@ -1,1 +1,48 @@
+name: Update graduate opportunities
 
+on:
+  schedule:
+    # Every day at 09:23 UTC (05:23 US Eastern in summer, 04:23 in winter).
+    - cron: "23 9 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-opportunities
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run offline tests
+        run: python -m unittest discover -s tests
+
+      - name: Collect opportunities
+        run: python scripts/collect.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/opportunities.json data/source-health.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update graduate opportunities feed"
+            git push
+          fi

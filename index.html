@@ -2212,6 +2212,8 @@
       .skill-group h3, .profile-card strong { font-size: 0.9rem; }
       footer, footer p + p { font-size: 1.02rem; }
       .note p, .note li, .news-list li, .news-list p { font-size: 1.05rem; }
+      .news-item { grid-template-columns: 10.5rem 1fr; }
+      .news-list { max-width: 66rem; }
       .funding-list strong { font-size: 1.05rem; }
       .funding-block p, .funding-list span { font-size: 1rem; }
     }
@@ -2506,13 +2508,28 @@
         <p class="section-text">
           Recent appointments, milestones and publications, newest first. Dates
           are taken from my CV and ORCID record; where only the year is given,
-          the month is not recorded there.
+          the month is not recorded there. Deadlines for calls for papers are
+          those on the publishers' pages.
         </p>
 
         <!-- To add news: copy one <li class="news-item"> block, put it at the
              top of the first list, and move the oldest visible item into the
              "Older news" list so the page stays short. -->
         <ol class="news-list">
+            <li class="news-item">
+              <span class="news-date">Open call</span>
+              <div class="news-body">
+                <span class="news-tag">Call for papers</span>
+                <p>I am guest editor or topic editor of three collections that are open for submissions:
+                  <a href="https://www.sciencedirect.com/special-issue/337077/plant-response-to-drought-and-combined-with-other-abiotic-stresses-physiological-molecular-and-genetic-mechanisms-of-tolerance" target="_blank" rel="noopener noreferrer">Plant Response to Drought and Combined with Other Abiotic Stresses</a>
+                  (<i>Plant Stress</i>, deadline 1 April 2027);
+                  <a href="https://www.frontiersin.org/research-topics/82452/root-and-shoot-developmental-plasticity-in-response-to-stress" target="_blank" rel="noopener noreferrer">Root and Shoot Developmental Plasticity in Response to Stress</a>
+                  (<i>Frontiers in Plant Science</i>, deadline 25 March 2027); and
+                  <a href="https://www.mdpi.com/journal/ijms/special_issues/93R82KK4HG" target="_blank" rel="noopener noreferrer">Plant Epigenetic Memory Under Abiotic Stress</a>
+                  (<i>International Journal of Molecular Sciences</i>, deadline 31 March 2027).
+                  Details are under <a href="#experience">Experience and editorial roles</a>.</p>
+              </div>
+            </li>
             <li class="news-item">
               <time class="news-date" datetime="2026">2026</time>
               <div class="news-body">

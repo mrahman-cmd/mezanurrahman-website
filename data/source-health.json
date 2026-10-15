@@ -1,0 +1,23 @@
+{
+ "generated_at": "2026-10-15T14:12:53Z",
+ "sources": [
+  {
+   "key": "wssa",
+   "name": "WSSA job board",
+   "url": "https://wssa.net/wp-json/wp/v2/posts?categories=17&per_page=100&_fields=id,date,link,title,excerpt,content",
+   "status": "error",
+   "fetched": 0,
+   "kept": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "key": "aspt",
+   "name": "ASPT opportunities list",
+   "url": "https://www.aspt.net/news-blog/category/OPPORTUNITY?format=rss",
+   "status": "ok",
+   "fetched": 20,
+   "kept": 2,
+   "error": ""
+  }
+ ]
+}

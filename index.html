@@ -752,6 +752,15 @@
       width: 100%;
     }
 
+    /* Scientific diagram slide: show the whole figure instead of cropping it */
+    .slide-figure {
+      background: #ffffff;
+    }
+
+    .slide-figure img {
+      object-fit: contain;
+    }
+
     .slide figcaption {
       background: linear-gradient(to top, rgba(4, 48, 58, 0.88), rgba(4, 48, 58, 0));
       bottom: 0;
@@ -2255,7 +2264,7 @@
 
     <!--
       Photo slideshow. Put your own photographs in an "images" folder next to index.html, named
-      slide-1.jpg to slide-4.jpg (about 1600 x 610 px, under 300 KB each). For each one, edit the alt text
+      slide-1.jpg to slide-6.jpg (about 1600 px wide, under 450 KB each). For each one, edit the alt text
       (a plain description for screen readers) and, if you wish, the caption between the figcaption tags.
       Slides whose file is missing are skipped, and the whole band stays hidden until at least one loads.
       To use more or fewer photographs, copy or delete a figure block.
@@ -2263,19 +2272,27 @@
     <section class="slideshow" id="gallery" aria-roledescription="carousel" aria-label="Research photographs" hidden>
       <div class="slides" id="slides">
           <figure class="slide active">
-            <img src="images/slide-1.jpg" alt="Photograph from my research (edit this description)" loading="eager" width="1600" height="610">
+            <img src="images/slide-1.jpg" alt="Drone view of twelve replicated green crop plots in a field trial" loading="eager" width="1600" height="610">
             <figcaption></figcaption>
           </figure>
           <figure class="slide">
-            <img src="images/slide-2.jpg" alt="Photograph from my research (edit this description)" loading="lazy" width="1600" height="610">
+            <img src="images/slide-2.jpg" alt="Drone view of field plots: healthy plots in the upper rows and waterlogged, damaged plots in the lower rows" loading="lazy" width="1600" height="610">
             <figcaption></figcaption>
           </figure>
           <figure class="slide">
-            <img src="images/slide-3.jpg" alt="Photograph from my research (edit this description)" loading="lazy" width="1600" height="610">
+            <img src="images/slide-3.jpg" alt="Drone view of a field experiment with rows of crop plants grown on plastic mulch and two people at the field edge" loading="lazy" width="1600" height="610">
             <figcaption></figcaption>
           </figure>
           <figure class="slide">
-            <img src="images/slide-4.jpg" alt="Photograph from my research (edit this description)" loading="lazy" width="1600" height="610">
+            <img src="images/slide-4.jpg" alt="Field trial rows of green crop plants beside a cereal plot, with university buildings in the background" loading="lazy" width="1600" height="610">
+            <figcaption></figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="images/slide-5.jpg" alt="Field plots of a cereal crop with ripening ears" loading="lazy" width="1600" height="1067">
+            <figcaption></figcaption>
+          </figure>
+          <figure class="slide slide-figure">
+            <img src="images/slide-6.jpg" alt="Diagram of climate-, soil- and human-driven stressors acting on a maize plant, and the cellular sources of reactive oxygen species (ROS) in the plasma membrane, chloroplast, mitochondria, peroxisome, nucleus and vacuole" loading="lazy" width="1900" height="1278">
             <figcaption></figcaption>
           </figure>
       </div>
@@ -4534,7 +4551,7 @@
 
     /* Photo slideshow: crossfade, skips missing images, respects reduced motion */
 
-    (function () {
+    function startSlideshow() {
       const band = document.getElementById("gallery");
       const holder = document.getElementById("slides");
 
@@ -4638,6 +4655,58 @@
       band.addEventListener("mouseleave", play);
       band.addEventListener("focusin", stop);
       band.addEventListener("focusout", play);
+    }
+
+    /*
+      Automatic slideshow: the "Update slideshow" workflow lists the pictures in images/slideshow/
+      in data/slides.json. When that list exists it replaces the fixed pictures written in the page above;
+      if it is missing or empty, the pictures images/slide-1.jpg to slide-6.jpg are used instead.
+    */
+    (function () {
+      const holder = document.getElementById("slides");
+
+      if (!holder || !window.fetch) {
+        startSlideshow();
+        return;
+      }
+
+      fetch("data/slides.json", { cache: "no-store" })
+        .then(function (response) { return response.ok ? response.json() : null; })
+        .then(function (data) {
+          const list = data && Array.isArray(data.slides) ? data.slides : [];
+          const usable = list.filter(function (item) {
+            return item && typeof item.src === "string" && item.src.indexOf("images/slideshow/") === 0;
+          });
+
+          if (!usable.length) {
+            return;
+          }
+
+          holder.textContent = "";
+
+          usable.forEach(function (item, i) {
+            const figure = document.createElement("figure");
+            const img = document.createElement("img");
+            const caption = document.createElement("figcaption");
+
+            figure.className = "slide" + (i === 0 ? " active" : "") + (item.contain ? " slide-figure" : "");
+            img.src = item.src;
+            img.alt = typeof item.alt === "string" ? item.alt : "";
+            img.loading = i === 0 ? "eager" : "lazy";
+
+            if (item.width && item.height) {
+              img.width = item.width;
+              img.height = item.height;
+            }
+
+            caption.textContent = typeof item.caption === "string" ? item.caption : "";
+            figure.appendChild(img);
+            figure.appendChild(caption);
+            holder.appendChild(figure);
+          });
+        })
+        .catch(function () { /* keep the fixed pictures */ })
+        .then(startSlideshow);
     })();
 
     /* Dropdown groups: click or keyboard toggles; hover and focus also open them on wide screens */

@@ -2,54 +2,172 @@
   "slides": [
     {
       "src": "images/slideshow/01-drone-view-of-twelve-replicated-crop-plots.jpg",
+      "sources": [
+        {
+          "src": "images/slideshow-sizes/01-drone-view-of-twelve-replicated-crop-plots-800w.jpg",
+          "w": 800
+        },
+        {
+          "src": "images/slideshow-sizes/01-drone-view-of-twelve-replicated-crop-plots-1600w.jpg",
+          "w": 1600
+        },
+        {
+          "src": "images/slideshow-sizes/01-drone-view-of-twelve-replicated-crop-plots-2560w.jpg",
+          "w": 2560
+        },
+        {
+          "src": "images/slideshow/01-drone-view-of-twelve-replicated-crop-plots.jpg",
+          "w": 3840
+        }
+      ],
       "alt": "Drone view of twelve replicated crop plots",
       "caption": "",
       "contain": false,
-      "width": 1600,
-      "height": 900
+      "width": 3840,
+      "height": 2160
     },
     {
       "src": "images/slideshow/02-drone-view-of-healthy-and-waterlogged-plots.jpg",
+      "sources": [
+        {
+          "src": "images/slideshow-sizes/02-drone-view-of-healthy-and-waterlogged-plots-800w.jpg",
+          "w": 800
+        },
+        {
+          "src": "images/slideshow-sizes/02-drone-view-of-healthy-and-waterlogged-plots-1600w.jpg",
+          "w": 1600
+        },
+        {
+          "src": "images/slideshow-sizes/02-drone-view-of-healthy-and-waterlogged-plots-2560w.jpg",
+          "w": 2560
+        },
+        {
+          "src": "images/slideshow/02-drone-view-of-healthy-and-waterlogged-plots.jpg",
+          "w": 3840
+        }
+      ],
       "alt": "Drone view of healthy and waterlogged plots",
       "caption": "",
       "contain": false,
-      "width": 1600,
-      "height": 1067
+      "width": 3840,
+      "height": 2560
     },
     {
       "src": "images/slideshow/03-drone-view-of-crop-rows-on-plastic-mulch.jpg",
+      "sources": [
+        {
+          "src": "images/slideshow-sizes/03-drone-view-of-crop-rows-on-plastic-mulch-800w.jpg",
+          "w": 800
+        },
+        {
+          "src": "images/slideshow-sizes/03-drone-view-of-crop-rows-on-plastic-mulch-1600w.jpg",
+          "w": 1600
+        },
+        {
+          "src": "images/slideshow-sizes/03-drone-view-of-crop-rows-on-plastic-mulch-2560w.jpg",
+          "w": 2560
+        },
+        {
+          "src": "images/slideshow/03-drone-view-of-crop-rows-on-plastic-mulch.jpg",
+          "w": 3840
+        }
+      ],
       "alt": "Drone view of crop rows on plastic mulch",
       "caption": "",
       "contain": false,
-      "width": 1600,
-      "height": 900
+      "width": 3840,
+      "height": 2160
     },
     {
       "src": "images/slideshow/04-field-trial-rows-beside-a-cereal-plot.jpg",
+      "sources": [
+        {
+          "src": "images/slideshow-sizes/04-field-trial-rows-beside-a-cereal-plot-800w.jpg",
+          "w": 800
+        },
+        {
+          "src": "images/slideshow-sizes/04-field-trial-rows-beside-a-cereal-plot-1600w.jpg",
+          "w": 1600
+        },
+        {
+          "src": "images/slideshow-sizes/04-field-trial-rows-beside-a-cereal-plot-2560w.jpg",
+          "w": 2560
+        },
+        {
+          "src": "images/slideshow/04-field-trial-rows-beside-a-cereal-plot.jpg",
+          "w": 3840
+        }
+      ],
       "alt": "Field trial rows beside a cereal plot",
       "caption": "",
       "contain": false,
-      "width": 1600,
-      "height": 898
+      "width": 3840,
+      "height": 2156
     },
     {
       "src": "images/slideshow/05-cereal-plots-with-ripening-ears.jpg",
+      "sources": [
+        {
+          "src": "images/slideshow-sizes/05-cereal-plots-with-ripening-ears-800w.jpg",
+          "w": 800
+        },
+        {
+          "src": "images/slideshow-sizes/05-cereal-plots-with-ripening-ears-1600w.jpg",
+          "w": 1600
+        },
+        {
+          "src": "images/slideshow-sizes/05-cereal-plots-with-ripening-ears-2560w.jpg",
+          "w": 2560
+        },
+        {
+          "src": "images/slideshow/05-cereal-plots-with-ripening-ears.jpg",
+          "w": 3840
+        }
+      ],
       "alt": "Cereal plots with ripening ears",
       "caption": "",
       "contain": false,
-      "width": 1600,
-      "height": 1067
+      "width": 3840,
+      "height": 2560
     },
     {
       "src": "images/slideshow/06-figure-stress-and-ROS-diagram.jpg",
+      "sources": [
+        {
+          "src": "images/slideshow-sizes/06-figure-stress-and-ROS-diagram-800w.jpg",
+          "w": 800
+        },
+        {
+          "src": "images/slideshow-sizes/06-figure-stress-and-ROS-diagram-1600w.jpg",
+          "w": 1600
+        },
+        {
+          "src": "images/slideshow/06-figure-stress-and-ROS-diagram.jpg",
+          "w": 2516
+        }
+      ],
       "alt": "Stress and ROS diagram",
       "caption": "",
       "contain": true,
-      "width": 1900,
-      "height": 1278
+      "width": 2516,
+      "height": 1693
     },
     {
       "src": "images/slideshow/07-figure-Populous%20Under%20Heat.jpg",
+      "sources": [
+        {
+          "src": "images/slideshow-sizes/07-figure-Populous%20Under%20Heat-800w.jpg",
+          "w": 800
+        },
+        {
+          "src": "images/slideshow-sizes/07-figure-Populous%20Under%20Heat-1600w.jpg",
+          "w": 1600
+        },
+        {
+          "src": "images/slideshow/07-figure-Populous%20Under%20Heat.jpg",
+          "w": 1900
+        }
+      ],
       "alt": "Populous Under Heat",
       "caption": "",
       "contain": true,
@@ -58,6 +176,20 @@
     },
     {
       "src": "images/slideshow/08-figure-Workflow.jpg",
+      "sources": [
+        {
+          "src": "images/slideshow-sizes/08-figure-Workflow-800w.jpg",
+          "w": 800
+        },
+        {
+          "src": "images/slideshow-sizes/08-figure-Workflow-1600w.jpg",
+          "w": 1600
+        },
+        {
+          "src": "images/slideshow/08-figure-Workflow.jpg",
+          "w": 1900
+        }
+      ],
       "alt": "Workflow",
       "caption": "",
       "contain": true,

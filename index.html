@@ -913,24 +913,6 @@
     }
 
 
-    /* Wide screens (1700 px and above, up to 4K and beyond): the whole page scales
-       in proportion to the screen width, like zooming in, so the layout always
-       fills the screen in the same way as on a laptop. Widths below are in rem
-       (1rem = 17px at 1700 px wide) so they grow with the font size. */
-    @media (min-width: 1700px) {
-      html { font-size: min(1vw, 44px); }
-      .container, nav, .hero-content { width: min(87rem, 92%); }
-      .hero h1 { max-width: 57.6rem; }
-      .hero .hero-affiliation { max-width: 56rem; }
-      .hero p { max-width: 56rem; }
-      .portrait { width: 22rem; }
-      .section-text, .news-list, .notes-older, .note { max-width: 54.1rem; }
-      .timeline-item p, .map-note { max-width: 52.9rem; }
-      .contact-box { max-width: 50rem; }
-      .contact-box p { max-width: 38.2rem; }
-      footer p + p { max-width: 48.2rem; }
-      .slides { max-height: 30.6rem; }
-    }
 
     /* Metrics */
 
@@ -2194,6 +2176,44 @@
     .notes-empty {
       color: var(--muted);
       margin-top: 24px;
+    }
+  
+    /* Wide screens (1700 px and above, up to 4K and beyond): the whole page scales
+       in proportion to the screen width, like zooming in, so the layout always
+       fills the screen in the same way as on a laptop. Widths below are in rem
+       (1rem = 17px at 1700 px wide) so they grow with the font size. */
+    @media (min-width: 1700px) {
+      html { font-size: min(1vw, 44px); }
+      body { font-size: 1rem; }
+      .container, nav, .hero-content { width: min(87rem, 92%); }
+      .hero h1 { max-width: 57.6rem; }
+      .hero .hero-affiliation { max-width: 56rem; }
+      .hero p { max-width: 56rem; }
+      .portrait { width: 22rem; }
+      .section-text, .news-list, .notes-older, .note { max-width: 54.1rem; }
+      .timeline-item p, .map-note { max-width: 52.9rem; }
+      .contact-box { max-width: 50rem; }
+      .contact-box p { max-width: 38.2rem; }
+      footer p + p { max-width: 48.2rem; }
+      .slides { max-height: 30.6rem; }
+
+      /* Reading text a little larger on wide screens */
+      .timeline-item p, .map-note { font-size: 1.12rem; line-height: 1.7; max-width: 62rem; }
+      .timeline-date { font-size: 1rem; }
+      .research-card p, .project-card p, .insight-card p { font-size: 1.1rem; }
+      .metric-card p, .metric-note { font-size: 1.05rem; }
+      .pub-venue, .pub-note, .pub-status, .pub-count, .news-date, .opp-snippet,
+      .opp-note, .opp-dates, .opp-status, .project-methods, .detail-list .thesis,
+      .funding-list span, .skills li, .service-note, .workflow span, .workflow-caption,
+      .country-list li, .chip-list a, .map-legend, .note-refs, .note-meta,
+      .insight-card .insight-ref, .opp-source { font-size: 1.02rem; }
+      .news-tag, .note-status, .opp-badges li, .tag, .research-number, .project-status,
+      .insight-card span, .opp-meta, .opp-toolbar label, .hero-label, .section-label,
+      .skill-group h3, .profile-card strong { font-size: 0.9rem; }
+      footer, footer p + p { font-size: 1.02rem; }
+      .note p, .note li, .news-list li, .news-list p { font-size: 1.05rem; }
+      .funding-list strong { font-size: 1.05rem; }
+      .funding-block p, .funding-list span { font-size: 1rem; }
     }
   </style>
 </head>

@@ -616,12 +616,14 @@
       font-weight: 600;
     }
 
-    .news-older {
+    .news-older,
+    .notes-older {
       margin-top: 4px;
       max-width: 920px;
     }
 
-    .news-older summary {
+    .news-older summary,
+    .notes-older summary {
       color: var(--navy);
       cursor: pointer;
       font-weight: 800;
@@ -2064,6 +2066,74 @@
         letter-spacing: 0.3px;
       }
     }
+
+    /* Section decoration: pale-green washes with a faint leaf motif,
+       replacing the white and near-white section backgrounds */
+    :root {
+      --wash-1: linear-gradient(180deg, #f1f8f4 0%, #e9f5ef 100%);
+      --wash-2: linear-gradient(180deg, #e8f4ee 0%, #eff8f3 100%);
+      --leaf-r: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' fill='none' stroke='%23118836' stroke-opacity='0.11' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M60 340C40 160 170 40 340 40C350 210 240 340 60 340Z'/%3E%3Cpath d='M60 340L340 40' stroke-width='1.6'/%3E%3Cpath d='M88 310Q101 309 134 298M88 310Q88 297 96 263M116 280Q133 283 173 279M116 280Q112 263 113 223M144 250Q165 256 213 259M144 250Q136 229 130 182M172 220Q196 229 248 236M172 220Q162 197 151 145M200 190Q225 199 278 209M200 190Q189 166 176 113M228 160Q252 169 304 176M228 160Q218 137 207 85M256 130Q277 136 325 139M256 130Q248 109 242 62M284 100Q301 103 341 99M284 100Q280 83 281 43M312 70Q324 68 355 56M312 70Q313 58 323 26' stroke-width='0.9'/%3E%3C/svg%3E");
+      --leaf-l: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' fill='none' stroke='%23118836' stroke-opacity='0.11' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg transform='translate%28400 0%29 scale%28-1 1%29'%3E%3Cpath d='M60 340C40 160 170 40 340 40C350 210 240 340 60 340Z'/%3E%3Cpath d='M60 340L340 40' stroke-width='1.6'/%3E%3Cpath d='M88 310Q101 309 134 298M88 310Q88 297 96 263M116 280Q133 283 173 279M116 280Q112 263 113 223M144 250Q165 256 213 259M144 250Q136 229 130 182M172 220Q196 229 248 236M172 220Q162 197 151 145M200 190Q225 199 278 209M200 190Q189 166 176 113M228 160Q252 169 304 176M228 160Q218 137 207 85M256 130Q277 136 325 139M256 130Q248 109 242 62M284 100Q301 103 341 99M284 100Q280 83 281 43M312 70Q324 68 355 56M312 70Q313 58 323 26' stroke-width='0.9'/%3E%3C/g%3E%3C/svg%3E");
+      --rule: linear-gradient(90deg, transparent, rgba(8, 122, 87, 0.30), transparent);
+    }
+
+    body {
+      background: #eaf4ef;
+    }
+
+    section#about,
+    section#research,
+    section#insights,
+    section#publications,
+    section#education,
+    section#contact {
+      background:
+        var(--rule) top center / min(70%, 900px) 1px no-repeat,
+        var(--leaf-l) left -90px bottom -70px / 420px auto no-repeat,
+        var(--wash-1);
+    }
+
+    section#news,
+    section#projects,
+    section#notes,
+    section#collaborate {
+      background:
+        var(--rule) top center / min(70%, 900px) 1px no-repeat,
+        var(--leaf-r) right -80px top 40px / 460px auto no-repeat,
+        var(--wash-2);
+    }
+
+    section#metrics,
+    section#network,
+    section#opportunities {
+      background:
+        var(--rule) top center / min(70%, 900px) 1px no-repeat,
+        #e4f3ee;
+    }
+
+    @media (max-width: 760px) {
+      section#about,
+      section#research,
+      section#insights,
+      section#publications,
+      section#education,
+      section#contact,
+      section#news,
+      section#projects,
+      section#notes,
+      section#collaborate {
+        background: var(--rule) top center / 70% 1px no-repeat, var(--wash-1);
+      }
+    }
+
+    .notes-older .note {
+      margin-top: 18px;
+    }
+
+    .notes-empty {
+      color: var(--muted);
+      margin-top: 24px;
+    }
   </style>
 </head>
 
@@ -2654,59 +2724,54 @@
         </p>
 
         <!--
-          To add a note: copy one <article class="note"> block, place it at the top of this list, change the
-          date, title and text, and move the oldest visible note into the "Earlier notes" list if there are
-          more than three. Cite only papers you have checked.
+          Notes are not written in this file. Add them to data/notes.json (see UPDATING.md).
+          The single note below is only a fallback for when data/notes.json cannot be loaded.
         -->
-        <div id="notes-list">
-          <article class="note">
-            <div class="note-meta">
-              <time datetime="2026-10-14">14 October 2026</time>
-              <span class="note-status">Experimental design</span>
-            </div>
-            <h3>Are we measuring drought, or plant size?</h3>
-            <p>
-              In many pot experiments, drought is imposed by saturating the
-              soil and then withholding water for a fixed number of days, often
-              7 to 10, before measuring. The hidden assumption is that every
-              plant has then experienced the same stress. It probably has not.
-              A larger plant transpires more and dries its pot faster than a
-              smaller one, so on the same day the large plant may sit at a much
-              lower soil water content. Where size differs between genotypes,
-              treatments or even pots, &ldquo;days without water&rdquo;
-              measures a mixture of drought intensity and plant size.
-            </p>
-            <p>
-              This matters for interpretation. A genotype that looks more
-              sensitive may simply be larger and so be exposed to more severe
-              stress, while a small, slow-growing genotype may look tolerant
-              because its soil stayed wetter. Rankings of tolerance, and
-              association studies built on them, can inherit that confound.
-            </p>
-            <p>What I would do instead:</p>
-            <ul>
-              <li>weigh pots and express stress as soil water content, or as a fraction of transpirable soil water, rather than as elapsed days;</li>
-              <li>hold a target soil water content by re-watering to weight, so that stress intensity is controlled and not just timed;</li>
-              <li>record plant size at the start and include it as a covariate, or normalise water use by leaf area or biomass;</li>
-              <li>compare genotypes at matched soil water status, not at matched time.</li>
-            </ul>
-            <p>
-              This is an argument from basic water-balance reasoning, not a
-              measured result. How large the effect is will depend on species,
-              pot volume, evaporative demand, and the range of plant sizes, so
-              it should be quantified in each system and not assumed.
-            </p>
-            <p class="note-refs">
-              Related reading: Ray JD, Sinclair TR (1997) Stomatal closure of
-              maize hybrids in response to drying soil. <em>Crop Science</em>
-              37: 803&ndash;807
-              (<a href="https://doi.org/10.2135/cropsci1997.0011183x003700030018x" target="_blank" rel="noopener noreferrer">doi:10.2135/cropsci1997.0011183x003700030018x</a>);
-              Passioura JB (2006) The perils of pot experiments.
-              <em>Functional Plant Biology</em> 33: 1075&ndash;1079
-              (<a href="https://doi.org/10.1071/fp06223" target="_blank" rel="noopener noreferrer">doi:10.1071/fp06223</a>).
-            </p>
-          </article>
+        <div id="notes-list" aria-live="polite">
+          <p class="notes-empty">Loading notes&hellip;</p>
         </div>
+        <noscript><p class="notes-empty">This section needs JavaScript.</p></noscript>
+        <script type="application/json" id="notes-seed">
+{
+  "notes": [
+    {
+      "id": "2026-10-14-drought-or-plant-size",
+      "status": "published",
+      "date": "2026-10-14",
+      "tag": "Experimental design",
+      "title": "Are we measuring drought, or plant size?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "In many pot experiments, drought is imposed by saturating the soil and then withholding water for a fixed number of days, often 7 to 10, before measuring. The hidden assumption is that every plant has then experienced the same stress. It probably has not. A larger plant transpires more and dries its pot faster than a smaller one, so on the same day the large plant may sit at a much lower soil water content. Where size differs between genotypes, treatments or even pots, “days without water” measures a mixture of drought intensity and plant size."
+        },
+        {
+          "type": "p",
+          "text": "This matters for interpretation. A genotype that looks more sensitive may simply be larger and so be exposed to more severe stress, while a small, slow-growing genotype may look tolerant because its soil stayed wetter. Rankings of tolerance, and association studies built on them, can inherit that confound."
+        },
+        {
+          "type": "list",
+          "intro": "What I would do instead:",
+          "items": [
+            "weigh pots and express stress as soil water content, or as a fraction of transpirable soil water, rather than as elapsed days;",
+            "hold a target soil water content by re-watering to weight, so that stress intensity is controlled and not just timed;",
+            "record plant size at the start and include it as a covariate, or normalise water use by leaf area or biomass;",
+            "compare genotypes at matched soil water status, not at matched time."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This is an argument from basic water-balance reasoning, not a measured result. How large the effect is will depend on species, pot volume, evaporative demand, and the range of plant sizes, so it should be quantified in each system and not assumed."
+        },
+        {
+          "type": "refs",
+          "text": "Related reading: Ray JD, Sinclair TR (1997) Stomatal closure of maize hybrids in response to drying soil. *Crop Science* 37: 803–807 ([doi:10.2135/cropsci1997.0011183x003700030018x](https://doi.org/10.2135/cropsci1997.0011183x003700030018x)); Passioura JB (2006) The perils of pot experiments. *Functional Plant Biology* 33: 1075–1079 ([doi:10.1071/fp06223](https://doi.org/10.1071/fp06223))."
+        }
+      ]
+    }
+  ]
+}
+        </script>
       </div>
     </section>
 
@@ -5324,6 +5389,260 @@
           }
         })
         .catch(function () {});
+    })();
+  </script>
+
+  <script>
+    /* Research notes: renders data/notes.json (with the inline seed as fallback).
+       Notes are plain data, so adding one never means editing this page.
+       Everything is built with DOM methods and textContent; no HTML from the data is ever parsed. */
+    (function () {
+      "use strict";
+
+      var list = document.getElementById("notes-list");
+
+      if (!list) {
+        return;
+      }
+
+      var VISIBLE = 3;
+      var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+      function safeHttp(value) {
+        try {
+          var url = new URL(value);
+          return url.protocol === "https:" || url.protocol === "http:" ? url.href : null;
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function isText(value, max) {
+        return typeof value === "string" && value.trim().length > 0 && value.length <= max;
+      }
+
+      function validDate(value) {
+        if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+          return false;
+        }
+
+        var d = new Date(value + "T00:00:00Z");
+        return !isNaN(d.getTime()) && d.toISOString().slice(0, 10) === value;
+      }
+
+      function today() {
+        var now = new Date();
+        return now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0") + "-" + String(now.getDate()).padStart(2, "0");
+      }
+
+      function validBlock(block) {
+        if (!block || typeof block !== "object") {
+          return false;
+        }
+
+        if (block.type === "p" || block.type === "refs") {
+          return isText(block.text, 6000);
+        }
+
+        if (block.type === "list") {
+          return Array.isArray(block.items) && block.items.length > 0 && block.items.length <= 20 &&
+            block.items.every(function (item) { return isText(item, 1500); }) &&
+            (block.intro === undefined || isText(block.intro, 300));
+        }
+
+        return false;
+      }
+
+      /* Visible only if published, dated today or earlier, and well formed. */
+      function usable(note) {
+        return !!note && typeof note === "object" &&
+          note.status === "published" &&
+          typeof note.id === "string" && /^[a-z0-9][a-z0-9-]{2,80}$/.test(note.id) &&
+          validDate(note.date) && note.date <= today() &&
+          isText(note.title, 200) &&
+          (note.tag === undefined || isText(note.tag, 60)) &&
+          Array.isArray(note.blocks) && note.blocks.length > 0 && note.blocks.length <= 40 &&
+          note.blocks.every(validBlock);
+      }
+
+      /* Inline markup allowed in text: *italic* and [text](https://link). */
+      function inline(parent, text) {
+        var pattern = /\*([^*]+)\*|\[([^\]]+)\]\(([^)\s]+)\)/g;
+        var last = 0;
+        var match;
+
+        while ((match = pattern.exec(text)) !== null) {
+          if (match.index > last) {
+            parent.appendChild(document.createTextNode(text.slice(last, match.index)));
+          }
+
+          if (match[1] !== undefined) {
+            var em = document.createElement("em");
+            em.textContent = match[1];
+            parent.appendChild(em);
+          } else {
+            var href = safeHttp(match[3]);
+
+            if (href) {
+              var a = document.createElement("a");
+              a.href = href;
+              a.target = "_blank";
+              a.rel = "noopener noreferrer";
+              a.textContent = match[2];
+              parent.appendChild(a);
+            } else {
+              parent.appendChild(document.createTextNode(match[2]));
+            }
+          }
+
+          last = pattern.lastIndex;
+        }
+
+        if (last < text.length) {
+          parent.appendChild(document.createTextNode(text.slice(last)));
+        }
+      }
+
+      function formatDate(iso) {
+        var parts = iso.split("-");
+        return Number(parts[2]) + " " + MONTHS[Number(parts[1]) - 1] + " " + parts[0];
+      }
+
+      function el(tag, className, text) {
+        var node = document.createElement(tag);
+
+        if (className) {
+          node.className = className;
+        }
+
+        if (text) {
+          node.textContent = text;
+        }
+
+        return node;
+      }
+
+      function renderNote(note) {
+        var article = el("article", "note");
+        article.id = "note-" + note.id;
+
+        var meta = el("div", "note-meta");
+        var time = el("time", "", formatDate(note.date));
+        time.setAttribute("datetime", note.date);
+        meta.appendChild(time);
+
+        if (note.tag) {
+          meta.appendChild(el("span", "note-status", note.tag));
+        }
+
+        article.appendChild(meta);
+        article.appendChild(el("h3", "", note.title));
+
+        note.blocks.forEach(function (block) {
+          if (block.type === "list") {
+            if (block.intro) {
+              article.appendChild(el("p", "", block.intro));
+            }
+
+            var ul = el("ul");
+
+            block.items.forEach(function (item) {
+              var li = el("li");
+              inline(li, item);
+              ul.appendChild(li);
+            });
+
+            article.appendChild(ul);
+          } else {
+            var p = el("p", block.type === "refs" ? "note-refs" : "");
+            inline(p, block.text);
+            article.appendChild(p);
+          }
+        });
+
+        return article;
+      }
+
+      function render(notes) {
+        var shown = notes.filter(usable).sort(function (a, b) {
+          return a.date === b.date ? (a.id < b.id ? 1 : -1) : (a.date < b.date ? 1 : -1);
+        });
+
+        list.textContent = "";
+
+        if (shown.length === 0) {
+          list.appendChild(el("p", "notes-empty", "No notes have been published yet."));
+          return;
+        }
+
+        shown.slice(0, VISIBLE).forEach(function (note) {
+          list.appendChild(renderNote(note));
+        });
+
+        if (shown.length > VISIBLE) {
+          var details = el("details", "notes-older");
+          details.appendChild(el("summary", "", "Earlier notes (" + (shown.length - VISIBLE) + ")"));
+
+          shown.slice(VISIBLE).forEach(function (note) {
+            details.appendChild(renderNote(note));
+          });
+
+          list.appendChild(details);
+        }
+
+        if (location.hash.indexOf("#note-") === 0) {
+          var target = document.getElementById(location.hash.slice(1));
+
+          if (target) {
+            var holder = target.closest("details");
+
+            if (holder) {
+              holder.open = true;
+            }
+
+            target.scrollIntoView();
+          }
+        }
+      }
+
+      function readSeed() {
+        try {
+          var data = JSON.parse(document.getElementById("notes-seed").textContent);
+          return Array.isArray(data.notes) ? data.notes : [];
+        } catch (error) {
+          return [];
+        }
+      }
+
+      /* Merge by id: an entry in data/notes.json replaces the seed entry with the same id. */
+      function merge(seed, live) {
+        var byId = {};
+
+        seed.concat(live).forEach(function (note) {
+          if (note && typeof note.id === "string") {
+            byId[note.id] = note;
+          }
+        });
+
+        return Object.keys(byId).map(function (id) { return byId[id]; });
+      }
+
+      var seed = readSeed();
+
+      fetch("data/notes.json", { cache: "no-cache" })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("HTTP " + response.status);
+          }
+
+          return response.json();
+        })
+        .then(function (data) {
+          render(merge(seed, Array.isArray(data.notes) ? data.notes : []));
+        })
+        .catch(function () {
+          render(seed);
+        });
     })();
   </script>
 </body>

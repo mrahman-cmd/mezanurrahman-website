@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "notes": [
+    {
+      "id": "2026-10-14-drought-or-plant-size",
+      "status": "published",
+      "date": "2026-10-14",
+      "tag": "Experimental design",
+      "title": "Are we measuring drought, or plant size?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "In many pot experiments, drought is imposed by saturating the soil and then withholding water for a fixed number of days, often 7 to 10, before measuring. The hidden assumption is that every plant has then experienced the same stress. It probably has not. A larger plant transpires more and dries its pot faster than a smaller one, so on the same day the large plant may sit at a much lower soil water content. Where size differs between genotypes, treatments or even pots, “days without water” measures a mixture of drought intensity and plant size."
+        },
+        {
+          "type": "p",
+          "text": "This matters for interpretation. A genotype that looks more sensitive may simply be larger and so be exposed to more severe stress, while a small, slow-growing genotype may look tolerant because its soil stayed wetter. Rankings of tolerance, and association studies built on them, can inherit that confound."
+        },
+        {
+          "type": "list",
+          "intro": "What I would do instead:",
+          "items": [
+            "weigh pots and express stress as soil water content, or as a fraction of transpirable soil water, rather than as elapsed days;",
+            "hold a target soil water content by re-watering to weight, so that stress intensity is controlled and not just timed;",
+            "record plant size at the start and include it as a covariate, or normalise water use by leaf area or biomass;",
+            "compare genotypes at matched soil water status, not at matched time."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This is an argument from basic water-balance reasoning, not a measured result. How large the effect is will depend on species, pot volume, evaporative demand, and the range of plant sizes, so it should be quantified in each system and not assumed."
+        },
+        {
+          "type": "refs",
+          "text": "Related reading: Ray JD, Sinclair TR (1997) Stomatal closure of maize hybrids in response to drying soil. *Crop Science* 37: 803–807 ([doi:10.2135/cropsci1997.0011183x003700030018x](https://doi.org/10.2135/cropsci1997.0011183x003700030018x)); Passioura JB (2006) The perils of pot experiments. *Functional Plant Biology* 33: 1075–1079 ([doi:10.1071/fp06223](https://doi.org/10.1071/fp06223))."
+        }
+      ]
+    }
+  ]
+}

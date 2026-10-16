@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mrahman-cmd.github.io/mezanurrahman-website/</loc>
+    <loc>https://www.mezanurrahman.com/</loc>
+    <lastmod>2026-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mezanurrahman.com/notes/</loc>
     <lastmod>2026-10-14</lastmod>
   </url>
   <url>
-    <loc>https://mrahman-cmd.github.io/mezanurrahman-website/notes/</loc>
-    <lastmod>2026-10-14</lastmod>
-  </url>
-  <url>
-    <loc>https://mrahman-cmd.github.io/mezanurrahman-website/notes/2026-10-14-drought-or-plant-size/</loc>
+    <loc>https://www.mezanurrahman.com/notes/2026-10-14-drought-or-plant-size/</loc>
     <lastmod>2026-10-14</lastmod>
   </url>
 </urlset>

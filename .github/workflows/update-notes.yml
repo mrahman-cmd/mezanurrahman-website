@@ -1,1 +1,41 @@
+name: Build note pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/notes.json"
+      - "scripts/build_note_pages.py"
+  workflow_dispatch:
+  schedule:
+    - cron: "17 5 * * *"   # daily, so notes dated in the future appear on their day
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build note pages and sitemap
+        run: python scripts/build_note_pages.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A notes 404.html sitemap.xml
+          if git diff --cached --quiet; then
+            echo "Nothing changed"
+          else
+            git commit -m "Update note pages and sitemap"
+            git pull --rebase
+            git push
+          fi
 

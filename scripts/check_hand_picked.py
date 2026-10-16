@@ -39,32 +39,54 @@ UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
 SEED_RE = re.compile(r'(<script type="application/json" id="opp-seed">)(.*?)(</script>)', re.S)
 
 
-def fetch_status(url, attempts=2, timeout=25):
-    """Return 'ok', 'blocked' or 'dead' for one address."""
+PLAIN_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/124.0 Safari/537.36")
+DETAIL = {}   # url -> text explaining the result, used in the log
+
+
+def _open(url, ua, timeout):
+    req = urllib.request.Request(url, headers={
+        "User-Agent": ua,
+        "Accept": "text/html,application/xhtml+xml,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+    })
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        resp.read(2048)
+        return resp.status
+
+
+def fetch_status(url, timeout=25):
+    """Return 'ok', 'blocked' or 'dead' for one address.
+
+    A page counts as dead only if it is missing (404/410) or the address does not
+    exist, and the answer is the same with two different browser identities. Many
+    sites answer automated visitors differently, so one 404 is not trusted on its own.
+    """
     url = url.split("#", 1)[0]
-    last = "blocked"
-    for attempt in range(attempts):
-        req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "text/html,*/*"})
+    outcomes = []
+    for ua in (UA, PLAIN_UA):
         try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                resp.read(2048)
-                return "ok" if resp.status < 400 else "blocked"
+            code = _open(url, ua, timeout)
+            DETAIL[url] = "HTTP %s" % code
+            return "ok" if code < 400 else "blocked"
         except urllib.error.HTTPError as err:
-            if err.code in (404, 410):
-                last = "dead"
-            else:
-                last = "blocked"
+            outcomes.append("HTTP %s" % err.code)
+            if err.code not in (404, 410):
+                DETAIL[url] = "HTTP %s" % err.code
+                return "blocked"
         except urllib.error.URLError as err:
             reason = getattr(err, "reason", None)
             if isinstance(reason, socket.gaierror):
-                last = "dead"          # the address does not exist
+                outcomes.append("address not found")
             else:
-                last = "blocked"
-        except (socket.timeout, TimeoutError, ConnectionError, OSError):
-            last = "blocked"
-        if attempt + 1 < attempts:
-            time.sleep(3)
-    return last
+                DETAIL[url] = "connection problem: %s" % reason
+                return "blocked"
+        except (socket.timeout, TimeoutError, ConnectionError, OSError) as err:
+            DETAIL[url] = "timeout or connection problem"
+            return "blocked"
+        time.sleep(3)
+    DETAIL[url] = " / ".join(outcomes)
+    return "dead"
 
 
 def main():
@@ -103,9 +125,9 @@ def main():
         url = obj.get("url")
         status = results.get(url)
         if status == "dead":
-            print("::warning::Dead link, please review or remove: %s (%s)" % (url, obj.get("title") or obj.get("name")))
+            print("::warning::Dead link (%s), please review or remove: %s (%s)" % (DETAIL.get(url, "?"), url, obj.get("title") or obj.get("name")))
         elif status == "blocked":
-            print("Unverified (site refused or timed out): %s" % url)
+            print("Unverified (%s): %s" % (DETAIL.get(url, "site refused or timed out"), url))
         elif status == "ok" and kind == "entry":
             obj["checked"] = today
         # expired deadlines are reported but never deleted here

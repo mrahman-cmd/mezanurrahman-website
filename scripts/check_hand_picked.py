@@ -43,6 +43,20 @@ PLAIN_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML
             "Chrome/124.0 Safari/537.36")
 DETAIL = {}   # url -> text explaining the result, used in the log
 
+# Pages that open normally in a browser but answer this checker with "404".
+# Only add a page here after you have opened it yourself and seen that it loads.
+# It is then treated as "unverified" instead of "dead".
+OPENS_IN_BROWSER = [
+]
+
+# Entries to take off the page. Add an address here when you have confirmed that the
+# posting is gone. The script removes the entry from the hand-picked list on its next
+# run and says so in the log.
+REMOVE_URLS = [
+    "https://www.agronomy.k-state.edu/about/employment/graduate-assistantships.html",
+    "https://plscgradprogram.utk.edu/common-questions-about-graduate-admission-to-plant-sciences/",
+]
+
 
 def _open(url, ua, timeout):
     req = urllib.request.Request(url, headers={
@@ -85,6 +99,9 @@ def fetch_status(url, timeout=25):
             DETAIL[url] = "timeout or connection problem"
             return "blocked"
         time.sleep(3)
+    if url in OPENS_IN_BROWSER:
+        DETAIL[url] = "%s for this checker, but the page opens in a normal browser" % " / ".join(outcomes)
+        return "blocked"
     DETAIL[url] = " / ".join(outcomes)
     return "dead"
 
@@ -103,6 +120,13 @@ def main():
         print("Could not find the opp-seed block. Nothing changed.")
         return 0
     seed = json.loads(match.group(2))
+
+    removed = [e for e in seed.get("items", []) if e.get("url") in REMOVE_URLS] + \
+              [p for p in seed.get("programs", []) if p.get("url") in REMOVE_URLS]
+    for r in removed:
+        print("Removed on your instruction (REMOVE_URLS): %s" % (r.get("title") or r.get("name")))
+    seed["items"] = [e for e in seed.get("items", []) if e.get("url") not in REMOVE_URLS]
+    seed["programs"] = [p for p in seed.get("programs", []) if p.get("url") not in REMOVE_URLS]
 
     targets = [("entry", e) for e in seed.get("items", [])] + \
               [("programme", p) for p in seed.get("programs", [])]

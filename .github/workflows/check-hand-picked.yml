@@ -1,1 +1,42 @@
+name: Re-check hand-picked opportunities
+
+on:
+  schedule:
+    # GitHub schedules run in UTC. 04:07 UTC is 12:07 AM New York in summer time (EDT),
+    # 05:07 UTC is 12:07 AM in winter time (EST). The script only acts in the 12 AM hour
+    # New York time, so exactly one of the two runs does the work all year.
+    - cron: "7 4 * * *"
+    - cron: "7 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Re-check hand-picked links and stamp the date
+        env:
+          FORCE_CHECK: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
+        run: python scripts/check_hand_picked.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A index.html
+          if git diff --cached --quiet; then
+            echo "Nothing changed"
+          else
+            git commit -m "Re-check hand-picked opportunities"
+            git pull --rebase
+            git push
+          fi
 

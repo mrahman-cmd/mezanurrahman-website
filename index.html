@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Dr. Md. Mezanur Rahman | Plant Scientist</title>
+  <title>Dr. Md. Mezanur Rahman | Plant Stress Physiology, ORNL</title>
 
   <meta
     name="description"
@@ -19,7 +19,7 @@
   >
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Dr. Md. Mezanur Rahman | Plant Scientist">
+  <meta property="og:title" content="Dr. Md. Mezanur Rahman | Plant Stress Physiology, ORNL">
   <meta
     property="og:description"
     content="Combined abiotic stress biology, high-throughput phenotyping, plant physiology, GWAS and multi-omics in trees and crops."
@@ -29,7 +29,8 @@
     property="og:image"
     content="https://mrahman-cmd.github.io/mezanurrahman-website/Md_Mezanur_Rahman-466.jpg"
   >
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://mrahman-cmd.github.io/mezanurrahman-website/Md_Mezanur_Rahman-466.jpg">
 
   <link
     rel="stylesheet"
@@ -2217,7 +2218,10 @@
       .funding-list strong { font-size: 1.05rem; }
       .funding-block p, .funding-list span { font-size: 1rem; }
     }
-  </style>
+  
+    .note-permalink { font-size: 0.85em; font-weight: 600; margin-left: auto; }
+    .notes-all { font-weight: 700; margin-top: 18px; }
+</style>
 </head>
 
 <body>
@@ -2408,7 +2412,7 @@
           </p>
         </div>
 
-        <aside class="profile-card">
+        <div class="profile-card" role="group" aria-label="Professional profile">
           <h3>Professional Profile</h3>
 
           <ul>
@@ -2447,7 +2451,7 @@
               >mrahman [at] gau.edu.bd</a>
             </li>
           </ul>
-        </aside>
+        </div>
       </div>
     </section>
 
@@ -2841,6 +2845,7 @@
           <p class="notes-empty">Loading notes&hellip;</p>
         </div>
         <noscript><p class="notes-empty">This section needs JavaScript.</p></noscript>
+        <p class="notes-all"><a href="notes/">All research notes &rarr;</a></p>
         <script type="application/json" id="notes-seed">
 {
   "notes": [
@@ -2908,7 +2913,7 @@
             when they exist.
         -->
 
-        <div class="pub-tools" role="search">
+        <div class="pub-tools" role="search" aria-label="Search publications">
           <label for="pub-search" class="sr-only">Search publications</label>
           <input id="pub-search" type="search" placeholder="Search title, journal or author" autocomplete="off">
           <label for="pub-role" class="sr-only">Filter by role</label>
@@ -5754,6 +5759,10 @@
         if (note.tag) {
           meta.appendChild(el("span", "note-status", note.tag));
         }
+
+        var link = el("a", "note-permalink", "Permalink");
+        link.href = "notes/" + note.id + "/";
+        meta.appendChild(link);
 
         article.appendChild(meta);
         article.appendChild(el("h3", "", note.title));

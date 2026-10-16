@@ -33,7 +33,7 @@ NOTES_DIR = ROOT / "notes"
 SITEMAP = ROOT / "sitemap.xml"
 NOT_FOUND = ROOT / "404.html"
 
-SITE = "https://mrahman-cmd.github.io/mezanurrahman-website/"
+SITE = "https://www.mezanurrahman.com/"
 AUTHOR = "Dr. Md. Mezanur Rahman"
 ORCID = "https://orcid.org/0000-0001-8822-9683"
 PORTRAIT = SITE + "Md_Mezanur_Rahman-466.jpg"
@@ -397,7 +397,7 @@ def build_sitemap(notes):
         for block in re.findall(r"<url>(.*?)</url>", text, re.S):
             loc = re.search(r"<loc>(.*?)</loc>", block)
             mod = re.search(r"<lastmod>(.*?)</lastmod>", block)
-            if loc and not loc.group(1).startswith(SITE + "notes/"):
+            if loc and loc.group(1).startswith(SITE) and not loc.group(1).startswith(SITE + "notes/"):
                 keep.append((loc.group(1), mod.group(1) if mod else None))
     if not any(u == SITE for u, _ in keep):
         keep.insert(0, (SITE, datetime.now(timezone.utc).strftime("%Y-%m-%d")))

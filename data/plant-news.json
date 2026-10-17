@@ -1,9 +1,16 @@
 {
-  "updated": "2026-10-17T00:57:55Z",
+  "updated": "2026-10-17T06:55:51Z",
   "items": [
     {
       "title": "Salt stress responses of Brassica napus roots and functional characterization of BnSAUR12 in salt tolerance",
       "link": "https://doi.org/10.1016/j.plantsci.2026.113521",
+      "source": "Plant Science",
+      "pubDate": "2027-01-01T00:00:00Z",
+      "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
+    },
+    {
+      "title": "Locus-aware characterization of wheat LOG-related genes and their transcriptional responses to abiotic stress",
+      "link": "https://doi.org/10.1016/j.plantsci.2026.113524",
       "source": "Plant Science",
       "pubDate": "2027-01-01T00:00:00Z",
       "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
@@ -74,13 +81,6 @@
     {
       "title": "A gain-of-function mutation in SlUVR8 reveals critical roles of UV-B signaling in tomato development and stress tolerance",
       "link": "https://doi.org/10.1016/j.plantsci.2026.113473",
-      "source": "Plant Science",
-      "pubDate": "2026-12-01T00:00:00Z",
-      "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
-    },
-    {
-      "title": "PSKR: An LRR-RLK, enhances oxidative stress tolerance by modulating ROS-driven stomatal closure",
-      "link": "https://doi.org/10.1016/j.plantsci.2026.113436",
       "source": "Plant Science",
       "pubDate": "2026-12-01T00:00:00Z",
       "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."

@@ -1,9 +1,16 @@
 {
-  "updated": "2026-10-19T13:01:22Z",
+  "updated": "2026-10-19T18:57:42Z",
   "items": [
     {
       "title": "Genome-wide characterization of Ferritin gene family reveals BnaFER1.1 as a key regulator of salt stress tolerance in rapeseed (Brassica napus)",
       "link": "https://doi.org/10.1016/j.plantsci.2026.113528",
+      "source": "Plant Science",
+      "pubDate": "2027-01-01T00:00:00Z",
+      "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
+    },
+    {
+      "title": "Genome-wide identification of the TIFY gene family in Sorghum bicolor and functional characterization of SbTIFY9 in salt stress tolerance",
+      "link": "https://doi.org/10.1016/j.plantsci.2026.113531",
       "source": "Plant Science",
       "pubDate": "2027-01-01T00:00:00Z",
       "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
@@ -74,13 +81,6 @@
     {
       "title": "Harnessing the variability in root architecture and VsNGR gene expression for drought adaptation in common vetch",
       "link": "https://doi.org/10.1016/j.plantsci.2026.113472",
-      "source": "Plant Science",
-      "pubDate": "2026-12-01T00:00:00Z",
-      "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
-    },
-    {
-      "title": "A gain-of-function mutation in SlUVR8 reveals critical roles of UV-B signaling in tomato development and stress tolerance",
-      "link": "https://doi.org/10.1016/j.plantsci.2026.113473",
       "source": "Plant Science",
       "pubDate": "2026-12-01T00:00:00Z",
       "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."

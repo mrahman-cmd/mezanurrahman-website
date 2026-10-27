@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27T05:11:06Z",
+  "updated": "2026-10-27T12:18:03Z",
   "items": [
     {
       "title": "Genome-wide characterization of Ferritin gene family reveals BnaFER1.1 as a key regulator of salt stress tolerance in rapeseed (Brassica napus)",
@@ -18,6 +18,13 @@
     {
       "title": "Salt stress responses of Brassica napus roots and functional characterization of BnSAUR12 in salt tolerance",
       "link": "https://doi.org/10.1016/j.plantsci.2026.113521",
+      "source": "Plant Science",
+      "pubDate": "2027-01-01T00:00:00Z",
+      "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
+    },
+    {
+      "title": "Functional analysis of SmCSN5 in salt stress tolerance of Salvia miltiorrhiza",
+      "link": "https://doi.org/10.1016/j.plantsci.2026.113539",
       "source": "Plant Science",
       "pubDate": "2027-01-01T00:00:00Z",
       "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
@@ -74,13 +81,6 @@
     {
       "title": "Irrigation frequency and salinity levels’ impact on biomass production and nutritional value in Sarcocornia fruticosa and Arthrocaulon macrostachyum",
       "link": "https://doi.org/10.1016/j.plantsci.2026.113453",
-      "source": "Plant Science",
-      "pubDate": "2026-12-01T00:00:00Z",
-      "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
-    },
-    {
-      "title": "The OsRFP1-OsMYB61 module regulates rice drought tolerance by modulating the transcription of ABA- and drought-responsive genes",
-      "link": "https://doi.org/10.1016/j.plantsci.2026.113443",
       "source": "Plant Science",
       "pubDate": "2026-12-01T00:00:00Z",
       "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30T22:24:42Z",
+  "updated": "2026-10-31T05:50:19Z",
   "items": [
     {
       "title": "Genome-wide characterization of Ferritin gene family reveals BnaFER1.1 as a key regulator of salt stress tolerance in rapeseed (Brassica napus)",
@@ -11,6 +11,13 @@
     {
       "title": "Direction-aware graph attention modeling and co-expression integration reveal novel core regulators of shared drought and salinity stress responses in rice leaves",
       "link": "https://doi.org/10.1016/j.plantsci.2026.113551",
+      "source": "Plant Science",
+      "pubDate": "2027-01-01T00:00:00Z",
+      "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
+    },
+    {
+      "title": "GhHDZ-87, a cotton HD-Zip transcription factor, involved in regulating salt stress tolerance in G. hirsutum",
+      "link": "https://doi.org/10.1016/j.plantsci.2026.113558",
       "source": "Plant Science",
       "pubDate": "2027-01-01T00:00:00Z",
       "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
@@ -74,13 +81,6 @@
     {
       "title": "Non-coding RNA levels integrating analysis revealed the salt and drought stress response mechanism of miR395e-PvUXS1 pathway in switchgrass",
       "link": "https://doi.org/10.1016/j.plantsci.2026.113533",
-      "source": "Plant Science",
-      "pubDate": "2027-01-01T00:00:00Z",
-      "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
-    },
-    {
-      "title": "EsPIP5K4, a target of Es-miR408, positively regulates salt tolerance in Siberian wildrye",
-      "link": "https://doi.org/10.1016/j.plantsci.2026.113526",
       "source": "Plant Science",
       "pubDate": "2027-01-01T00:00:00Z",
       "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."

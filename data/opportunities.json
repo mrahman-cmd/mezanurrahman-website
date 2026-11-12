@@ -1,6 +1,50 @@
 {
- "generated_at": "2026-11-11T17:17:21Z",
+ "generated_at": "2026-11-12T17:39:31Z",
  "items": [
+  {
+   "id": "wssa-a1e1d9b1c2",
+   "title": "Graduate Ph.D. Research Assistant",
+   "url": "https://wssa.net/2026/10/graduate-ph-d-research-assistant/",
+   "source": "WSSA job board",
+   "source_key": "wssa",
+   "university": "University of Arkansas",
+   "state": "AR",
+   "degree": "PhD",
+   "topics": [
+    "Weed science"
+   ],
+   "posted": "2026-10-06",
+   "deadline": "",
+   "deadline_kind": "",
+   "start_term": "",
+   "snippet": "The student will join a large graduate program focused on addressing some of the most challenging weed management issues facing Midsouth growers, many of which center around herbicide-resistant weeds, including but not limited to Palmer amaranth…",
+   "first_seen": "2026-11-12",
+   "checked": "2026-11-12",
+   "rolling": false
+  },
+  {
+   "id": "wssa-10cd805112",
+   "title": "Graduate Research Assistant",
+   "url": "https://wssa.net/2026/08/graduate-research-assistant-2/",
+   "source": "WSSA job board",
+   "source_key": "wssa",
+   "university": "University of Maryland Extension",
+   "state": "MD",
+   "degree": "MS",
+   "topics": [
+    "Weed science",
+    "Soil health",
+    "Cover crops"
+   ],
+   "posted": "2026-08-28",
+   "deadline": "",
+   "deadline_kind": "",
+   "start_term": "Spring 2027",
+   "snippet": "The Department of Plant Science and Landscape Architecture (PSLA)/University of Maryland Extension (UME) is inviting applications for a graduate assistant (M.S. level) to start in Spring 2027.",
+   "first_seen": "2026-11-12",
+   "checked": "2026-11-12",
+   "rolling": false
+  },
   {
    "id": "aspt-d705b8fef7",
    "title": "Herbarium Graduate Assistantship, University of Tennessee at Chattanooga",
@@ -19,7 +63,7 @@
    "start_term": "Spring 2027",
    "snippet": "The Shaw Lab at the University of Tennessee at Chattanooga is seeking a Master's student interested in botanical research who is also looking gain experience running and growing a mid-sized herbarium from 50,000 to 65,000 specimens.",
    "first_seen": "2026-10-15",
-   "checked": "2026-11-11",
+   "checked": "2026-11-12",
    "rolling": false
   },
   {
@@ -41,7 +85,30 @@
    "start_term": "",
    "snippet": "The Department of Biology, Geology, and Environmental Science (BGE) at the University of Tennessee at Chattanooga (UTC) in the College of Arts and Sciences invites applications for a tenure-track Assistant Professor in Plant Ecology beginning August 1, 2027.",
    "first_seen": "2026-10-15",
-   "checked": "2026-11-11",
+   "checked": "2026-11-12",
+   "rolling": false
+  },
+  {
+   "id": "wssa-f5c1fb8957",
+   "title": "Graduate Research Assistant (MS)",
+   "url": "https://wssa.net/2026/03/graduate-research-assistant-ms/",
+   "source": "WSSA job board",
+   "source_key": "wssa",
+   "university": "",
+   "state": "",
+   "degree": "MS",
+   "topics": [
+    "Weed science",
+    "Plant-microbe interactions",
+    "Soil health"
+   ],
+   "posted": "2026-03-22",
+   "deadline": "",
+   "deadline_kind": "",
+   "start_term": "",
+   "snippet": "We are developing a novel tool for managing weeds via electricity. The MS student will implement the weed management system and collect data. Work will be on fallow ground for pilot testing and within vineyards.",
+   "first_seen": "2026-11-12",
+   "checked": "2026-11-12",
    "rolling": false
   }
  ],

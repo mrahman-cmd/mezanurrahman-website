@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13T06:51:24Z",
+  "updated": "2026-11-13T19:45:45Z",
   "items": [
     {
       "title": "CmALDH2B7 and CmALDH7B4 positively regulate the osmotic stress tolerance in melon (Cucumis melo L.)",
@@ -11,6 +11,13 @@
     {
       "title": "VvSnRK1 orchestrates energy reallocation and metabolic adaptation to combined heat and waterlogging stress in grapevine",
       "link": "https://doi.org/10.1016/j.plantsci.2026.113568",
+      "source": "Plant Science",
+      "pubDate": "2027-02-01T00:00:00Z",
+      "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
+    },
+    {
+      "title": "CmWRKY7 and CmMYBL1 directly activate CmP5CS1 to promote proline accumulation and cold tolerance in melon (Cucumis melo L.)",
+      "link": "https://doi.org/10.1016/j.plantsci.2026.113598",
       "source": "Plant Science",
       "pubDate": "2027-02-01T00:00:00Z",
       "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
@@ -74,13 +81,6 @@
     {
       "title": "The bZIP transcription factor ZmbZIP111 contributes to drought tolerance and regulates the expression of ZmEULD1b in maize",
       "link": "https://doi.org/10.1016/j.plantsci.2026.113532",
-      "source": "Plant Science",
-      "pubDate": "2027-01-01T00:00:00Z",
-      "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
-    },
-    {
-      "title": "Endophytic Aspergillus niger and Aspergillus oryzae improve growth, antioxidant defense, and ion homeostasis in maize under salinity stress",
-      "link": "https://doi.org/10.1016/j.plantsci.2026.113508",
       "source": "Plant Science",
       "pubDate": "2027-01-01T00:00:00Z",
       "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."

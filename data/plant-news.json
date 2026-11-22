@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T19:20:43Z",
+  "updated": "2026-11-22T06:55:22Z",
   "items": [
     {
       "title": "PagMPK3 enhances salinity tolerance and drought resistance of transgenic poplar",
@@ -25,6 +25,13 @@
     {
       "title": "StHSFB2A enhances potato tolerance to combined heat–drought stress by modulating redox homeostasis and osmotic adjustment",
       "link": "https://doi.org/10.1016/j.plantsci.2026.113603",
+      "source": "Plant Science",
+      "pubDate": "2027-02-01T00:00:00Z",
+      "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
+    },
+    {
+      "title": "Integrative profiling of miRNA–gene networks associated with wheat detoxification responses under combined abiotic stress",
+      "link": "https://doi.org/10.1016/j.plantsci.2026.113600",
       "source": "Plant Science",
       "pubDate": "2027-02-01T00:00:00Z",
       "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
@@ -74,13 +81,6 @@
     {
       "title": "Direction-aware graph attention modeling and co-expression integration reveal novel core regulators of shared drought and salinity stress responses in rice leaves",
       "link": "https://doi.org/10.1016/j.plantsci.2026.113551",
-      "source": "Plant Science",
-      "pubDate": "2027-01-01T00:00:00Z",
-      "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
-    },
-    {
-      "title": "GhHDZ-87, a cotton HD-Zip transcription factor, involved in regulating salt stress tolerance in G. hirsutum",
-      "link": "https://doi.org/10.1016/j.plantsci.2026.113558",
       "source": "Plant Science",
       "pubDate": "2027-01-01T00:00:00Z",
       "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."

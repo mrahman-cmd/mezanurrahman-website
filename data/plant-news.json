@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T08:41:43Z",
+  "updated": "2026-11-25T21:44:54Z",
   "items": [
     {
       "title": "PagMPK3 enhances salinity tolerance and drought resistance of transgenic poplar",
@@ -25,6 +25,13 @@
     {
       "title": "StHSFB2A enhances potato tolerance to combined heat–drought stress by modulating redox homeostasis and osmotic adjustment",
       "link": "https://doi.org/10.1016/j.plantsci.2026.113603",
+      "source": "Plant Science",
+      "pubDate": "2027-02-01T00:00:00Z",
+      "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
+    },
+    {
+      "title": "Mitogen-activated protein kinase 1 (MAPK1) positively regulates freezing tolerance in potato",
+      "link": "https://doi.org/10.1016/j.plantsci.2026.113608",
       "source": "Plant Science",
       "pubDate": "2027-02-01T00:00:00Z",
       "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
@@ -74,13 +81,6 @@
     {
       "title": "Genome-wide characterization of Ferritin gene family reveals BnaFER1.1 as a key regulator of salt stress tolerance in rapeseed (Brassica napus)",
       "link": "https://doi.org/10.1016/j.plantsci.2026.113528",
-      "source": "Plant Science",
-      "pubDate": "2027-01-01T00:00:00Z",
-      "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
-    },
-    {
-      "title": "Direction-aware graph attention modeling and co-expression integration reveal novel core regulators of shared drought and salinity stress responses in rice leaves",
-      "link": "https://doi.org/10.1016/j.plantsci.2026.113551",
       "source": "Plant Science",
       "pubDate": "2027-01-01T00:00:00Z",
       "summary": "Peer-reviewed research related to plant abiotic stress, stress tolerance, or climate resilience."
